@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
-    if @activity.save?
+    if @activity.save
       redirect_to root_path
     else
       render :new
@@ -15,6 +15,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name)
+    params.require(:activity).permit(:name, :category_id)
   end
 end
