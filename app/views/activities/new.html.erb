@@ -9,6 +9,8 @@
         <div class="form-info">
           <%= f.input :photo, as: :file, required: true %>
         </div>
+
+        <%= f.association :category %>
       </div>
       <%= f.button :submit, "Create your activity", class: "primary-button"  %>
 
