@@ -1,0 +1,2 @@
+class ItemStoragesController < ApplicationController
+end
