@@ -3,13 +3,13 @@
 <%= simple_form_for @activity do |f| %>
       <div class="form">
         <div class="form-info">
-          <%= f.input :name, label: 'Your category name:', required: true %>
+          <%= f.input :name, label: 'Your activity name:', required: true %>
         </div>
 
         <div class="form-info">
           <%= f.input :photo, as: :file, required: true %>
         </div>
       </div>
-      <%= f.button :submit, "Create your category", class: "primary-button"  %>
+      <%= f.button :submit, "Create your activity", class: "primary-button"  %>
 
     <% end %>
