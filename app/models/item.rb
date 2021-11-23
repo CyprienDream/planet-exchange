@@ -3,4 +3,6 @@ class Item < ApplicationRecord
   has_one_attached :photo
   has_many :activity_items
   has_many :activities, through: :activity_items
+
+
 end
