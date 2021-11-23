@@ -1,0 +1,11 @@
+<div class="container">
+<h2>Add a new item</h2>
+<%= simple_form_for(@item) do |f| %>
+<%= f.input :name %>
+<%= f.association :activities %>
+<%= f.input :photo, as: :file %>
+<%= f.button :submit, class: "btn btn-new"%>
+<% end %>
+</div>
+<%# stupid czýzu hzá hzujiok
+ %>
