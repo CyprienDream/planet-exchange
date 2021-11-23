@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_164618) do
+ActiveRecord::Schema.define(version: 2021_11_23_093138) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_164618) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
+
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -83,6 +85,17 @@ ActiveRecord::Schema.define(version: 2021_11_22_164618) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "item_materials", force: :cascade do |t|
+    t.float "percentage_weight"
+    t.bigint "item_id", null: false
+    t.bigint "material_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_item_materials_on_item_id"
+    t.index ["material_id"], name: "index_item_materials_on_material_id"
+  end
+
+
   create_table "item_storages", force: :cascade do |t|
     t.text "specification"
     t.bigint "storage_id", null: false
@@ -101,6 +114,15 @@ ActiveRecord::Schema.define(version: 2021_11_22_164618) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
+
+  create_table "materials", force: :cascade do |t|
+    t.string "name"
+    t.float "co2_per_kilo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "storages", force: :cascade do |t|
     t.string "address"
     t.float "latitude"
@@ -113,13 +135,19 @@ ActiveRecord::Schema.define(version: 2021_11_22_164618) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "email"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+ add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  
   add_foreign_key "activities", "categories"
   add_foreign_key "activity_items", "activities"
   add_foreign_key "activity_items", "items"
@@ -127,6 +155,10 @@ ActiveRecord::Schema.define(version: 2021_11_22_164618) do
   add_foreign_key "activity_users", "users"
   add_foreign_key "interest_users", "interests"
   add_foreign_key "interest_users", "users"
+
+  add_foreign_key "item_materials", "items"
+  add_foreign_key "item_materials", "materials"
+
   add_foreign_key "item_storages", "items"
   add_foreign_key "item_storages", "storages"
   add_foreign_key "storages", "users"

@@ -1,0 +1,15 @@
+<h1>Create a new category</h1>
+
+<%= simple_form_for @category do |f| %>
+      <div class="form">
+        <div class="form-info">
+          <%= f.input :name, label: 'Your category name:', required: true %>
+        </div>
+
+        <div class="form-info">
+          <%= f.input :photo, as: :file, required: true %>
+        </div>
+      </div>
+      <%= f.button :submit, "Create your category", class: "primary-button"  %>
+
+    <% end %>
