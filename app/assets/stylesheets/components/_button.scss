@@ -1,8 +1,40 @@
-button {
+.btn {
   font-family: Sen;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 115.19%;
   letter-spacing: 0.03em;
+  text-decoration: none;
+
+  display: inline-block;
+  padding: 24px 48px;
+  border-radius: 50px;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-white {
+  color: $white;
+  border: 3px solid $white;
+  box-shadow: 0 5px 0 $white;
+  &.btn-white:hover, .btn-white:active {
+    color: $white;
+    -webkit-transform: translate(0px,5px);
+    -ms-transform: translate(0px,5px);
+    transform: translate(0px,5px);
+    box-shadow: 0 0 0 $white;
+  }
+}
+
+.btn-green {
+  color: $green3;
+  border: 3px solid $green3;
+  box-shadow: 0 5px 0 $green3;
+  &.btn-green:hover, .btn-green:active {
+    color: $green3;
+    -webkit-transform: translate(0px,5px);
+    -ms-transform: translate(0px,5px);
+    transform: translate(0px,5px);
+    box-shadow: 0 0 0 $green3;
+  }
 }

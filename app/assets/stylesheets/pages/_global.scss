@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Sen", "Helvetica", "sans-serif";
   font-style: normal;
@@ -6,6 +10,8 @@ body {
   line-height: 115.19%;
   color: $white;
   background-color: $green1;
+  background-image: url("assets/background.svg");
+  background-position: top center;
 }
 
 h1 {
