@@ -1,14 +1,27 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container d-flex flex-column text-center">
 
+  <div class="home-container">
+    <div class="logo">
+      <h1>Planet Exchange</h1>
+      <small>Just borrow it!</small>
+    </div>
 
-<h4>List of categories</h4>
+    <div class="start">
+      <small>Start your journey</small>
+      <a href="#onboarding" class="btn btn-white">let's go</a>
+    </div>
+  </div>
 
-<ul>
-  <% @categories.each do |category| %>
-    <li><%= category.name %></li>
-  <% end %>
-</ul>
+  <div class="home-container">
+    <div class="logo">
+      <h1>Planet Exchange</h1>
+      <small>Just borrow it!</small>
+    </div>
 
+    <div class="start" id="onboarding">
+      <small>Start your journey</small>
+      <a href="#" class="btn btn-white">let's go</a>
+    </div>
+  </div>
 
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+</div>
