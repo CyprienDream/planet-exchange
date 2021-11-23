@@ -4,8 +4,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: %i[new create index show]
   resources :activities, only: %i[new create show]
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :items, only: [:index, :new, :create]
+  resources :storages, only: %i[show new create]
+  resources :items, only: %i[index new create]
 
 end

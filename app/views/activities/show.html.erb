@@ -1,1 +1,7 @@
 <h1>Activity: <%= @activity.name %></h1>
+
+<ol>
+  <% @activity.items.each do |item| %>
+    <%= item.name %><br>
+  <% end %>
+</ol>
