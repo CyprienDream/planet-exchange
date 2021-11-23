@@ -6,6 +6,5 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :interest_users
   has_many :interests, through: :interest_users
-  accepts_nested_attributes_for :interests
-
+  # accepts_nested_attributes_for :interests
 end
