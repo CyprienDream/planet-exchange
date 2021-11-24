@@ -1,6 +1,13 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    if params[:query].present?
+    @items = []
+    ItemStorage.all.each do |item_storage|
+      @items << { item: item_storage.item, address: item_storage.address}
+    end
+    else
+      @items = ItemStorage.all
+    end
   end
 
   def new

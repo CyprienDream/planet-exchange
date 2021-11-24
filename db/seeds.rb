@@ -9,14 +9,45 @@
 # categories
 require "open-uri"
 require "pry-byebug"
+
 Activity.destroy_all
 Category.destroy_all
 ItemMaterial.destroy_all
 Material.destroy_all
 ActivityItem.destroy_all
+ItemStorage.destroy_all
+Storage.destroy_all
 Item.destroy_all
+InterestUser.destroy_all
+User.destroy_all
 
 puts "destroyed stuff"
+# users
+
+cities = ["Barcelona, Spain", "Madrid, Spain", "Paris, France", "Lyon, France", "London, England", "Manchester, England",
+          "Luxembourg, Luxembourg", "Berlin, Germany", "Munich, Germany", "Canberra, Australia", "Wellington, New Zealand",
+          "Lima, Peru", "Washington, United States", "New York, United States", "Lisbon, Portugal", "Oslo, Norway", "Beijing, China",
+          "Tokyo, Japan", "Dijon, France", "Stockholm, Sweden", "Bratislava, Slovakia", "Buenos Aires, Argentina", "Cusco, Peru",
+          "Medellin, Colombia", "Bologna, Italy", "Napoli, Italy", "Caracas, Venezuela", "Moscow, Russia", "Rekjavik, Iceland", "Helsinki, Finland",
+          "Prievidza, Slovakia", "Bilbao, Spain", "Sofia, Bulgaria", "Belgrade, Serbia", "Alger, Algeria", "Cairo, Egypt", "Tunis, Tunisia", "Cape Town, South Affrica",
+          "Istanbul, Turkey", "Niger, Nigeria", "Antananarivo, Madagascar", "Dakar, Senegal", "Macon, France", "Osaka, Japan", "Kyoto, Japan", "New Dehli, India", "Taipei, Taiwan",
+          "Brussels, Belgium", "Valencia, Venezuela", "Valencia, Spain", "Valence, France", "Seoul, South Korea", "Hong Kong, Honk Kong", "Bangkok, Thailand", "Phnom Penh, Cambodia",
+          "Cancun, Mexico", "Tulum, Mexico", "San Cristobal de las casas, Mexico", "Guadalajara, Mexico", "Mexico city, Mexico", "Antigua, Guatemala", "Guatemala city, Guatemala",
+          "San Salvador, Salvador", "San Pedro Sula, Honduras", "Managua, Nicaragua", "Tijuana, Mexico", "San Jose, Costa Rica", "Panama city, Panama", "Bogota, Columbia", "Georgetown, Guyana",
+          "Montevideo, Urugay", "Sao Paulo, Brazil", "Nairobi, Kenya", "Luanda, Angola", "Marseille, France", "Douala, Cameroon", "Abidjan, Ivory Coast", "Newcastle, England", "Glasgow, Wales", "Belfast, Ireland",
+          "Athens, Greece", "Dubrovnik, Croatia", "Kiev, Ukraine", "Tbilisi, Georgia"]
+
+user1 = User.new({username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia2@lucia.com" , password: "123456", password_confirmation: "123456"})
+user1.photo.attach(io: File.open('app/assets/images/Lucia01.jpg'), filename: "user1.png",content_type: 'image/png')
+user1.save!
+
+user2 = User.new({username: "Oyivid", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456"})
+user2.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U02G1P39XDM-d2fe1bf286ac-512"), filename: "user2.png" , content_type: 'image/png')
+user2.save!
+
+storage_user1 = Storage.create!(user_id: user1.id, address: cities.sample)
+storage_user2 = Storage.create!(user_id: user2.id, address: cities.sample)
+
 
 category_file1 = File.open("app/assets/images/tools icon.png")
 category_file2 = File.open("app/assets/images/sports icon.png")
@@ -133,6 +164,8 @@ items.each do |item|
   item_in_db.photo.attach(io: File.open(item[:photo]), filename: "#{item[:name]}.png", content_type: "image/png")
   item_in_db.save!
 
+  ItemStorage.create!(storage_id: storage_user1.id, item: item_in_db)
+  ItemStorage.create!(storage_id: storage_user2.id, item: item_in_db)
 end
 
 
@@ -215,15 +248,6 @@ end
 # activity_item3 = ActivityItem.create({activity_id: 10 , item_id: 3})
 # activity_item4 = ActivityItem.create({activity_id: 10 , item_id: 4})
 
-# users
-
-# user1 = User.new({username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia@lucia.com" , password: "123456", password_confirmation: "123456"})
-# user1.photo.attach(io: File.open('app/assets/images/Lucia01.jpg'), filename: "user1.png",content_type: 'image/png')
-# user1.save
-
-# user2 = User.new({username: "Oyivid", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo@amigo.com", password: "123456", password_confirmation: "123456"})
-# user2.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U02G1P39XDM-d2fe1bf286ac-512"), filename: "user2.png" , content_type: 'image/png')
-# user2.save
 
 # interest
 

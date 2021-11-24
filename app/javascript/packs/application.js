@@ -38,3 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   initSwiper();
   initMapbox();
 });
+
+import "controllers"
