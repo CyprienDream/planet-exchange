@@ -1,7 +1,8 @@
+
+
 <h1>Activity: <%= @activity.name %></h1>
 
-<ol>
-  <% @activity.items.each do |item| %>
-    <%= item.name %><br>
-  <% end %>
-</ol>
+<%= simple_form_for @activity do |f| %>
+  <%= f.input :name, collection: @activity.items, prompt: 'Select Item', label: false %>
+  <%= f.button :submit, "Search" %>
+<% end %>
