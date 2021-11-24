@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: 'pages#home'
+
+  get '/search', to: 'pages#search'
 
   resources :categories, only: %i[new create index show]
   resources :activities, only: %i[new create show]
