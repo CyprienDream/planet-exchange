@@ -26,6 +26,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 // External imports
 import "bootstrap";
+import { initSwiper } from '../components/swiper';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -33,6 +34,8 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  initSwiper();
   initMapbox();
 });
 
