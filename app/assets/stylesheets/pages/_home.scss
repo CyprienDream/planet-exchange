@@ -5,8 +5,10 @@
   height: 100vh;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: column;
   padding: 9em 0 3em 0;
+  text-align: center;
 }
 
 .logo {
@@ -15,6 +17,12 @@
 
 .logo h1 {
     margin-bottom: 0.2em;
+}
+
+.start{
+  max-width: 216px;
+  display: flex;
+  flex-direction: column;
 }
 
 .start a.btn {
