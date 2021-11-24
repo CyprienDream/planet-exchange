@@ -44,4 +44,11 @@
   background-color: $white;
   height: 96px;
   border-radius: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
+
+.big-button small {
+    max-width: 110px;
+  }
