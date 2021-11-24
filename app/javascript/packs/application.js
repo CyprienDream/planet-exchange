@@ -24,7 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { onBoarding } from '../components/onboarding';
+import { initSwiper } from '../components/swiper';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,5 +32,5 @@ import { onBoarding } from '../components/onboarding';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  onBoarding()
+  initSwiper();
 });

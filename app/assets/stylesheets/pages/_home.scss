@@ -49,25 +49,14 @@
   margin-top: 0.3em;
 }
 
-.visible {
-  display: none;
+.swiper-wrapper {
+  margin-bottom: 1em ;
 }
 
-.pagination .active {
-  opacity: 1;
+.swiper-pagination-bullet, .swiper-pagination-bullet-active {
+  background-color: $white !important;
 }
 
-.pagination {
-  justify-content: center;
-  margin-bottom: 2em;
-}
-
-.pagination span {
-  width: 8px;
-  height: 8px;
-  background-color: $white;
-  border-radius: 50%;
-  display: block;
-  margin: 0 4px;
-  opacity: 0.3;
+.swiper {
+  width: 100%;
 }
