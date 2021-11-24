@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_23_093138) do
+ActiveRecord::Schema.define(version: 2021_11_24_115028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,9 @@ ActiveRecord::Schema.define(version: 2021_11_23_093138) do
     t.float "carbon_footprint"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "weight"
+    t.float "height"
+    t.float "width"
   end
 
   create_table "materials", force: :cascade do |t|

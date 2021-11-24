@@ -1,7 +1,9 @@
 <h1>Item index</h1>
 
-<ul>
+
   <% @items.each do |item| %>
-    <li><%= item.name %></li>
+  <%= item.name %>
+  <p>You will save at least: <%= item.avg_price %> € </p>
+  <p>You will save at least: <%= item.space_taken%> m2</p>
+  <p>You will save at least: equivalent to emissions CO2/kg <%= item.carbon_footprint %> </p>
   <% end %>
-</ul>
