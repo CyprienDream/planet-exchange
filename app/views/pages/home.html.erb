@@ -1,6 +1,6 @@
 <div class="container d-flex flex-column">
 
-  <div class="intro-container">
+  <section class="intro-container">
     <div class="logo">
       <h1>Planet Exchange</h1>
       <small>Just borrow it!</small>
@@ -10,15 +10,13 @@
       <small>Start your journey</small>
       <a href="#onboarding" class="btn btn-white">let's go</a>
     </div>
-  </div>
+  </section>
 
-  <div class="onboarding-container" id="onboarding">
+  <section class="onboarding-container" id="onboarding">
     <small>how does it work?</small>
 
     <div class="swiper">
-      <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
-        <!-- Slides -->
         <div class="swiper-slide">
           <img width="100%" height="154px" style="background-color:#666;">
           <h2>Explore</h2>
@@ -36,11 +34,9 @@
           <h2>Save</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis eget integer sit congue auctor at suspendisse sit. Semper integer enim sagittis lobortis aliquam at.</p>
         </div>
-
       </div>
 
       <div class="swiper-pagination"></div>
-
     </div>
 
     <div class="onboarding-next">
@@ -48,6 +44,27 @@
       <a href="#" id="btn-onboarding" class="btn btn-white">Continue</a>
     </div>
 
-  </div>
+  </section>
+
+  <section class="choices">
+    <h2>What do you want to do?</h2>
+
+    <div class="choice-item">
+      <img width="100%" height="154px" style="background-color:#666;">
+      <a href="#">
+        <div class="big-button">
+          <small>Browse all items</small>
+          <%= image_tag("arrow.svg") %>
+        </div>
+      </a>
+    </div>
+    <div class="choice-item">
+
+    </div>
+  </section>
+
+  <section class="browse">
+
+  </section>
 
 </div>

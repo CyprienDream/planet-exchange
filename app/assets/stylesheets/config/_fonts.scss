@@ -3,8 +3,8 @@
 
 @font-face {
   font-family: "Apfel Grotezk";
-  src: url("assets/fonts/ApfelGrotezk-Regular");
-  src: url("assets/fonts/ApfelGrotezk-Regular") format("woff"), format("woff2");
+  src: asset-url("/assets/fonts/ApfelGrotezk-Regular");
+  src: asset-url("/assets/fonts/ApfelGrotezk-Regular") format("woff"), format("woff2");
 }
 
 
