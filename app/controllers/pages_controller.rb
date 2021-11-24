@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       @items = Item.search_by_name(params[:query]) # yet to be implemented
     else
       # display or do something if no search input
-      @items = Item.all
+      @items = ItemStorage.all
     end
 
     # define markers and info window for map
@@ -19,8 +19,7 @@ class PagesController < ApplicationController
       {
         lat: item.storage.latitude,
         lng: item.storage.longitude,
-        # info_window: render_to_string(partial: "info_window", locals: { experience: experience })
-        # image_url: helpers.asset_url(experience.photo.key)
+        info_window: render_to_string(partial: "info_window", locals: { item: item })
       }
     end
   end
