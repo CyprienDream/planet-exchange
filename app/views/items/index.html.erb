@@ -1,9 +1,13 @@
 <h1>Item index</h1>
-
+  <%= form_tag items_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+  placeholder: "Search for item to borrow" %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 
   <% @items.each do |item| %>
-  <%= item.name %>
-  <p>You will save at least: <%= item.avg_price %> € </p>
-  <p>You will save at least: <%= item.space_taken%> m2</p>
-  <p>You will save at least: equivalent to emissions CO2/kg <%= item.carbon_footprint %> </p>
+  <%= item.item.name %>
+  <%= item.storage.address %>
   <% end %>
