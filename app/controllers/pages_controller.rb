@@ -9,10 +9,13 @@ class PagesController < ApplicationController
       @items = Item.search_by_name(params[:query]) # yet to be implemented
     else
       # display or do something if no search input
+      @items = Item.all
     end
 
     # define markers and info window for map
-    @markers = @items.geocoded.map do |item|
+    @markers = @items.map do |item|
+      next unless item.storage.geocoded?
+
       {
         lat: item.storage.latitude,
         lng: item.storage.longitude,
