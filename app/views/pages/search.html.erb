@@ -15,7 +15,9 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
+<% if params[:query].present?%>
 <% @items.each do |item| %>
   <%= item.item.name %>
   <%= item.storage.address %>
   <% end %>
+<% end %>
