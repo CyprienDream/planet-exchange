@@ -56,3 +56,15 @@ small {
   padding-left: 32px;
   padding-right: 32px;
 }
+
+input, textarea {
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 20px;
+  opacity: 0.2;
+  color: $white;
+  padding: 0.5em 1em;
+  margin: 0.5em 0;
+
+}

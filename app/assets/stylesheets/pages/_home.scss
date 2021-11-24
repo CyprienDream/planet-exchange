@@ -62,3 +62,37 @@
 }
 
 // CHOICES -------------------------------------------------
+
+.choice-item {
+  margin: 0.8em 0;
+}
+
+img.choice {
+  transform: translateY(8px)
+}
+
+// BROWSE  -------------------------------------------------
+
+#browse {
+  margin: 3em 0;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  // margin-bottom: 2em;
+}
+
+.category-icon {
+  background-color: $white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon img {
+  max-width: 92px;
+}
