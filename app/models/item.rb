@@ -8,6 +8,13 @@ class Item < ApplicationRecord
   has_many :item_materials
   has_many :materials, through: :item_materials
 
+  include PgSearch::Model
+  pg_search_scope :search_by_name,
+    against: [ :name ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   def space_taken
    return (height * width).round(3)
   end
@@ -17,4 +24,5 @@ class Item < ApplicationRecord
       return ((weight * m.percentage_weight) * m.material.co2_per_kilo).round(2)
     end
   end
+
 end
