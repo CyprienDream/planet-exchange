@@ -1,6 +1,6 @@
-// Specific CSS for your home-page
+// INTRO --------------------------------------------------
 
-.home-container {
+.intro-container {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -27,4 +27,47 @@
 
 .start a.btn {
   margin-top: 1em;
+}
+
+// ONBOARDING -------------------------------------------------
+
+.onboarding-container {
+  width: 100%;
+  height: 100vh;
+  padding: 3em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.onboarding-next {
+  text-align: center;
+}
+
+.onboarding {
+  margin-top: 0.3em;
+}
+
+.visible {
+  display: none;
+}
+
+.pagination .active {
+  opacity: 1;
+}
+
+.pagination {
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.pagination span {
+  width: 8px;
+  height: 8px;
+  background-color: $white;
+  border-radius: 50%;
+  display: block;
+  margin: 0 4px;
+  opacity: 0.3;
 }

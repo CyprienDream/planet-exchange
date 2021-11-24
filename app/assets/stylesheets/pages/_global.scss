@@ -28,6 +28,7 @@ h2{
   font-weight: normal;
   font-size: 48px;
   line-height: 87.19%;
+  margin: 0.3em 0;
 }
 
 h3 {
@@ -46,4 +47,12 @@ small {
   line-height: 115.19%;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+
+  display: inline-block;
+  margin-bottom: 0.3em ;
+}
+
+.container {
+  padding-left: 32px;
+  padding-right: 32px;
 }
