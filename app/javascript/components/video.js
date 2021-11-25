@@ -4,10 +4,8 @@ const videoFading = () => {
   const onboardingTag = document.querySelector("#onboarding")
 
   buttonTag.addEventListener("click", (event) => {
-    // event.preventDefault()
     videoDiv.style.opacity = "0";
     onboardingTag.scrollIntoView()
-    // console.log(videoDiv.style)
   })
 }
 
