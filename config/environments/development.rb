@@ -59,4 +59,7 @@ config.active_storage.service = :cloudinary
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # ngrok config
+  config.hosts << "aff2-83-47-132-136.ngrok.io"
 end
