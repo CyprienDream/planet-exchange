@@ -1,10 +1,18 @@
-<h1>Category: <%= @category.name %></h1>
-
-  <% @category.activities.each do |activity| %>
-    <%= link_to activity_path(activity) do %>
-    <div class="btn btn-white">
-      <small><%= activity.name %></small>
-      <%= image_tag("arrow.svg") %>
+<div class="container">
+  <div class="show-container">
+    <div class="top-container">
+    <h2><%= @category.name %></h2>
+    <div class="category-icon"><%= cl_image_tag @category.photo.key %></div>
     </div>
-    <% end %>
-  <% end %>
+    <div class="list-container">
+      <% @category.activities.each do |activity| %>
+        <%= link_to activity_path(activity) do %>
+        <div class="btn btn-list-white">
+          <small><%= activity.name %></small>
+          <%= image_tag "arrow.svg" , class: "img-white" %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
