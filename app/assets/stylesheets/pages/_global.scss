@@ -4,7 +4,9 @@
 
 html {
   scroll-behavior: smooth;
+  height: -webkit-fill-available;
 }
+
 
 body {
   font-family: "Sen", "Helvetica", "sans-serif";
@@ -16,6 +18,9 @@ body {
   background-color: $green1;
   background-image: image-url("background.svg");
   background-position: top center;
+
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 h1 {
