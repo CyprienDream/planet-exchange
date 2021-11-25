@@ -16,8 +16,13 @@
   <% end %>
 
 <% if params[:query].present?%>
-<% @items.each do |item| %>
-  <%= item.item.name %>
-  <%= item.storage.address %>
+<% @items.each do |item_storage| %>
+  <%= item_storage.item.name %>
+  <%= item_storage.storage.address %>
+  <% end %>
+<br>
+<br>
+  <% @items.each do |item_storage| %>
+    <%= item_storage.storage.user.username %>
   <% end %>
 <% end %>
