@@ -6,10 +6,16 @@
     </div>
     <%= cl_image_tag @user.photo.key, class: "user-img" %>
   </div>
+  <div class="mt-3">
+   <%= @user.bio %>
+  </div>
   <div class="user-background-container">
+  <div class="p-3">
+
+
     <div class="storage-holder">
     <p><%= @user.username %>'s storage room</p>
-<div class="storage-room-items-container">
+  <div class="storage-room-items-container">
   <% @storage_items.each do |item| %>
   <div class="item-item">
   <%= item.name %>
@@ -26,6 +32,7 @@
       <%= cl_image_tag interest.photo.key, class: "user-interest-icon" %>
       <% end %>
     </div>
+  </div>
     </div>
   </div>
   <div class="text-center mt-3">
