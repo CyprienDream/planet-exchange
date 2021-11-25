@@ -20,6 +20,7 @@ class PagesController < ApplicationController
 
       @markers = @storage_items.map do |item_storage|
         next unless item_storage.storage.geocoded?
+
         {
           lat: item_storage.storage.latitude,
           lng: item_storage.storage.longitude,
