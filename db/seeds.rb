@@ -18,6 +18,7 @@ ItemStorage.destroy_all
 Storage.destroy_all
 Item.destroy_all
 InterestUser.destroy_all
+Interest.destroy_all
 User.destroy_all
 
 puts "destroyed stuff"
@@ -77,20 +78,69 @@ barcelona_addresses = [
 ]
 
 # users
- users = [
+
+interests = [
+{name: "Coffee", photo: "app/assets/images/interest_icons/cafe.svg"},
+{name: "Sweets", photo: "app/assets/images/interest_icons/cupcake.svg"},
+{name: "Wine", photo: "app/assets/images/interest_icons/wine.svg"},
+{name: "Cinema", photo: "app/assets/images/interest_icons/cinema.svg"},
+{name: "Beer", photo: "app/assets/images/interest_icons/beer.svg"},
+{name: "Exchange", photo: "app/assets/images/interest_icons/exchange.svg"},
+]
+
+interests.each do |interest|
+  interest_in_db = Interest.new(name: interest[:name])
+  photo = interest[:photo].split("/")
+  interest_in_db.photo.attach(io: File.open(interest[:photo]), filename: "#{photo.last}.svg", content_type: "image/svg")
+  interest_in_db.save!
+end
+
+# interest
+
+# interest1 = Interest.new({name:"Coffee"})
+# interest1.photo.attach(io: File.open("app/assets/images/hobby_coffee.png"), filename: "iterest_image1.png" , content_type:"image/png")
+# interest1.save
+
+# interest2 = Interest.new({name:"Sweets"})
+# interest2.photo.attach(io: File.open("app/assets/images/baking_item2.png"), filename: "iterest_image2.png" , content_type:"image/png")
+# interest2.save
+
+# interest3 = Interest.new({name:"Wine"})
+# interest3.photo.attach(io: File.open("app/assets/images/interest_wine.jpg"), filename: "iterest_image3.png" , content_type:"image/png")
+# interest3.save
+
+# interest4 = Interest.new({name:"Beer"})
+# interest4.photo.attach(io: File.open("app/assets/images/interest_beer2.jpg"), filename: "iterest_image4.png" , content_type:"image/png")
+# interest4.save
+
+# interest5 = Interest.new({name:"Cinema"})
+# interest5.photo.attach(io: File.open("app/assets/images/interest_cinema.png"), filename: "iterest_image5.png" , content_type:"image/png")
+# interest5.save
+
+# # user interest
+
+# interest_user1 = InterestUser.create({interest_id: 5 , user_id: 1})
+# interest_user2 = InterestUser.create({interest_id: 4 , user_id: 1})
+# interest_user3 = InterestUser.create({interest_id: 2 , user_id: 1})
+# interest_user4 = InterestUser.create({interest_id: 4 , user_id: 2})
+# interest_user5 = InterestUser.create({interest_id: 1 , user_id: 2})
+# interest_user6 = InterestUser.create({interest_id: 3 , user_id: 2})
+users = [
   {username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia2@lucia.com" , password: "123456", password_confirmation: "123456", photo:"app/assets/images/Lucia01.jpg"},
-  {username: "Oyivid", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/king.png"},
+  {username: "Oyvind", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/king.png"},
   {username: "Max", bio: "Gruss Got Freunde, I am new in town and very sick, but I also enjoy hoarding unnecessary shit so I am here to give it further, except of my Lederhose,. Always up for a beer and a good spanks.", email: "amigo24@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/max.jpg"},
   {username: "Cyprien", bio: "Hey there, I used to avoid people but now I am ready to make new friends. I would love to hang out over a beer and am ready to jump on new DIY project. Anybody around? ", email: "amigo55@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/cypri.jpg"},
   {username: "Maxime", bio: "To all art afasionados, I am Maxime and I greatly enjoy art and coffee. I do have a collection of coffee mashines at home which I am more than willing to share. Just hit me up if you need something. Hugs M!", email: "amigo22@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/T02NE0241-U02H2FE2KKJ-3ef0a62b55c5-512.jpg"},
  ]
 
-users.each do |user|
-user_in_db = User.new(user)
-user_in_db.photo.attach( io: File.open(user[:photo]), filename: "user#{user_in_db.id}.png", content_type: "image/png")
-user_in_db.save!
-
-Storage.create!(user: user_in_db, address: barcelona_addresses.sample)
+ users.each do |user|
+  user_in_db = User.new(user)
+  user_in_db.photo.attach( io: File.open(user[:photo]), filename: "user#{user_in_db.id}.png", content_type: "image/png")
+  user_in_db.save!
+  3.times do
+  InterestUser.create!(interest: Interest.all.sample, user: user_in_db)
+  end
+  Storage.create!(user: user_in_db, address: barcelona_addresses.sample)
 end
 
 
@@ -296,36 +346,6 @@ end
 # activity_item4 = ActivityItem.create({activity_id: 10 , item_id: 4})
 
 
-# interest
-
-# interest1 = Interest.new({name:"Coffee"})
-# interest1.photo.attach(io: File.open("app/assets/images/hobby_coffee.png"), filename: "iterest_image1.png" , content_type:"image/png")
-# interest1.save
-
-# interest2 = Interest.new({name:"Sweets"})
-# interest2.photo.attach(io: File.open("app/assets/images/baking_item2.png"), filename: "iterest_image2.png" , content_type:"image/png")
-# interest2.save
-
-# interest3 = Interest.new({name:"Wine"})
-# interest3.photo.attach(io: File.open("app/assets/images/interest_wine.jpg"), filename: "iterest_image3.png" , content_type:"image/png")
-# interest3.save
-
-# interest4 = Interest.new({name:"Beer"})
-# interest4.photo.attach(io: File.open("app/assets/images/interest_beer2.jpg"), filename: "iterest_image4.png" , content_type:"image/png")
-# interest4.save
-
-# interest5 = Interest.new({name:"Cinema"})
-# interest5.photo.attach(io: File.open("app/assets/images/interest_cinema.png"), filename: "iterest_image5.png" , content_type:"image/png")
-# interest5.save
-
-# # user interest
-
-# interest_user1 = InterestUser.create({interest_id: 5 , user_id: 1})
-# interest_user2 = InterestUser.create({interest_id: 4 , user_id: 1})
-# interest_user3 = InterestUser.create({interest_id: 2 , user_id: 1})
-# interest_user4 = InterestUser.create({interest_id: 4 , user_id: 2})
-# interest_user5 = InterestUser.create({interest_id: 1 , user_id: 2})
-# interest_user6 = InterestUser.create({interest_id: 3 , user_id: 2})
 
 
 

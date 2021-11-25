@@ -6,20 +6,29 @@
     </div>
     <%= cl_image_tag @user.photo.key, class: "user-img" %>
   </div>
-  <div class="user-details-container">
+  <div class="user-background-container">
     <div class="storage-holder">
     <p><%= @user.username %>'s storage room</p>
 <div class="storage-room-items-container">
   <% @storage_items.each do |item| %>
-<%= item.name %>
+  <div class="item-item">
+  <%= item.name %>
+  </div>
   <% end %>
-
-
-
 </div>
 
     </div>
+
     <div class="interests-holder">
+    <p><%= @user.username%>'s interests</p>
+    <div class="d-flex justify-content-between p-2 interests-container">
+      <% @user.interests.each do |interest|  %>
+      <%= cl_image_tag interest.photo.key, class: "user-interest-icon" %>
+      <% end %>
     </div>
+    </div>
+  </div>
+  <div class="text-center mt-3">
+  <div class="btn btn-white ">Contact</div>
   </div>
 </div>
