@@ -1,10 +1,40 @@
 <div class="container">
   <h2><%= @activity.name %></h1>
 
-  <p>For this activity, you may need</p>
+
   <%= simple_form_for :search, url: search_path, method: :get do |f| %>
-    <%= f.input :item_id, collection: @activity.items, prompt: 'Select Item', label: false %>
-    <p>An item is missing ? Search it</p>
-    <%= f.submit "Search" %>
+    <div class="you-may-need mt-4">
+      <p>For this activity, you may need</p>
+      <%= f.input :item_id, collection: @activity.items, prompt: 'Select Item', label: false %>
+    </div>
+    <div class="mt-4">An item is missing ? Search it
+    <%= f.submit "Search" %></div>
   <% end %>
+
+  <div class="calculator">
+    <div class="calculator-row d-flex justify-content-around align-items-center">
+      <%= image_tag "earth.svg" %>
+      <div class="d-flex flex-column">
+        <span>You saved</span>
+        <div class="d-flex"><h3>45.12</h3><span class="quantity">Co2</span></div>
+      </div>
+    </div>
+    <div class="calculator-row d-flex justify-content-around align-items-center">
+      <div class="d-flex flex-column">
+        <span>You saved</span>
+        <div class="d-flex"><h3>23.4</h3><span class="quantity">m²</span></div>
+      </div>
+      <%= image_tag "box.svg" %>
+    </div>
+    <div class="calculator-row d-flex justify-content-around align-items-center">
+      <%= image_tag "money.svg" %>
+      <div class="d-flex flex-column">
+        <span>You saved</span>
+        <div class="d-flex"><h3>5.12</h3><span class="quantity">€</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-3 mb-4"><a href="#" class="btn btn-white">search</a></div>
+
 </div>
