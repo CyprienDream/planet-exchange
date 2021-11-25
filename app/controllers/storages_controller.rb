@@ -15,7 +15,7 @@ class StoragesController < ApplicationController
       params[:storage][:item_ids].each do |id|
         ItemStorage.create(storage_id: @storage.id, item_id: id)
       end
-      redirect_to root_path # needs to change to desired path
+      redirect_to user_path(current_user) # needs to change to desired path
     else
       render :new
     end
