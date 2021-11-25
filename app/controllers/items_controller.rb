@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
   def index
-    if params[:query].present?
-    end
-    else
-      @items = ItemStorage.all
-    end
+    # if params[:query].present?
+    # end
+    # else
+    #   @items = ItemStorage.all
+    # end
   end
 
   def new
@@ -28,5 +28,4 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :photo, :weight, :height, :width, :carbon_footprint, activity_ids: [])
   end
-
 end
