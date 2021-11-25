@@ -95,36 +95,6 @@ interests.each do |interest|
   interest_in_db.save!
 end
 
-# interest
-
-# interest1 = Interest.new({name:"Coffee"})
-# interest1.photo.attach(io: File.open("app/assets/images/hobby_coffee.png"), filename: "iterest_image1.png" , content_type:"image/png")
-# interest1.save
-
-# interest2 = Interest.new({name:"Sweets"})
-# interest2.photo.attach(io: File.open("app/assets/images/baking_item2.png"), filename: "iterest_image2.png" , content_type:"image/png")
-# interest2.save
-
-# interest3 = Interest.new({name:"Wine"})
-# interest3.photo.attach(io: File.open("app/assets/images/interest_wine.jpg"), filename: "iterest_image3.png" , content_type:"image/png")
-# interest3.save
-
-# interest4 = Interest.new({name:"Beer"})
-# interest4.photo.attach(io: File.open("app/assets/images/interest_beer2.jpg"), filename: "iterest_image4.png" , content_type:"image/png")
-# interest4.save
-
-# interest5 = Interest.new({name:"Cinema"})
-# interest5.photo.attach(io: File.open("app/assets/images/interest_cinema.png"), filename: "iterest_image5.png" , content_type:"image/png")
-# interest5.save
-
-# # user interest
-
-# interest_user1 = InterestUser.create({interest_id: 5 , user_id: 1})
-# interest_user2 = InterestUser.create({interest_id: 4 , user_id: 1})
-# interest_user3 = InterestUser.create({interest_id: 2 , user_id: 1})
-# interest_user4 = InterestUser.create({interest_id: 4 , user_id: 2})
-# interest_user5 = InterestUser.create({interest_id: 1 , user_id: 2})
-# interest_user6 = InterestUser.create({interest_id: 3 , user_id: 2})
 users = [
   {username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia2@lucia.com" , password: "123456", password_confirmation: "123456", photo:"app/assets/images/Lucia01.jpg"},
   {username: "Oyvind", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/king.png"},
@@ -218,6 +188,7 @@ activity12.save!
 activity13= Activity.new({name:"Making bread", category: category4})
 activity13.photo.attach(io: File.open("app/assets/images/baking_bread.png"), filename: 'fi13.png', content_type: 'image/png')
 activity13.save!
+
 
 # items
 

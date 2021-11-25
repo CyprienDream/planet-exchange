@@ -3,13 +3,14 @@
   width: 76px;
   height: 76px;
   border-radius: 25px;
+  object-fit:cover;
 }
 
 .user-background-container{
   margin-top:25px;
   background-color: rgba(255,255,255,0.3);
   border-radius: 25px;
-  padding:12px;
+  padding:8px;
 }
 
 .storage-room-items-container{
