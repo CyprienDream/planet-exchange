@@ -7,4 +7,29 @@
     <p>An item is missing ? Search it</p>
     <%= f.submit "Search" %>
   <% end %>
+
+  <div class="calculator">
+    <div class="calculator-row d-flex justify-content-around align-items-center">
+      <%= image_tag "earth.svg" %>
+      <div class="d-flex flex-column">
+        <span>You saved</span>
+        <div class="d-flex"><h3>45.12</h3><span class="quantity">Co2</span></div>
+      </div>
+    </div>
+    <div class="calculator-row d-flex justify-content-around align-items-center">
+      <div class="d-flex flex-column">
+        <span>You saved</span>
+        <div class="d-flex"><h3>23.4</h3><span class="quantity">m²</span></div>
+      </div>
+      <%= image_tag "box.svg" %>
+    </div>
+    <div class="calculator-row d-flex justify-content-around align-items-center">
+      <%= image_tag "money.svg" %>
+      <div class="d-flex flex-column">
+        <span>You saved</span>
+        <div class="d-flex"><h3>5.12</h3><span class="quantity">€</span></div>
+      </div>
+    </div>
+  </div>
+
 </div>
