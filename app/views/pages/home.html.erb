@@ -8,8 +8,13 @@
 
     <div class="start">
       <small>Start your journey</small>
-      <a href="#onboarding" class="btn btn-white">let's go</a>
+      <a href="javascript:;" class="btn btn-white" id="start-journey">let's go</a>
     </div>
+
+    <div class="video-intro">
+      <%= video_tag "video-intro.mp4", id: "videoBG", autoplay: true, muted: true, controls: false, loop: true %>
+    </div>
+
   </section>
 
   <section class="onboarding-container" id="onboarding">

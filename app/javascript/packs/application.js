@@ -27,6 +27,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 // External imports
 import "bootstrap";
 import { initSwiper } from '../components/swiper';
+import { videoFading } from '../components/video';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -37,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
 
   initSwiper();
   initMapbox();
+  videoFading();
 });
 
 import "controllers"
