@@ -8,12 +8,11 @@ class UsersController < Devise::RegistrationsController
 
   def show
     @user = User.find(params[:id])
-    address = @user.storages.first.address
+    address = @user.storage.address
     city_country = address.split(",")
     @city = city_country[1]
-    storage = @user.storages.first
+    storage = @user.storage
     @storage_items = storage.items
-
   end
 
 end
