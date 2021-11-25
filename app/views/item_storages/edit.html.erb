@@ -1,0 +1,9 @@
+<h1>Edit page for item <%= @item_storage.item.name %> of <%= @item_storage.storage.user.username %>'s storage room</h1>
+
+<%= simple_form_for @item_storage do |f| %>
+  <%= f.input :specification,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "address" }%>
+  <%= f.button :submit, "Edit item" %>
+<% end %>

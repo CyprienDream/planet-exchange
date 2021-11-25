@@ -10,7 +10,11 @@ class StoragesController < ApplicationController
   def create
     @storage = Storage.new(storage_params)
     @storage.user = current_user
+    # raise
     if @storage.save
+      params[:storage][:item_ids].each do |id|
+        ItemStorage.create(storage_id: @storage.id, item_id: id)
+      end
       redirect_to root_path # needs to change to desired path
     else
       render :new
@@ -20,6 +24,6 @@ class StoragesController < ApplicationController
   private
 
   def storage_params
-    params.require(:storage).permit(:address)
+    params.require(:storage).permit(:address, :item_ids)
   end
 end

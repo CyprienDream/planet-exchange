@@ -27,4 +27,3 @@ class PagesController < ApplicationController
   end
 
 end
-    # define markers and info window for map
