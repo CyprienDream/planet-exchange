@@ -201,6 +201,7 @@ Material.create!(materials)
 
 items.each do |item|
   item_in_db = Item.new(name: item[:name], avg_price: item[:avg_price], weight: item[:avg_weight], height: item[:height], width: item[:width])
+  item_in_db.carbon_footprint_calc
 
   item[:item_materials].each do |material_i|
     puts material_i[:material]

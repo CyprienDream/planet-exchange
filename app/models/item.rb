@@ -19,10 +19,12 @@ class Item < ApplicationRecord
    return (height * width).round(3)
   end
 
-  def carbon_footprint
+  def carbon_footprint_calc
+    carbon = 0
     self.item_materials.each do |m|
-      return ((weight * m.percentage_weight) * m.material.co2_per_kilo).round(2)
+      carbon += ((weight * m.percentage_weight) * m.material.co2_per_kilo).round(2)
     end
+    self.carbon_footprint = carbon
+    self.save!
   end
-
 end
