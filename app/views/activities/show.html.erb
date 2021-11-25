@@ -1,14 +1,12 @@
 <div class="container">
   <h2><%= @activity.name %></h1>
-
-
   <%= simple_form_for :search, url: search_path, method: :get do |f| %>
     <div class="you-may-need mt-4">
       <p>For this activity, you may need</p>
       <%= f.input :item_id, collection: @activity.items, prompt: 'Select Item', label: false %>
     </div>
     <div class="mt-4">An item is missing ? Search it
-    <%= f.submit "Search" %></div>
+    <%= render 'shared/search_bar' %></div>
   <% end %>
 
   <div class="calculator">

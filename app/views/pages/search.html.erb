@@ -1,38 +1,30 @@
-<h1>Search page</h1>
 
-<div class="map-container">
-  <div id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container">
+  <div class="map-container">
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
+
+  <div class="form-container">
+      <%= form_tag search_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search for item to borrow" %>
+        <%= submit_tag "Search", class: "btn btn-white" %>
+      <% end %>
+  </div>
+
+  <% if params[:query].present?%>
+    <% @storage_items.each do |item| %>
+      <%= link_to user_path(item.storage.user) do %>
+    <div class="d-flex item-card-user">
+      <%= cl_image_tag item.storage.user.photo.key, class: "icon-user" %>
+      <%= item.storage.user.username %>
+    </div>
+    <% end %>
+    <% end %>
+  <% end %>
 </div>
-
-<%= form_tag search_path, method: :get do %>
-  <%= text_field_tag :query,
-  params[:query],
-  class: "form-control",
-  placeholder: "Search for item to borrow" %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-
-<% if params[:query].present?%>
-
-<% @storage_items.each do |item| %>
-<%= link_to  %>
-  <div class="item-card">
-    <%= item.item.name %>
-    <%= item.storage.address %>
-  </div>
-  <% end %>
-<% end %>
-
-<% if params[:query].present?%>
-<% @storage_items.each do |item| %>
-<%= link_to user_path(item.storage.user) do %>
-  <div class="item-card">
-    <%= item.storage.user.username %>
-  </div>
-  <% end %>
-
-  <% end %>
-<% end %>
