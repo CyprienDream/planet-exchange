@@ -1,7 +1,10 @@
 <h1>Category: <%= @category.name %></h1>
 
-<ul>
   <% @category.activities.each do |activity| %>
-    <li><%= link_to activity.name, activity_path(activity) %></li>
+    <%= link_to activity_path(activity) do %>
+    <div class="btn btn-white">
+      <small><%= activity.name %></small>
+      <%= image_tag("arrow.svg") %>
+    </div>
+    <% end %>
   <% end %>
-</ul>

@@ -24,29 +24,93 @@ User.destroy_all
 puts "destroyed stuff"
 # users
 
-cities = ["Barcelona, Spain", "Madrid, Spain", "Paris, France", "Lyon, France", "London, England", "Manchester, England",
-          "Luxembourg, Luxembourg", "Berlin, Germany", "Munich, Germany", "Canberra, Australia", "Wellington, New Zealand",
-          "Lima, Peru", "Washington, United States", "New York, United States", "Lisbon, Portugal", "Oslo, Norway", "Beijing, China",
-          "Tokyo, Japan", "Dijon, France", "Stockholm, Sweden", "Bratislava, Slovakia", "Buenos Aires, Argentina", "Cusco, Peru",
-          "Medellin, Colombia", "Bologna, Italy", "Napoli, Italy", "Caracas, Venezuela", "Moscow, Russia", "Rekjavik, Iceland", "Helsinki, Finland",
-          "Prievidza, Slovakia", "Bilbao, Spain", "Sofia, Bulgaria", "Belgrade, Serbia", "Alger, Algeria", "Cairo, Egypt", "Tunis, Tunisia", "Cape Town, South Affrica",
-          "Istanbul, Turkey", "Niger, Nigeria", "Antananarivo, Madagascar", "Dakar, Senegal", "Macon, France", "Osaka, Japan", "Kyoto, Japan", "New Dehli, India", "Taipei, Taiwan",
-          "Brussels, Belgium", "Valencia, Venezuela", "Valencia, Spain", "Valence, France", "Seoul, South Korea", "Hong Kong, Honk Kong", "Bangkok, Thailand", "Phnom Penh, Cambodia",
-          "Cancun, Mexico", "Tulum, Mexico", "San Cristobal de las casas, Mexico", "Guadalajara, Mexico", "Mexico city, Mexico", "Antigua, Guatemala", "Guatemala city, Guatemala",
-          "San Salvador, Salvador", "San Pedro Sula, Honduras", "Managua, Nicaragua", "Tijuana, Mexico", "San Jose, Costa Rica", "Panama city, Panama", "Bogota, Columbia", "Georgetown, Guyana",
-          "Montevideo, Urugay", "Sao Paulo, Brazil", "Nairobi, Kenya", "Luanda, Angola", "Marseille, France", "Douala, Cameroon", "Abidjan, Ivory Coast", "Newcastle, England", "Glasgow, Wales", "Belfast, Ireland",
-          "Athens, Greece", "Dubrovnik, Croatia", "Kiev, Ukraine", "Tbilisi, Georgia"]
+barcelona_addresses = [
+  "280 Bolivia, Barcelona, Spain",
+  "10B Arriassa, Barcelona, Spain",
+  "5 Casa Llarga, Barcelona, Spain",
+  "2 Bernat Metge, Barcelona, Spain",
+  "112 Camp Arriassa, Barcelona, Spain",
+  "344 Concili de trento, Barcelona, Spain",
+  "15 Camp Arriassa, Barcelona, Spain",
+  "5 Bolivia, Barcelona, Spain",
+  "40 Bolivia, Barcelona, Spain",
+  "50 Gelida, Barcelona, Spain",
+  "6 Ferradura, Barcelona, Spain",
+  "2 Fernando de los Rios, Barcelona, Spain",
+  "6 Ignasi Juliol, Barcelona, Spain",
+  "6 Fluvia, Barcelona, Spain",
+  "268 Fluvia, Barcelona, Spain",
+  "105 Verneda, Barcelona, Spain",
+  "2 Pau, Barcelona, Spain",
+  "55 Paraguai, Barcelona, Spain",
+  "16 Infancia, Barcelona, Spain",
+  "44 Paraguai, Barcelona, Spain",
+  "12 Paraguai, Barcelona, Spain",
+  "12 Infancia, Barcelona, Spain",
+  "12 Josep Pla, Barcelona, Spain",
+  "187 Josep Pla, Barcelona, Spain",
+  "187 Menorca, Barcelona, Spain",
+  "2 Menorca, Barcelona, Spain",
+  "56 Menorca, Barcelona, Spain",
+  "79 Camelies, Barcelona, Spain",
+  "4 Camil Oliveras, Barcelona, Spain",
+  "12 Can Baro, Barcelona, Spain",
+  "56 Cardener, Barcelona, Spain",
+  "14 Cardener, Barcelona, Spain",
+  "80 Cardener, Barcelona, Spain",
+  "110 Carmel, Barcelona, Spain",
+  "3 Carmel, Barcelona, Spain",
+  "56 Cartagena, Barcelona, Spain",
+  "400 Cartagena, Barcelona, Spain",
+  "56 Cartagena, Barcelona, Spain",
+  "22 Cartagena, Barcelona, Spain",
+  "22 Rabassa, Barcelona, Spain",
+  "22 Robi, Barcelona, Spain",
+  "2 Sagrada Familia, Barcelona, Spain",
+  "29 Cartagena, Barcelona, Spain",
+  "18 Salinas, Barcelona, Spain",
+  "2 Santa Creu, Barcelona, Spain",
+  "22 Verdi, Barcelona, Spain",
+  "22 Marianao, Barcelona, Spain",
+  "22 Maignon, Barcelona, Spain",
+  "2 Joanic, Barcelona, Spain",
+  "22 Granja, Barcelona, Spain",
+]
 
-user1 = User.new({username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia2@lucia.com" , password: "123456", password_confirmation: "123456"})
-user1.photo.attach(io: File.open('app/assets/images/Lucia01.jpg'), filename: "user1.png",content_type: 'image/png')
-user1.save!
+# users
+ users = [
+  {username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia2@lucia.com" , password: "123456", password_confirmation: "123456", photo:"app/assets/images/Lucia01.jpg"},
+  {username: "Oyivid", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/king.png"},
+  {username: "Max", bio: "Gruss Got Freunde, I am new in town and very sick, but I also enjoy hoarding unnecessary shit so I am here to give it further, except of my Lederhose,. Always up for a beer and a good spanks.", email: "amigo24@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/max.jpg"},
+  {username: "Cyprien", bio: "Hey there, I used to avoid people but now I am ready to make new friends. I would love to hang out over a beer and am ready to jump on new DIY project. Anybody around? ", email: "amigo55@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/cypri.jpg"},
+  {username: "Maxime", bio: "To all art afasionados, I am Maxime and I greatly enjoy art and coffee. I do have a collection of coffee mashines at home which I am more than willing to share. Just hit me up if you need something. Hugs M!", email: "amigo22@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/T02NE0241-U02H2FE2KKJ-3ef0a62b55c5-512.jpg"},
+ ]
 
-user2 = User.new({username: "Oyivid", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456"})
-user2.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U02G1P39XDM-d2fe1bf286ac-512"), filename: "user2.png" , content_type: 'image/png')
-user2.save!
+users.each do |user|
+user_in_db = User.new(user)
+user_in_db.photo.attach( io: File.open(user[:photo]), filename: "user#{user_in_db.id}.png", content_type: "image/png")
+user_in_db.save!
 
-storage_user1 = Storage.create!(user_id: user1.id, address: cities.sample)
-storage_user2 = Storage.create!(user_id: user2.id, address: cities.sample)
+Storage.create!(user: user_in_db, address: barcelona_addresses.sample)
+end
+
+# user1 = User.new({username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia2@lucia.com" , password: "123456", password_confirmation: "123456"})
+# user1.photo.attach(io: File.open('app/assets/images/Lucia01.jpg'), filename: "user1.png",content_type: 'image/png')
+# user1.save!
+
+# user2 = User.new({username: "Oyivid", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456"})
+# user2.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U02G1P39XDM-d2fe1bf286ac-512"), filename: "user2.png" , content_type: 'image/png')
+# user2.save!
+
+# user3 = User.new({username: "Max", bio: "Gruss Got Freunde, I am new in town and very sick, but I also enjoy hoarding unnecessary shit so I am here to give it further, except of my Lederhose,. Always up for a beer and a good spanks.", email: "amigo24@amigo.com", password: "123456", password_confirmation: "123456"})
+# user2.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U02G1P39XDM-d2fe1bf286ac-512"), filename: "user3.png" , content_type: 'image/png')
+# user3.save!
+
+# storage_user1 = Storage.create!(user_id: user1.id, address: barcelona_addresses.sample)
+# storage_user2 = Storage.create!(user_id: user2.id, address: barcelona_addresses.sample)
+# storage_user3 = Storage.create!(user_id: user3.id,
+# address: barcelona_addresses.sample
+# )
 
 
 category_file1 = File.open("app/assets/images/tools icon.png")
@@ -56,73 +120,73 @@ category_file4 = File.open("app/assets/images/cooking icon.png")
 
 category1 = Category.new({name: 'DIY'})
 category1.photo.attach(io:category_file1, filename: 'ci1.png', content_type:'image/png')
-category1.save
+category1.save!
 category2 = Category.new({ name: 'Sport'})
 category2.photo.attach(io:category_file2, filename: 'ci2.png', content_type:'image/png')
-category2.save
+category2.save!
 category3 = Category.new({ name: 'Camping'})
 category3.photo.attach(io:category_file3, filename: 'ci3.png', content_type:'image/png')
-category3.save
+category3.save!
 category4 = Category.new({name:' Cooking'})
 category4.photo.attach(io:category_file4, filename: 'ci4.png', content_type:'image/png')
-category4.save
+category4.save!
 
 
-activity1= Activity.new({name:"Installing shelves", category_id: 1})
+activity1= Activity.new({name:"Installing shelves", category: category1})
 activity1.photo.attach(io: File.open("app/assets/images/fa-solid_hammer.png"), filename: 'fi1.png', content_type: 'image/png')
-activity1.save
+activity1.save!
 
-activity2= Activity.new({name:"Hanging art", category_id: 1})
+activity2= Activity.new({name:"Hanging art", category: category1})
 activity2.photo.attach(io: File.open("app/assets/images/fa-solid_hammer.png"), filename: 'fi2.png', content_type: 'image/png')
-activity2.save
+activity2.save!
 
-activity5= Activity.new({name:"Painting walls", category_id: 1})
+activity5= Activity.new({name:"Painting walls", category: category1})
 activity5.photo.attach(io: File.open("app/assets/images/bx_bx-paint-roll.png"), filename: 'fi5.png', content_type: 'image/png')
-activity5.save
+activity5.save!
 
-activity3= Activity.new({name:"Golf", category_id: 2})
+activity3= Activity.new({name:"Golf", category: category2})
 activity3.photo.attach(io: File.open("app/assets/images/golf.png"), filename: 'fi3.png', content_type: 'image/png')
-activity3.save
+activity3.save!
 
-activity4= Activity.new({name:"Basketball", category_id: 2})
+activity4= Activity.new({name:"Basketball", category: category2})
 activity4.photo.attach(io: File.open("app/assets/images/fluent_sport-basketball-24-filled.png"), filename: 'fi4.png', content_type: 'image/png')
-activity4.save
+activity4.save!
 
-activity6= Activity.new({name:"Hockey", category_id: 2})
+activity6= Activity.new({name:"Hockey", category: category2})
 activity6.photo.attach(io: File.open("app/assets/images/ic_outline-sports-hockey.png"), filename: 'fi6.png', content_type: 'image/png')
-activity6.save
+activity6.save!
 
-activity7= Activity.new({name:"Baseball", category_id: 2})
+activity7= Activity.new({name:"Baseball", category: category2})
 activity7.photo.attach(io: File.open("app/assets/images/ic_baseline-sports-baseball.png"), filename: 'fi7.png', content_type: 'image/png')
-activity7.save
+activity7.save!
 
-activity8= Activity.new({name:"Volleyball", category_id: 2})
+activity8= Activity.new({name:"Volleyball", category: category2})
 activity8.photo.attach(io: File.open("app/assets/images/volleyball.png"), filename: 'fi8.png', content_type: 'image/png')
-activity8.save
+activity8.save!
 
-activity8= Activity.new({name:"Winter camping", category_id: 3})
+activity8= Activity.new({name:"Winter camping", category: category3})
 activity8.photo.attach(io: File.open("app/assets/images/camping.png"), filename: 'fi8.png', content_type: 'image/png')
-activity8.save
+activity8.save!
 
-activity9= Activity.new({name:"Summer camping", category_id: 3})
+activity9= Activity.new({name:"Summer camping", category: category3})
 activity9.photo.attach(io: File.open("app/assets/images/summer_camping.png"), filename: 'fi9.png', content_type: 'image/png')
-activity9.save
+activity9.save!
 
-activity10= Activity.new({name:"Baking a cake", category_id: 4})
+activity10= Activity.new({name:"Baking a cake", category: category4})
 activity10.photo.attach(io: File.open("app/assets/images/summer_camping.png"), filename: 'fi9.png', content_type: 'image/png')
-activity10.save
+activity10.save!
 
-activity11= Activity.new({name:"Barbeque", category_id: 4})
+activity11= Activity.new({name:"Barbeque", category: category4})
 activity11.photo.attach(io: File.open("app/assets/images/barbeque_utentils.png"), filename: 'fi11.png', content_type: 'image/png')
-activity11.save
+activity11.save!
 
-activity12= Activity.new({name:"Party", category_id: 4})
+activity12= Activity.new({name:"Party", category: category4})
 activity12.photo.attach(io: File.open("app/assets/images/party_wine_glasses_cheering.png"), filename: 'fi12.png', content_type: 'image/png')
-activity12.save
+activity12.save!
 
-activity13= Activity.new({name:"Making bread", category_id: 4})
+activity13= Activity.new({name:"Making bread", category: category4})
 activity13.photo.attach(io: File.open("app/assets/images/baking_bread.png"), filename: 'fi13.png', content_type: 'image/png')
-activity13.save
+activity13.save!
 
 # items
 
@@ -164,8 +228,9 @@ items.each do |item|
   item_in_db.photo.attach(io: File.open(item[:photo]), filename: "#{item[:name]}.png", content_type: "image/png")
   item_in_db.save!
 
-  ItemStorage.create!(storage_id: storage_user1.id, item: item_in_db)
-  ItemStorage.create!(storage_id: storage_user2.id, item: item_in_db)
+  Storage.all.each do |storage|
+    ItemStorage.create!(storage: storage, item: item_in_db )
+  end
 end
 
 
