@@ -2,7 +2,7 @@
 
 <%# maybe replace this with storage.storageitems.each? %>
 <ol>
-  <% @storage.items.each do  |item| %>
-    <li><%= item.name %></li>
+  <% @storage.item_storages.each do  |item_storage| %>
+    <li><%= item_storage.item.name %></li><%= link_to "edit", item_ %>
   <% end %>
 </ol>
