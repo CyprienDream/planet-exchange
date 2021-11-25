@@ -8,7 +8,6 @@
 
 # categories
 require "open-uri"
-require "pry-byebug"
 
 Activity.destroy_all
 Category.destroy_all
