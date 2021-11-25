@@ -94,24 +94,6 @@ user_in_db.save!
 Storage.create!(user: user_in_db, address: barcelona_addresses.sample)
 end
 
-# user1 = User.new({username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia2@lucia.com" , password: "123456", password_confirmation: "123456"})
-# user1.photo.attach(io: File.open('app/assets/images/Lucia01.jpg'), filename: "user1.png",content_type: 'image/png')
-# user1.save!
-
-# user2 = User.new({username: "Oyivid", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456"})
-# user2.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U02G1P39XDM-d2fe1bf286ac-512"), filename: "user2.png" , content_type: 'image/png')
-# user2.save!
-
-# user3 = User.new({username: "Max", bio: "Gruss Got Freunde, I am new in town and very sick, but I also enjoy hoarding unnecessary shit so I am here to give it further, except of my Lederhose,. Always up for a beer and a good spanks.", email: "amigo24@amigo.com", password: "123456", password_confirmation: "123456"})
-# user2.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U02G1P39XDM-d2fe1bf286ac-512"), filename: "user3.png" , content_type: 'image/png')
-# user3.save!
-
-# storage_user1 = Storage.create!(user_id: user1.id, address: barcelona_addresses.sample)
-# storage_user2 = Storage.create!(user_id: user2.id, address: barcelona_addresses.sample)
-# storage_user3 = Storage.create!(user_id: user3.id,
-# address: barcelona_addresses.sample
-# )
-
 
 category_file1 = File.open("app/assets/images/tools icon.png")
 category_file2 = File.open("app/assets/images/sports icon.png")
@@ -352,3 +334,20 @@ end
 # interest_beer_file = File.open()
 
 # interests = Interest.create([{name:"wine", }, {name:"beer"},{name:"music"},{name:"sweets"},{name:"cinema"}])
+# user1 = User.new({username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia2@lucia.com" , password: "123456", password_confirmation: "123456"})
+# user1.photo.attach(io: File.open('app/assets/images/Lucia01.jpg'), filename: "user1.png",content_type: 'image/png')
+# user1.save!
+
+# user2 = User.new({username: "Oyivid", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456"})
+# user2.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U02G1P39XDM-d2fe1bf286ac-512"), filename: "user2.png" , content_type: 'image/png')
+# user2.save!
+
+# user3 = User.new({username: "Max", bio: "Gruss Got Freunde, I am new in town and very sick, but I also enjoy hoarding unnecessary shit so I am here to give it further, except of my Lederhose,. Always up for a beer and a good spanks.", email: "amigo24@amigo.com", password: "123456", password_confirmation: "123456"})
+# user2.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U02G1P39XDM-d2fe1bf286ac-512"), filename: "user3.png" , content_type: 'image/png')
+# user3.save!
+
+# storage_user1 = Storage.create!(user_id: user1.id, address: barcelona_addresses.sample)
+# storage_user2 = Storage.create!(user_id: user2.id, address: barcelona_addresses.sample)
+# storage_user3 = Storage.create!(user_id: user3.id,
+# address: barcelona_addresses.sample
+# )
