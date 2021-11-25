@@ -80,10 +80,11 @@
     <%# <input id="#search" placeholder="Shelves, Table, Ball, Tent, ..."> %>
     <p class="text-center mt-4">or select here the category of the activity that you would like to do.</p>
     <div class="categories">
-      <a href="#"><div class="category-icon"><%= image_tag("camping-icon.svg") %></div></a>
-      <a href="#"><div class="category-icon"><%= image_tag("doityourself-icon.svg") %></div></a>
-      <a href="#"><div class="category-icon"><%= image_tag("sports-icon.svg") %></div></a>
-      <a href="#"><div class="category-icon"><%= image_tag("cooking-icon.svg") %></div></a>
+      <% @categories.each do |category| %>
+        <%= link_to category_path(category) do %>
+          <div class="category-icon"><%= cl_image_tag category.photo.key %></div>
+        <% end %>
+      <% end %>
     </div>
   </section>
 

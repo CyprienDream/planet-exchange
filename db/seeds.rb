@@ -95,22 +95,22 @@ Storage.create!(user: user_in_db, address: barcelona_addresses.sample)
 end
 
 
-category_file1 = File.open("app/assets/images/tools icon.png")
-category_file2 = File.open("app/assets/images/sports icon.png")
-category_file3 = File.open("app/assets/images/camping icon.png")
-category_file4 = File.open("app/assets/images/cooking icon.png")
+category_file1 = File.open("app/assets/images/doityourself-icon.svg")
+category_file2 = File.open("app/assets/images/sports-icon.svg")
+category_file3 = File.open("app/assets/images/camping-icon.svg")
+category_file4 = File.open("app/assets/images/cooking-icon.svg")
 
 category1 = Category.new({name: 'DIY'})
-category1.photo.attach(io:category_file1, filename: 'ci1.png', content_type:'image/png')
+category1.photo.attach(io:category_file1, filename: 'doityourself-icon.svg', content_type:'image/svg')
 category1.save!
 category2 = Category.new({ name: 'Sport'})
-category2.photo.attach(io:category_file2, filename: 'ci2.png', content_type:'image/png')
+category2.photo.attach(io:category_file2, filename: 'doityourself-icon.svg', content_type:'image/svg')
 category2.save!
 category3 = Category.new({ name: 'Camping'})
-category3.photo.attach(io:category_file3, filename: 'ci3.png', content_type:'image/png')
+category3.photo.attach(io:category_file3, filename: 'doityourself-icon.svg', content_type:'image/svg')
 category3.save!
 category4 = Category.new({name:' Cooking'})
-category4.photo.attach(io:category_file4, filename: 'ci4.png', content_type:'image/png')
+category4.photo.attach(io:category_file4, filename: 'doityourself-icon.svg', content_type:'image/svg')
 category4.save!
 
 
