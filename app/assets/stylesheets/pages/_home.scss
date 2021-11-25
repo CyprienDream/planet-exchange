@@ -61,14 +61,18 @@
   width: 100%;
 }
 
+.swiper-slide img, .choice-img {
+  width: 100%;
+}
+
 // CHOICES -------------------------------------------------
 
 .choice-item {
   margin: 0.8em 0;
 }
 
-img.choice {
-  transform: translateY(8px)
+.choice-img {
+  transform: translateY(15px)
 }
 
 // BROWSE  -------------------------------------------------
