@@ -1,1 +1,12 @@
 <h1>Create a new storage room</h1>
+
+<%= simple_form_for @storage do |f| %>
+  <%= f.input :address,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "address" }%>
+  <%= f.association :items,
+                      as: :check_boxes,
+                      multiple: true%>
+  <%= f.button :submit, "Create storage" %>
+<% end %>
