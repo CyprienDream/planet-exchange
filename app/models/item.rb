@@ -24,7 +24,7 @@ class Item < ApplicationRecord
     self.item_materials.each do |m|
       carbon += ((weight * m.percentage_weight) * m.material.co2_per_kilo).round(2)
     end
-    self.carbon_footprint = carbon
+    self.carbon_footprint = carbon.round(3)
     self.save!
   end
 end
