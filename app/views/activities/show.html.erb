@@ -2,7 +2,7 @@
 
 <h1>Activity: <%= @activity.name %></h1>
 
-<%= simple_form_for @activity do |f| %>
-  <%= f.input :name, collection: @activity.items, prompt: 'Select Item', label: false %>
-  <%= f.button :submit, "Search" %>
+<%= simple_form_for :search, url: search_path, method: :get do |f| %>
+  <%= f.input :item_id, collection: @activity.items, prompt: 'Select Item', label: false %>
+  <%= f.submit "Search" %>
 <% end %>
