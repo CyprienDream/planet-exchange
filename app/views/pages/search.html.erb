@@ -17,7 +17,20 @@
 
 <% if params[:query].present?%>
 <% @items.each do |item| %>
-  <%= item.item.name %>
-  <%= item.storage.address %>
+<%= link_to  %>
+  <div class="item-card">
+    <%= item.item.name %>
+    <%= item.storage.address %>
+  </div>
+  <% end %>
+<% end %>
+
+<% if params[:query].present?%>
+<% @items.each do |item| %>
+<%= link_to user_path(item.storage.user) do %>
+  <div class="item-card">
+    <%= item.storage.user.username %>
+  </div>
+  <% end %>
   <% end %>
 <% end %>

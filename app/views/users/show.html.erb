@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="top-container">
+    <div class="user-info">
+    <h2><%= @user.username %></h2>
+    <small><%= @city %></small>
+    </div>
+    <%= cl_image_tag @user.photo.key, class: "user-img" %>
+  </div>
+  <div class="user-details-container">
+    <div class="storage-holder">
+    <p><%= @user.username %>'s storage room</p>
+<div class="storage-room-items-container">
+  <% @storage_items.each do |item| %>
+<%= item.name %>
+  <% end %>
+
+
+
+</div>
+
+    </div>
+    <div class="interests-holder">
+    </div>
+  </div>
+</div>

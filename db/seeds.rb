@@ -206,8 +206,8 @@ items.each do |item|
     puts material_i[:material]
     ItemMaterial.create!(item: item_in_db, material: Material.find_by_name(material_i[:material]) , percentage_weight: material_i[:proportion] )
   end
-
-  item_in_db.photo.attach(io: File.open(item[:photo]), filename: "#{item[:name]}.png", content_type: "image/png")
+  photo = item[:photo].split("/")
+  item_in_db.photo.attach(io: File.open(item[:photo]), filename: "#{photo.last}", content_type: "image/png")
   item_in_db.save!
 
   Storage.all.each do |storage|

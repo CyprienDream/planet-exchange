@@ -17,14 +17,16 @@ class PagesController < ApplicationController
       ItemStorage.all.each do |item_storage|
         @items << item_storage if @items_instances.include?(item_storage.item)
       end
+
       @markers = @items.map do |item|
         next unless item.storage.geocoded?
-
         {
           lat: item.storage.latitude,
           lng: item.storage.longitude,
           info_window: render_to_string(partial: "info_window", locals: { item: item })
         }
+
+
       end
 
     end
