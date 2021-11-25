@@ -1,6 +1,6 @@
 class ItemStoragesController < ApplicationController
   def edit
-    @storage = Storage.find(params[:id])
+    @item_storage = ItemStorage.find(params[:id])
   end
 
   def update

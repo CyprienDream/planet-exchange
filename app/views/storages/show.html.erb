@@ -3,6 +3,6 @@
 <%# maybe replace this with storage.storageitems.each? %>
 <ol>
   <% @storage.item_storages.each do  |item_storage| %>
-    <li><%= item_storage.item.name %></li><%= link_to "edit", item_ %>
+    <li><%= item_storage.item.name %></li><%= link_to "edit", edit_item_storage_path(item_storage) %>
   <% end %>
 </ol>
