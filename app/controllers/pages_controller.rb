@@ -8,10 +8,11 @@ class PagesController < ApplicationController
     # considering search input is named 'query'
     # raise
     if params[:query].present? || params[:search].present?
-      if params[:search].present?
-        @items_instances = Item.search_by_name(Item.find(params[:search][:item_id]).name)
-      else
+
+      if params[:query].present?
         @items_instances = Item.search_by_name(params[:query])
+      else
+        @items_instances = Item.search_by_name(Item.find(params[:search][:item_id]).name)
       end
       @storage_items = []
       ItemStorage.all.each do |item_storage|
