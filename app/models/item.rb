@@ -10,13 +10,15 @@ class Item < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name,
-    against: [ :name ],
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
+                  against: [:name],
+                  using: {
+                    tsearch: {
+                      prefix: true
+                    }
+                  }
 
   def space_taken
-   return (height * width).round(3)
+    return (height * width).round(3)
   end
 
   def carbon_footprint_calc
