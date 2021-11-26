@@ -3,9 +3,7 @@
   <%= simple_form_for :search, url: search_path, method: :get do |f| %>
     <div class="you-may-need mt-4">
       <p>For this activity, you may need</p>
-      <%= f.input :item_id, as: :check_boxes, collection: @activity.items, prompt: 'Select Item', label: false, multiple: true %>
-      <%= f.submit %>
-      <%# <%= f.input :item_id, collection: @activity.items, prompt: 'Select Item', label: false %> %>
+      <%= f.input :item_id, collection: @activity.items, prompt: 'Select Item', label: false %>
     </div>
     <div class="mt-4">An item is missing ? Search it
     <%= render 'shared/search_bar' %></div>
