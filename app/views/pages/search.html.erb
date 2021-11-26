@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <% if params[:query].present?%>
+  <% if params[:query].present? || params[:search_array].present? %>
     <% @storage_items.each do |item| %>
       <%= link_to user_path(item.storage.user) do %>
     <div class="d-flex item-card-user">
