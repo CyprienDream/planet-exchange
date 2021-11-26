@@ -2,6 +2,11 @@
   font-family: "Sen", "Helvetica", "sans-serif";
 }
 
+:root {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
 html {
   scroll-behavior: smooth;
   height: -webkit-fill-available;
