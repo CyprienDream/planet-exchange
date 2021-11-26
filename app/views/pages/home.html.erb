@@ -12,31 +12,33 @@
     </div>
 
     <div class="video-intro">
-      <%= video_tag "video-intro.mp4", id: "videoBG", autoplay: true, muted: true, controls: false, loop: true %>
+      <%= video_tag "video-intro.mp4", "video-intro.webm", id: "videoBG", autoplay: true, muted: true, controls: false, loop: true %>
     </div>
 
   </section>
+</div>
+<div class="d-flex flex-column">
 
-  <section class="onboarding-container" id="onboarding">
+  <section class="onboarding-container text-center" id="onboarding">
     <small>how does it work?</small>
 
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="swiper-slide pr-4 pl-4">
           <%= image_tag("explore.svg") %>
           <h2>Explore</h2>
           <p>Meet people around you and help each other out.
             Borrow an object in exchange for another, meet over a drink, make friends and more!</p>
         </div>
 
-        <div class="swiper-slide">
+        <div class="swiper-slide pr-4 pl-4">
           <%= image_tag("store-room.svg") %>
           <h2>Store</h2>
           <p>Create your own virtual storage room to help other users around you get started with their business.
             Let them know what you have available.</p>
         </div>
 
-        <div class="swiper-slide">
+        <div class="swiper-slide pr-4 pl-4">
           <%= image_tag("save-the-planet.svg") %>
           <h2>Save</h2>
           <p>Calculate and reduce your carbon footprint by exchanging items instead of buying them.
@@ -53,6 +55,9 @@
     </div>
 
   </section>
+</div>
+
+<div class="container d-flex flex-column">
 
   <section class="choices" id="choices">
     <h2 class="text-center">What do you want to do?</h2>
@@ -78,7 +83,7 @@
   </section>
 
   <section class="browse" id="browse">
-    <h2 class="text-center">What are you looking for ?</h2>
+    <h2 class="text-center mb-4">What are you looking for ?</h2>
     <%= render 'shared/search_bar' %>
 
     <p class="text-center mt-5">Select here the activity's category that you would like to do.</p>
