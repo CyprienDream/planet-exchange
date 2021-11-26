@@ -3,7 +3,15 @@
   <%= simple_form_for :search, url: search_path, method: :get do |f| %>
     <div class="you-may-need mt-4">
       <p>For this activity, you may need</p>
-      <%= f.input :item_id, collection: @activity.items, prompt: 'Select Item', label: false %>
+      <div class="checkbox-holder">
+          <% @activity.items.each do |item|%>
+          <div class="checkbox-item">
+              <%= check_box_tag(item.name) %>
+              <%= label_tag(item.name, "#{item.name}") %>
+          </div>
+          <% end %>
+      </div>
+    <%= f.submit "Submit" %>
     </div>
     <div class="mt-4">An item is missing ? Search it
     <%= render 'shared/search_bar' %></div>
