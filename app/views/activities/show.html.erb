@@ -6,7 +6,7 @@
       <div class="checkbox-holder">
           <% @activity.items.each do |item|%>
           <div class="checkbox-item">
-              <%= check_box_tag("search_array[]", item.name) %>
+              <%= check_box_tag("search_array[]", item.name, false, data: { carbon: item.carbon_footprint, space: item.space_taken, price: item.avg_price }) %>
               <%= label_tag(item.name, "#{item.name}") %>
           </div>
           <% end %>
@@ -24,13 +24,15 @@
       <%= image_tag "earth.svg" %>
       <div class="d-flex flex-column">
         <span>You saved</span>
-        <div class="d-flex"><h3>45.12</h3><span class="quantity">Co2</span></div>
+        <div class="d-flex">
+        <h3 id="carbon_value">0</h3>
+        <span class="quantity">CO2</span></div>
       </div>
     </div>
     <div class="calculator-row d-flex justify-content-around align-items-center">
       <div class="d-flex flex-column">
         <span>You saved</span>
-        <div class="d-flex"><h3>23.4</h3><span class="quantity">m²</span></div>
+        <div class="d-flex"><h3 id="space_value">0</h3><span class="quantity">m²</span></div>
       </div>
       <%= image_tag "box.svg" %>
     </div>
@@ -38,7 +40,7 @@
       <%= image_tag "money.svg" %>
       <div class="d-flex flex-column">
         <span>You saved</span>
-        <div class="d-flex"><h3>5.12</h3><span class="quantity">€</span></div>
+        <div class="d-flex"><h3 id="price_value">0</h3><span class="quantity">€</span></div>
       </div>
     </div>
   </div>
