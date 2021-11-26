@@ -14,9 +14,11 @@
   </head>
 
   <body>
-   <%
+  <%
 =begin%>
- <%= render "shared/navbar" %>
+ <%= if request.original_url != "/"  %>
+    <%= render "shared/navbar" %>
+  <% end  %>
 <%
 =end%>
     <%= yield %>

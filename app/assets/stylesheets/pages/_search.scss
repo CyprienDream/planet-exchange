@@ -1,9 +1,11 @@
 .map-container {
+  margin-top:2em;
 }
 
 #map {
   width: auto;
-  height: 350px;
+  height: 300px;
+  border-radius: 20px;
 }
 
 .map-label {
@@ -17,17 +19,21 @@
   background-size: cover !important;
 }
 
-.form-container{
-  input, textarea{
-    opacity:1;
-  }
+.mapboxgl-control-container {
+  display: none;
 }
+
+
+.form-container{
+  margin: 2em 0;
+}
+
 .item-card-user{
   background-color: white;
-  border-radius:25px;
+  border-radius:50px;
   width:100%;
-  padding: 5px 15px;
-  margin: 12px;
+  padding: 5px;
+  margin: 1em 0;
   align-items:center;
   color: $green3;
   a{
@@ -39,6 +45,8 @@
     width:50px;
     border-radius:50%;
     border: 2px solid $green3;
+    background-color: $green3;
+    object-fit: cover;
   }
 }
 

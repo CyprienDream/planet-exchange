@@ -1,11 +1,12 @@
 <div class="container">
+  <h2>Here are the results!</h2>
   <div class="map-container">
     <div id="map"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-
+  <p class="mt-4"><strong><%= @storage_items.length %></strong> items founded.</p>
   <% if params[:query].present? || params[:search_array].present? %>
     <% @storage_items.each do |item| %>
       <%= link_to user_path(item.storage.user) do %>
@@ -19,10 +20,11 @@
 
   <div class="form-container">
       <%= form_tag search_path, method: :get do %>
+        <p>Looking for something else ?<p>
         <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Search for item to borrow" %>
+        placeholder: "Search here" %>
         <%= submit_tag "Search", class: "btn btn-white" %>
       <% end %>
   </div>
