@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def search
     # considering search input is named 'query'
-    # raise
+    raise
     if params[:query].present? || params[:search].present?
 
       if params[:query].present?
