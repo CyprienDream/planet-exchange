@@ -11,9 +11,9 @@ const videoFading = () => {
   window.addEventListener('scroll', function () {
     const videoDiv = document.querySelector(".video-intro")
 
-    if (window.pageYOffset > "640") {
+    if (window.pageYOffset > "460") {
       videoDiv.style.opacity = "0";
-    } else if (window.pageYOffset < "640") {
+    } else if (window.pageYOffset < "460") {
       videoDiv.style.opacity = "1";
     }
   });
