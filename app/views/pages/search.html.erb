@@ -8,11 +8,11 @@
   </div>
   <p class="mt-4"><strong><% if @storage_items != nil %><%= @storage_items.length %></strong> items founded.<% end %></p>
   <% if params[:query].present? || params[:search_array].present? %>
-    <% @storage_items.each do |item| %>
-      <%= link_to user_path(item.storage.user) do %>
+    <% @owners.each do |owner| %>
+      <%= link_to user_path(owner) do %>
     <div class="d-flex item-card-user">
-      <%= cl_image_tag item.storage.user.photo.key, class: "icon-user" %>
-      <%= item.storage.user.username %>
+      <%= cl_image_tag owner.photo.key, class: "icon-user" %>
+      <%= owner.username %>
     </div>
     <% end %>
     <% end %>

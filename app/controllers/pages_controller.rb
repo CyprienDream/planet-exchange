@@ -23,14 +23,14 @@ class PagesController < ApplicationController
         @storage_items << item_storage if @items_instances.include?(item_storage.item)
       end
 
-      owners = []
+      @owners = []
       @storage_items.each do |storage_item|
-        owners << storage_item.storage.user
+        @owners << storage_item.storage.user
       end
-      owners.uniq!
+      @owners.uniq!
 
       belongings = []
-      owners.each do |owner|
+      @owners.each do |owner|
         belongings << [owner, []]
       end
 
@@ -38,7 +38,7 @@ class PagesController < ApplicationController
         found = belongings.index { |e| e[0] == storage_item.storage.user }
         belongings[found][1] << storage_item
       end
-
+      # raise
       # @markers = @storage_items.map do |item_storage|
       #   next unless item_storage.storage.geocoded?
 
