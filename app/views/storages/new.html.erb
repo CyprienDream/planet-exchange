@@ -1,12 +1,16 @@
-<h1>Create a new storage room</h1>
+<div class="container d-flex flex-column">
+  <h2>Create a new storage room</h2>
 
-<%= simple_form_for @storage do |f| %>
-  <%= f.input :address,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "address" }%>
-  <%= f.association :items,
-                      as: :check_boxes,
-                      multiple: true%>
-  <%= f.button :submit, "Create storage" %>
-<% end %>
+  <div class="mt-4">
+    <%= simple_form_for @storage do |f| %>
+      <%= f.input :address,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "address" }%>
+      <%= f.association :items,
+                          as: :check_boxes,
+                          multiple: true%>
+      <%= f.button :submit, "Create storage", class: "btn btn-white" %>
+    <% end %>
+  </div>
+</div>
