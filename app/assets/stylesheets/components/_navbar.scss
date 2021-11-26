@@ -9,10 +9,13 @@
   width: 100%;
   height: 64px;
   z-index: 10;
-  display: none;
   justify-content: space-around;
 }
 
 .navbar-icon{
   transform: translateY(4px);
+}
+
+.not-working{
+  opacity:0.3;
 }
