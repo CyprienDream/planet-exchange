@@ -6,7 +6,7 @@
       <div class="checkbox-holder">
           <% @activity.items.each do |item|%>
           <div class="checkbox-item">
-              <%= check_box_tag(item.name) %>
+              <%= check_box_tag("search_array[]", item.name) %>
               <%= label_tag(item.name, "#{item.name}") %>
           </div>
           <% end %>
