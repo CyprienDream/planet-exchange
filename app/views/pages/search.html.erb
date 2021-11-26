@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Looking for something?</h2>
+  <h2><% if params[:query] %>Here are the results!<% else %>Looking for something ?<% end %></h2>
   <div class="map-container">
     <div id="map"
       data-markers="<%= @markers.to_json %>"

@@ -23,6 +23,8 @@ class PagesController < ApplicationController
         @storage_items << item_storage if @items_instances.include?(item_storage.item)
       end
 
+      @search_word = params[:query]
+
       @markers = @storage_items.map do |item_storage|
         next unless item_storage.storage.geocoded?
 
