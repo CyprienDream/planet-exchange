@@ -18,7 +18,7 @@
 }
 .checkbox-holder input {
   opacity: 0;
-  position: absolute;
+  position: fixed;
 }
 
 .checkbox-holder input:checked + label {
