@@ -9,11 +9,11 @@
 # categories
 require "open-uri"
 
+ActivityItem.destroy_all
 Activity.destroy_all
 Category.destroy_all
 ItemMaterial.destroy_all
 Material.destroy_all
-ActivityItem.destroy_all
 ItemStorage.destroy_all
 Storage.destroy_all
 Item.destroy_all
@@ -234,8 +234,16 @@ items.each do |item|
     ItemStorage.create!(storage: storage, item: item_in_db )
   end
   item_in_db.carbon_footprint_calc
+  baking_items = ["Cake pan", "Whisk","Spatula","Hand mixer"]
+  if baking_items.include?(item_in_db[:name])
+    ActivityItem.create!(activity: activity10, item: item_in_db)
+  end
 end
 
+# activity_item1 = ActivityItem.create({activity_id: 10 , item_id: 1})
+# activity_item2 = ActivityItem.create({activity_id: 10 , item_id: 2})
+# activity_item3 = ActivityItem.create({activity_id: 10 , item_id: 3})
+# activity_item4 = ActivityItem.create({activity_id: 10 , item_id: 4})
 
 # materials = item[:item_materials].map { |item_material| Material.where(name:item_material[:material])}
 #
@@ -311,10 +319,6 @@ end
 
 # activity items for baking cake
 
-# activity_item1 = ActivityItem.create({activity_id: 10 , item_id: 1})
-# activity_item2 = ActivityItem.create({activity_id: 10 , item_id: 2})
-# activity_item3 = ActivityItem.create({activity_id: 10 , item_id: 3})
-# activity_item4 = ActivityItem.create({activity_id: 10 , item_id: 4})
 
 
 
