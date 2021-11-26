@@ -1,4 +1,7 @@
-<h6 style="color: black"><%= belonging[0].username %></h6>
-<% belonging[1].each do |item| %>
-  <%= cl_image_tag item.item.photo.key, class: "map-img" %>
-<% end %>
+<p style="color: black; font-size: 18px"><%= belonging[0].username %></p>
+
+<div class="d-flex">
+  <% belonging[1].each do |item| %>
+    <%= cl_image_tag item.item.photo.key, class: "map-img" %>
+  <% end %>
+</div>
