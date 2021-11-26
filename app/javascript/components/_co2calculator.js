@@ -2,7 +2,9 @@ const totalCarbon = () => {
   const items = document.querySelectorAll("#search_array_");
   let total = 0;
   const value_display = document.getElementById("carbon_value");
-  value_display.innerText = total;
+  if (value_display !== null){
+    value_display.innerText = total;
+  }
   // const updateSum = () => {
 
   // }
@@ -24,7 +26,9 @@ const totalPrice = () => {
   const items = document.querySelectorAll("#search_array_");
   let total = 0;
   const price_display = document.getElementById("price_value");
-  price_display.innerText = total;
+  if (price_display) {
+    price_display.innerText = total;
+  }
   // const updateSum = () => {
 
   // }
@@ -46,7 +50,9 @@ const totalSpace = () => {
   const items = document.querySelectorAll("#search_array_");
   let total = 0;
   const space_display = document.getElementById("space_value");
-  space_display.innerText = total;
+  if (space_display) {
+    space_display.innerText = total;
+  }
   // const updateSum = () => {
 
   // }
@@ -59,7 +65,9 @@ const totalSpace = () => {
       } else if (item.checked) {
         total += space_item;
       }
-      space_display.innerText = total.toFixed(2);
+      if (space_display) {
+        space_display.innerText = total.toFixed(2);
+      }
     });
   });
 };
