@@ -8,7 +8,6 @@ require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
 
-import { initMapbox } from "../plugins/init_mapbox";
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,11 +23,13 @@ import { initMapbox } from "../plugins/init_mapbox";
 
 // External imports
 import "bootstrap";
+import { initMapbox } from "../plugins/init_mapbox";
 import { initSwiper } from "../components/swiper";
 import { videoFading } from "../components/video";
 import { totalCarbon } from "../components/_co2calculator";
 import { totalSpace } from "../components/_co2calculator";
 import { totalPrice } from "../components/_co2calculator";
+// import { initMap } from "../plugins/init_address_autocomplete"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -43,6 +44,7 @@ document.addEventListener("turbolinks:load", () => {
   totalSpace();
   totalPrice();
   videoFading();
+  // initMap();
 });
 
 import "controllers";
