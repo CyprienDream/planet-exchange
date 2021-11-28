@@ -10,7 +10,6 @@ class StoragesController < ApplicationController
   def create
     @storage = Storage.new(storage_params)
     @storage.user = current_user
-    # raise
     if @storage.save
       params[:storage][:item_ids].each do |id|
         ItemStorage.create(storage_id: @storage.id, item_id: id)
