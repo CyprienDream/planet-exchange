@@ -14,9 +14,9 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10',
-      center: [2.1774322, 41.3828939],
-      zoom: 11
+      style: 'mapbox://styles/mapbox/streets-v10'
+      // center: [2.1774322, 41.3828939],
+      // zoom: 11
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
@@ -37,6 +37,27 @@ const initMapbox = () => {
     });
 
     fitMapToMarkers(map, markers);
+
+    // Add fly to feature to map
+
+    //select all fly buttons
+    const flyBtns = document.querySelectorAll(".js-fly");
+
+    //add event listener on click for each button
+    flyBtns.forEach((flyBtn) => {
+      flyBtn.addEventListener("click", (event) => {
+        //retrieve coordinates from html
+        const coordinates = [
+          Number.parseFloat(event.currentTarget.dataset.lng),
+          Number.parseFloat(event.currentTarget.dataset.lat)
+        ]
+        //move map focus to wanted coordinates
+        map.flyTo({
+          center: coordinates,
+          zoom: 10
+        });
+      })
+    })
   }
 };
 
