@@ -29,7 +29,6 @@ import { videoFading } from "../components/video";
 import { totalCarbon } from "../components/_co2calculator";
 import { totalSpace } from "../components/_co2calculator";
 import { totalPrice } from "../components/_co2calculator";
-// import { initMap } from "../plugins/init_address_autocomplete"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -44,7 +43,6 @@ document.addEventListener("turbolinks:load", () => {
   totalSpace();
   totalPrice();
   videoFading();
-  // initMap();
 });
 
 import "controllers";
