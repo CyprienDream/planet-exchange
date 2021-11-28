@@ -6,9 +6,10 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-  <p class="mt-4"><strong><% if @storage_items != nil %><%= @storage_items.length %></strong> items founded.<% end %></p>
+  <p class="mt-4"><strong><% if @storage_items != nil %><%= @storage_items.length %></strong> items found.<% end %></p>
   <% if params[:query].present? || params[:search_array].present? %>
     <% @owners.each do |owner| %>
+    <button class="js-fly" data-lat="<%= owner.storage.latitude %>" data-lng="<%= owner.storage.longitude %>"><%= image_tag "interest_icons/beer.svg", class: "map-marked" %></button>
       <%= link_to user_path(owner) do %>
     <div class="d-flex item-card-user">
       <%= cl_image_tag owner.photo.key, class: "icon-user" %>
