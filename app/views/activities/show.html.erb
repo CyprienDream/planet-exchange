@@ -11,12 +11,19 @@
           </div>
           <% end %>
       </div>
-      <div class="text-center mt-3 mb-4 w-50 btn-submit-center">
+
+      <div class="text-center mt-3">
         <%= f.submit "Search", class: "btn btn-white" %>
       </div>
+
     </div>
-    <div class="mt-4">An item is missing ? Search it
-    <%= render 'shared/search_bar' %></div>
+    <%
+=begin%>
+ <div class="mt-4">An item is missing ? Search it
+      <%= render 'shared/search_bar' %>
+    </div>
+<%
+=end%>
   <% end %>
 
   <div class="calculator">

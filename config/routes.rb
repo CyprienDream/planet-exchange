@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
     resources :users, only: %i[show]
+    get '/users/:id/chatrooms', to: 'users#chatrooms', as: :user_chatrooms
   end
+
   root to: 'pages#home'
 
   get '/search', to: 'pages#search'
@@ -12,4 +14,7 @@ Rails.application.routes.draw do
   resources :storages, only: %i[show new create]
   resources :items, only: %i[index new create]
   resources :item_storages, only: %i[edit update]
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end

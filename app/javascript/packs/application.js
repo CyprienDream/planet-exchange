@@ -28,7 +28,11 @@ import { videoFading } from "../components/video";
 import { totalCarbon } from "../components/_co2calculator";
 import { totalSpace } from "../components/_co2calculator";
 import { totalPrice } from "../components/_co2calculator";
+
 import { autocompleteSearch } from "../components/autocomplete";
+
+import { initChatroomCable } from "../channels/chatroom_channel";
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -44,6 +48,7 @@ document.addEventListener("turbolinks:load", () => {
   totalPrice();
   autocompleteSearch();
   videoFading();
+  initChatroomCable();
 });
 
 import "controllers";

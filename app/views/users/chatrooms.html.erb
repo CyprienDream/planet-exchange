@@ -1,0 +1,8 @@
+<% @chatrooms.each do |chatroom| %>
+  <%= link_to chatroom_path(chatroom) do %>
+    <div class="chat-preview" style="color: white; border-style: solid">
+      <%= chatroom.name %><br>
+      <%= chatroom.messages.last.content %>
+    </div>
+  <% end %>
+<% end %>

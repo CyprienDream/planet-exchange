@@ -10,7 +10,7 @@
 
     <div class="start">
       <small>Start your journey</small>
-      <a href="javascript:;" class="btn btn-white" id="start-journey">let's go</a>
+      <%= image_tag("arrow-white.svg") %>
     </div>
 
     <div class="video-intro">
@@ -21,29 +21,29 @@
 </div>
 <div class="d-flex flex-column">
 
-  <section class="onboarding-container text-center" id="onboarding">
-    <small>how does it work?</small>
+  <section class="onboarding-container" id="onboarding">
+    <small class="text-center">how does it work?</small>
 
     <div class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide pr-4 pl-4">
           <%= image_tag("explore.svg") %>
           <h2>Explore</h2>
-          <p>Meet people around you and help each other out.
+          <p class="text-left">Meet people around you and help each other out.
             Borrow an object in exchange for another, meet over a drink, make friends and more!</p>
         </div>
 
         <div class="swiper-slide pr-4 pl-4">
           <%= image_tag("store-room.svg") %>
           <h2>Store</h2>
-          <p>Create your own virtual storage room to help other users around you get started with their business.
+          <p class="text-left">Create your own virtual storage room to help other users around you get started with their business.
             Let them know what you have available.</p>
         </div>
 
         <div class="swiper-slide pr-4 pl-4">
           <%= image_tag("save-the-planet.svg") %>
           <h2>Save</h2>
-          <p>Calculate and reduce your carbon footprint by exchanging items instead of buying them.
+          <p class="text-left">Calculate and reduce your carbon footprint by exchanging items instead of buying them.
           Save the planet and make friends!</p>
         </div>
       </div>
@@ -69,7 +69,7 @@
       <a href="javascript:;"  id="btn-browse" >
         <div class="big-button">
           <small>Browse all items</small>
-          <%= image_tag("arrow.svg") %>
+          <%= image_tag "arrow.svg", class: "icon" %>
         </div>
       </a>
     </div>
@@ -78,7 +78,7 @@
       <a href="/storages/new">
         <div class="big-button">
           <small style="max-width:150px">Create your storage room</small>
-          <%= image_tag("arrow.svg") %>
+          <%= image_tag "arrow.svg", class: "icon" %>
         </div>
       </a>
     </div>
@@ -86,16 +86,21 @@
 
   <section class="browse" id="browse">
     <h2 class="text-center mb-4">What are you looking for ?</h2>
+    <p class="text-center mt-5">Look here for a specific item</p>
     <%= render 'shared/search_bar' %>
 
     <p class="text-center mt-5">Select here the activity's category that you would like to do.</p>
-    <div class="categories">
+    <div class="grid">
       <% @categories.each do |category| %>
         <%= link_to category_path(category) do %>
-          <div class="category-icon"><%= cl_image_tag category.photo.key %></div>
+          <div class="button-link-white">
+            <small><%= category.name %></small>
+            <%= cl_image_tag category.photo.key %>
+          </div>
         <% end %>
       <% end %>
     </div>
   </section>
 
 </div>
+<%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>

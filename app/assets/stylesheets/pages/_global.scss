@@ -53,6 +53,10 @@ h3 {
   line-height: 115.19%;
 }
 
+a, a:hover, a:active {
+  text-decoration: none !important;
+}
+
 small {
   font-family: "Apfel Grotezk", "Helvetica", "sans-serif";
   font-style: normal;
@@ -70,6 +74,19 @@ small {
   padding-left: 32px;
   padding-right: 32px;
   padding-bottom: 80px;
+}
+
+.top-container{
+  margin: 3em 0 1em 0;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  .category-icon {
+    padding:15px
+  }
+  .category-icon img{
+    width: 65px;
+  }
 }
 
 input, textarea {
