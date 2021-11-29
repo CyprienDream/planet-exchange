@@ -17,24 +17,26 @@ const videoFading = () => {
       videoDiv.style.opacity = "1";
     }
   });
+  if (buttonTag){
+    buttonTag.addEventListener("click", (event) => {
+      event.preventDefault
+      onboardingTag.scrollIntoView();
+      videoDiv.style.opacity = "0";
 
-  buttonTag.addEventListener("click", (event) => {
-    event.preventDefault
-    onboardingTag.scrollIntoView();
-    videoDiv.style.opacity = "0";
-
-  });
-
-  buttonOnboardingTag.addEventListener("click", (event) => {
-    event.preventDefault
-    choicesTag.scrollIntoView();
-  });
-
-  buttonBrowseTag.addEventListener("click", (event) => {
-    event.preventDefault
-    browseTag.scrollIntoView();
-  });
-
+    });
+  }
+  if (buttonOnboardingTag){
+    buttonOnboardingTag.addEventListener("click", (event) => {
+      event.preventDefault
+      choicesTag.scrollIntoView();
+    });
+  }
+  if (buttonBrowseTag){
+    buttonBrowseTag.addEventListener("click", (event) => {
+      event.preventDefault
+      browseTag.scrollIntoView();
+    });
+  }
 };
 
 export { videoFading };
