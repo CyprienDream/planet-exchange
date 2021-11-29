@@ -10,10 +10,15 @@
   height: 64px;
   z-index: 10;
   justify-content: space-around;
+  padding-top: 14px;
 }
 
 .navbar-icon {
-  transform: translateY(4px);
+  transform: translateY(-4px);
+}
+
+.navbar-icon-center {
+  transform: translateY(-8px);
 }
 
 .not-working {

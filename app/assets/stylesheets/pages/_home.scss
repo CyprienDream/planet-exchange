@@ -1,4 +1,8 @@
-
+@keyframes arrow-intro {
+  0% { transform: rotate(90deg) translateX(0); }
+  50% { transform: rotate(90deg) translateX(32px); }
+  100% { transform: rotate(90deg) translateX(0); }
+}
 
 
 // INTRO --------------------------------------------------
@@ -26,11 +30,19 @@
   max-width: 216px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.start a.btn {
-  margin-top: 1em;
+.start small {
+  margin-bottom: 3em;
 }
+
+.start img {
+  width: 32px;
+  transform:rotate(90deg);
+  animation: arrow-intro 3s infinite;
+}
+
 
 .video-intro {
   width: 100%;
