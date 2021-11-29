@@ -1,44 +1,51 @@
-<h2>Sign up</h2>
+<div class="container">
 
-<%# add username and bio
-chose interests from list
-picture %>
+  <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <%# add username and bio
+  chose interests from list
+  picture %>
 
-  <div class="form-inputs">
-    <%= f.input :username,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "username" }%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :bio,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "bio" }%>
-    <%= f.input :photo,
-                as: :file,
-                required: true,
-                autofocus: true %>
-    <%= f.association :interests,
-                      as: :check_boxes,
-                      multiple: true%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :username,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "username" }%>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :bio,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "bio" }%>
+      <%= f.input :photo,
+                  as: :file,
+                  required: true,
+                  autofocus: true %>
+      <%= f.association :interests,
+                        as: :check_boxes,
+                        multiple: true%>
+      <div class="form-border">
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class:"btn btn-white" %>
+    </div>
+  <% end %>
+
+  <div class="login-links">
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
