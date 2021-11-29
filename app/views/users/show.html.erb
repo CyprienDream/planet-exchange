@@ -37,7 +37,7 @@
 
     <div class="interests-holder">
     <p><%= @user.username%>'s interests</p>
-    <div class="d-flex justify-content-between p-2 interests-container">
+    <div class="grid-interests">
       <% @user.interests.each do |interest|  %>
       <%= cl_image_tag interest.photo.key, class: "user-interest-icon" %>
       <% end %>
