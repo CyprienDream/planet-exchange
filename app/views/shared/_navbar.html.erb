@@ -13,7 +13,7 @@
     <%= link_to user_chatrooms_path(current_user) do %>
       <%= image_tag "msgs-icon.svg", class: "navbar-icon" %>
     <% end %>
-    <%= link_to user_path(current_user)do %>
+    <%= link_to dashboard_path(current_user)do %>
       <%= image_tag "profile-icon.svg"  %>
     <% end %>
   <% else %>
