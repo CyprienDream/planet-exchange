@@ -5,8 +5,10 @@ class PagesController < ApplicationController
   end
 
   def search
-    # considering search input is named 'query'
-    # raise
+
+    items_raw = Item.pluck(:name).sort
+    @items = items_raw.to_json
+
     if params[:query].present? || params[:search_array].present?
 
       if params[:query].present?
@@ -41,6 +43,7 @@ class PagesController < ApplicationController
       # raise
       # @markers = @storage_items.map do |item_storage|
       #   next unless item_storage.storage.geocoded?
+      # raise
 
       #   {
       #     lat: item_storage.storage.latitude,

@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  after_action :verify_authorized, only: [:new, :create, :edit, :destroy]
+
   def index
     # if params[:query].present?
     # end
@@ -13,6 +15,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    authorite @item
     item_params.activity_ids.each do |id|
       ActivityItem.create(activity_id: id, item: @item)
     end
@@ -22,6 +25,8 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
+
 
   private
 
