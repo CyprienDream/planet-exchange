@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :storages, only: %i[show new create]
   resources :items, only: %i[index new create]
   resources :item_storages, only: %i[edit update]
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: %i[show create] do
     resources :messages, only: :create
   end
 end
