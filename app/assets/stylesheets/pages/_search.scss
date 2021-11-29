@@ -27,7 +27,7 @@
 
 .map-marked {
   // box-shadow: 0px 0px 5px 1px rgba(95, 79, 66, 0.7);
-  width: 30px;
+  width: 17px;
 }
 
 
@@ -54,6 +54,10 @@
     border: 2px solid $green3;
     background-color: $green3;
     object-fit: cover;
+  }
+  .icon-item-small{
+    height:45px;
+
   }
 }
 
