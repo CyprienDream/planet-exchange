@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/search', to: 'pages#search'
+  get '/dashboard', to: 'pages#dashboard'
 
   resources :categories, only: %i[new create index show]
   resources :activities, only: %i[new create show]

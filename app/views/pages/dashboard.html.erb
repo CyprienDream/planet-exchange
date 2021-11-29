@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mt-3">
+    <div class="user-info">
+      <h2><%= @user.username %></h2>
+      <small>Dashboard</small>
+    </div>
+    <%= cl_image_tag @user.photo.key, class: "user-img" %>
+  </div>
+
+  <div class="d-flex flex-column mt-4">
+
+    <%= image_tag("save-the-planet.svg") %>
+
+    <%= link_to do %>
+    <div class="btn button-link-white mt-3">
+      <small>Edit profile</small>
+      <%= image_tag "arrow.svg", class: "icon"  %>
+    </div>
+    <% end %>
+
+    <%= link_to do %>
+    <div class="btn button-link-white mt-3">
+      <small>Edit storage room</small>
+      <%= image_tag "arrow.svg", class: "icon"  %>
+    </div>
+    <% end %>
+
+  </div>
+
+
+</div>

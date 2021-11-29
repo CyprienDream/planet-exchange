@@ -8,19 +8,20 @@
   <%= link_to categories_path do %>
     <%= image_tag "explore-icon.svg", class: "navbar-icon-center" %>
   <% end %>
+
   <% if user_signed_in? %>
     <%= link_to user_chatrooms_path(current_user) do %>
-      <%= image_tag "msgs-icon.svg", class: "navbar-icon not-working" %>
+      <%= image_tag "msgs-icon.svg", class: "navbar-icon" %>
     <% end %>
-    <%= link_to user_path(current_user)do %>
-      <%= image_tag "profile-icon.svg", class: "not-working"  %>
+    <%= link_to dashboard_path(current_user)do %>
+      <%= image_tag "profile-icon.svg"  %>
     <% end %>
   <% else %>
     <%= link_to new_user_session_path do %>
-      <%= image_tag "msgs-icon.svg", class: "navbar-icon not-working" %>
+      <%= image_tag "msgs-icon.svg", class: "navbar-icon" %>
     <% end %>
     <%= link_to new_user_session_path do %>
-      <%= image_tag "profile-icon.svg", class: "not-working"  %>
+      <%= image_tag "profile-icon.svg"  %>
     <% end %>
   <% end %>
 </div>

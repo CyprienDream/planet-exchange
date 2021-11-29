@@ -1,7 +1,11 @@
 <div class="on-mobile"><h1>Watch it on your mobile please!</h1></div>
 
 <div class="p-4 text-right">
-  <%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
+  <% if user_signed_in? %>
+    <%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "LOG IN", user_session_path %>
+  <% end  %>
 </div>
 
 <div class="container d-flex flex-column">

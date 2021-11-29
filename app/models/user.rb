@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :messages
   enum role: %i[member admin]
 
+
   after_initialize do
     if self.new_record?
       self.role ||= :member
