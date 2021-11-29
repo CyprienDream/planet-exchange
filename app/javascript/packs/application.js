@@ -33,7 +33,6 @@ import { autocompleteSearch } from "../components/autocomplete";
 
 import { initChatroomCable } from "../channels/chatroom_channel";
 
-
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -42,11 +41,11 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
 
   initSwiper();
+  autocompleteSearch();
   initMapbox();
   totalCarbon();
   totalSpace();
   totalPrice();
-  autocompleteSearch();
   videoFading();
   initChatroomCable();
 });
