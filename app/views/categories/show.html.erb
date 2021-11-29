@@ -1,18 +1,28 @@
 <div class="container">
   <div class="show-container">
     <div class="top-container">
-    <h2><%= @category.name %></h2>
-    <div class="category-icon"><%= cl_image_tag @category.photo.key %></div>
+      <h2><%= @category.name %></h2>
+      <div class="category-icon"><%= cl_image_tag @category.photo.key %></div>
     </div>
+
     <div class="list-container">
       <% @category.activities.each do |activity| %>
         <%= link_to activity_path(activity) do %>
-        <div class="btn btn-list-white">
+        <div class="btn button-link-white">
           <small><%= activity.name %></small>
-          <%= image_tag "arrow-white.svg"  %>
+          <%= image_tag "arrow.svg", class: "icon"  %>
         </div>
         <% end %>
       <% end %>
     </div>
+    <div class="list-container">
+       <%= link_to categories_path do %>
+        <div class="btn btn-list-white">
+          <%= image_tag "arrow-white.svg", class: "back"%>
+          <small>Back to categories</small>
+      </div>
+      <% end %>
+    </div>
+
   </div>
 </div>
