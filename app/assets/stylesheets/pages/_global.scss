@@ -76,6 +76,19 @@ small {
   padding-bottom: 80px;
 }
 
+.top-container{
+  margin: 3em 0 1em 0;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  .category-icon {
+    padding:15px
+  }
+  .category-icon img{
+    width: 65px;
+  }
+}
+
 input, textarea {
   width: 100%;
   height: auto;

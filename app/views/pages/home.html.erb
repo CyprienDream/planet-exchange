@@ -90,7 +90,7 @@
     <%= render 'shared/search_bar' %>
 
     <p class="text-center mt-5">Select here the activity's category that you would like to do.</p>
-    <div class="categories">
+    <div class="grid">
       <% @categories.each do |category| %>
         <%= link_to category_path(category) do %>
           <div class="button-link-white">

@@ -5,7 +5,7 @@
       <div class="category-icon"><%= cl_image_tag @category.photo.key %></div>
     </div>
 
-    <div class="list-container">
+    <div class="grid list-container">
       <% @category.activities.each do |activity| %>
         <%= link_to activity_path(activity) do %>
         <div class="btn button-link-white">

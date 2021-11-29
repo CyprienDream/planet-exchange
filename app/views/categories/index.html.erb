@@ -2,7 +2,7 @@
   <div class="top-container">
   <h2>Pick a category</h2>
   </div>
-  <div class="categories categories-container">
+  <div class="grid">
       <% @categories.each do |category| %>
         <%= link_to category_path(category) do %>
           <div class="big-button">
