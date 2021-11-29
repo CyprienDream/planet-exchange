@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   # after_action :verify_authorized, except: [:index, :show]
   # after_action :verify_policy_scoped, only: [:index, :show]
-  before_action :verify_authorized!, except: [:index, :show]
+ before_action :authenticate_user! , except: [:index, :show]
   def index
     @categories = Category.all
   end
