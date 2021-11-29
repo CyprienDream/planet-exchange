@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  before_action :verify_authorized!, except: [:index, :show]
   def show
     @activity = Activity.find(params[:id])
     @items = @activity.items
