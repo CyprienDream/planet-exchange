@@ -17,6 +17,7 @@ class UsersController < Devise::RegistrationsController
 
   def chatrooms
     messages = Message.where(user: current_user)
+    # refactor with active record
     @chatrooms = []
     messages.each do |message|
       @chatrooms << Chatroom.find(message.chatroom_id)
