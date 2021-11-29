@@ -1,9 +1,10 @@
 <h1>#<%= @chatroom.name %></h1>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
+  <% @chatroom.messages.reverse.each do |message| %>
     <%= render 'messages/messages', message: message %>
   <% end %>
 </div>
 <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
   <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
 <% end %>
+<%= link_to "back", user_chatrooms_path(current_user), style: "color: white" %>
