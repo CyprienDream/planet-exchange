@@ -198,10 +198,26 @@ items = [
   {name: "Cake pan", avg_price: 8, avg_weight: 0.7926, height: 0.07 , width: 0.25, photo: "app/assets/images/baking_cake_pan.png", item_materials: [{material: "Carbon Steel", proportion: 1}]},
   {name: "Hand mixer", avg_price: 15, avg_weight: 1.129, height: 0.208, width: 0.156, photo: "app/assets/images/baking_hand_mixer.png", item_materials: [{material: "ABS Plastic", proportion:0.7}, {material: "Stainless Steel", proportion: 0.3}]},
   {name: "Drill", avg_price: 15, avg_weight: 1.53, height: 0.3 , width: 0.14, photo: "app/assets/images/diy_drill.png", item_materials: [{material: "ABS Plastic", proportion:0.7}, {material: "Steel",proportion: 0.3}]},
-  {name: "Hammer", avg_price: 6, avg_weight: 0.73, height: 0.36, width: 0.048, photo: "app/assets/images/fa-solid_hammer.png", item_materials: [{material: "Wood", proportion: 0.6}, {material: "Steel", proportion: 0.4}]},
-  {name: "Ladder", avg_price: 35, avg_weight: 4.3, height: 1.75, width: 0.8, photo: "app/assets/images/diy_ladder.png", item_materials: [{material:"Aluminium", proportion:1}]},
+  {name: "Hammer", avg_price: 6, avg_weight: 0.73, height: 0.36, width: 0.048, photo: "app/assets/images/tools/fa-solid_hammer.png", item_materials: [{material: "Wood", proportion: 0.6}, {material: "Steel", proportion: 0.4}]},
+  {name: "Ladder", avg_price: 35, avg_weight: 4.3, height: 1.75, width: 0.8, photo: "app/assets/images/tools/diy_ladder.png", item_materials: [{material:"Aluminium", proportion:1}]},
   {name: "Pot", avg_price: 21, avg_weight: 1.4, height: 0.165, width: 0.279, photo: "app/assets/images/cooking_item_big_pot.png", item_materials: [{material: "Stainless Steel", proportion: 1}]},
-  {name: "Tape measure", avg_price: 5, avg_weight: 0.205, height: 0.12, width: 0.08, photo: "app/assets/images/diy_tape_measure.png", item_materials: [{material: "Steel", proportion: 0.5}, {material: "ABS Plastic", proportion: 0.5}]},
+  {name: "Tape measure", avg_price: 5, avg_weight: 0.205, height: 0.12, width: 0.08, photo: "app/assets/images/tools/tape_measure.png", item_materials: [{material: "Steel", proportion: 0.5}, {material: "ABS Plastic", proportion: 0.5}]},
+
+  {name: "Flashlight", avg_price: 6.5, avg_weight: 0.205, height: 0.06, width: 0.04, length: 0.14 ,photo: "app/assets/images/tools/flashlight.png", item_materials: [{material: "Aluminium", proportion: 1}]},
+  {name: "Utility knife", avg_price: 6.5, avg_weight: 0.230, height: 0.08, width: 0.08, length: 0.18, photo: "app/assets/images/tools/utility_knife.png", item_materials: [{material: "Zinc", proportion: 0.7}, {material: "ABS Plastic", proportion: 0.3}]},
+  {name: "Handsaw", avg_price: 13, avg_weight: 0.722, height: 0.12, width: 0.08, photo: "app/assets/images/tools/diy_saw.png", item_materials: [{material: "Steel", proportion: 0.8}, {material: "ABS Plastic", proportion: 0.2}]},
+  {name: "Wrench set", avg_price: 9, avg_weight: 0.8, height: 0.23, width: 0.04, length: 0.17, photo: "app/assets/images/tools/wrench_set.png", item_materials: [{material: "Steel", proportion: 1}]},
+  {name: "Screwdriver", avg_price: 7, avg_weight: 0.145, height: 0.16, width: 0.03, length: 0.08, photo: "app/assets/images/tools/screewdriver.png", item_materials: [{material: "Steel", proportion: 0.8}, {material: "ABS Plastic", proportion: 0.2}]},
+  {name: "Level", avg_price: 11, avg_weight: 0.503, height: 0.12, width: 0.08, length: 1, photo: "app/assets/images/tools/diy_level.png", item_materials: [{material: "Aluminium", proportion: 1}]},
+  {name: "Wheelbarrow", avg_price: 30, avg_weight: 13.5, height: 0.65, width: 0.65, length: 1.5, photo: "app/assets/images/tools/wheelbarrow-icon-26.jpg", item_materials: [{material: "Steel", proportion: 0.3}, {material: "ABS Plastic", proportion: 0.7}]},
+  {name: "Stud finder", avg_price: 18, avg_weight: 0.33, height: 0.08, width: 0.10, length: 0.32, photo: "app/assets/images/tools/stud_finder.png", item_materials: [{material: "ABS Plastic", proportion: 1}]},
+  {name: "Sandpaper", avg_price: 0.8, avg_weight: 0.015, height: 0.23, width: 0.01, length: 0.28, photo: "app/assets/images/tools/sandpaper.png", item_materials: [{material: "Paper", proportion: 0.9}, {material: "Aluminium", proportion: 0.1}]},
+  {name: "Putty scrapper", avg_price: 3.5, avg_weight: 0.86, height: 0.15, width: 0.08, length: 0.22,photo: "app/assets/images/tools/putty_scrapper.png", item_materials: [{material: "Stainless Steel", proportion: 0.8}, {material: "ABS Plastic", proportion: 0.2}]},
+  {name: "Wire cutters", avg_price: 8, avg_weight: 0.015, height: 0.06, width: 0.03, length: 0.14, photo: "app/assets/images/tools/wire_cutters.jpg", item_materials: [{material: "Steel", proportion: 1}]},
+  {name: "Safety glasses", avg_price: 2, avg_weight: 0.157, height: 0.17, width: 0.08, length: 0.16, photo: "app/assets/images/tools/safety_glasses.png", item_materials: [ {material: "ABS Plastic", proportion: 1}]},
+  {name: "Hacksaw", avg_price: 21, avg_weight: 0.61, height: 0.08, width: 0.05, length: 0.33, photo: "app/assets/images/tools/hacksaw_1.png", item_materials: [{material: "Steel", proportion: 0.7}, {material: "Wood", proportion: 0.3}]},
+  {name: "Staple gun", avg_price: 8, avg_weight: 0.39, height: 0.15, width: 0.03, length: 0.08, photo: "app/assets/images/tools/staple-gun.png", item_materials: [{material: "Steel", proportion: 0.8}, {material: "Aluminium", proportion: 0.2}]},
+  {name: "Shovel", avg_price: 10, avg_weight: 1.84, height: 0.8, width: 0.26, length: 1.3, photo: "app/assets/images/tools/shovel.png", item_materials: [{material: "Steel", proportion: 0.4}, {material: "Wood", proportion: 0.6}]},
 ]
 
 materials = [
@@ -215,6 +231,8 @@ materials = [
   {name: "Glass", co2_per_kilo: 0.85},
   {name: "Polyuretan flex plastic", co2_per_kilo: 4.99},
   {name: "Paper", co2_per_kilo: 2.42},
+  {name: "Zinc", co2_per_kilo: 3.41},
+
 ]
 
 Material.create!(materials)
@@ -230,13 +248,22 @@ items.each do |item|
   item_in_db.photo.attach(io: File.open(item[:photo]), filename: "#{photo.last}", content_type: "image/png")
   item_in_db.save!
 
-  Storage.all.each do |storage|
-    ItemStorage.create!(storage: storage, item: item_in_db )
-  end
   item_in_db.carbon_footprint_calc
   baking_items = ["Cake pan", "Whisk","Spatula","Hand mixer"]
+  diy_items = ["Drill", "Screwdriver", "Safety glasses", "Stud finder", "Level"]
   if baking_items.include?(item_in_db[:name])
     ActivityItem.create!(activity: activity10, item: item_in_db)
+    ActivityItem.create!(activity: activity13 , item: item_in_db)
+  end
+  if diy_items.include?(item_in_db[:name])
+    ActivityItem.create!(activity: activity1, item: item_in_db)
+    ActivityItem.create!(activity: activity2, item: item_in_db)
+  end
+end
+
+Storage.all.each do |storage|
+  8.times do
+  ItemStorage.create!(storage: storage, item: (Item.all).sample )
   end
 end
 
