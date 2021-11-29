@@ -7,8 +7,11 @@ class User < ApplicationRecord
   has_many :interest_users
   has_many :interests, through: :interest_users
   has_one :storage
+  has_many :chatroom_users
+  has_many :chatrooms, through: :chatroom_users
+  has_many :messages
+  enum role: %i[member admin]
 
-  enum role: [:member, :admin]
 
   after_initialize do
     if self.new_record?

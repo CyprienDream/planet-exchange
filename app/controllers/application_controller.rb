@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
     # devise_parameter_sanitizer.permit(:account_update, keys: %i[username bio photo])
   end
+
   private
 
   def skip_pundit?
@@ -24,4 +25,12 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "Log in as admin"
     redirect_back fallback_location: root_path
   end
+
+  # def after_sign_in_path_for(resource)
+  #   user_path(current_user) # your path
+  # end
+
+  # def after_sign_up_path_for(resource)
+  #   user_path(current_user) # your path
+  # end
 end
