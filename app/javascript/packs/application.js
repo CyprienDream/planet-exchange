@@ -8,7 +8,6 @@ require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -29,6 +28,7 @@ import { videoFading } from "../components/video";
 import { totalCarbon } from "../components/_co2calculator";
 import { totalSpace } from "../components/_co2calculator";
 import { totalPrice } from "../components/_co2calculator";
+import { autocompleteSearch } from "../components/autocomplete";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -42,6 +42,7 @@ document.addEventListener("turbolinks:load", () => {
   totalCarbon();
   totalSpace();
   totalPrice();
+  autocompleteSearch();
   videoFading();
 });
 

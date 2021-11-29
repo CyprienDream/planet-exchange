@@ -96,11 +96,11 @@ interests.each do |interest|
 end
 
 users = [
-  {username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia2@lucia.com" , password: "123456", password_confirmation: "123456", photo:"app/assets/images/Lucia01.jpg"},
-  {username: "Oyvind", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/king.png"},
-  {username: "Max", bio: "Gruss Got Freunde, I am new in town and very sick, but I also enjoy hoarding unnecessary shit so I am here to give it further, except of my Lederhose,. Always up for a beer and a good spanks.", email: "amigo24@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/max.jpg"},
-  {username: "Cyprien", bio: "Hey there, I used to avoid people but now I am ready to make new friends. I would love to hang out over a beer and am ready to jump on new DIY project. Anybody around? ", email: "amigo55@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/cypri.jpg"},
-  {username: "Maxime", bio: "To all art afasionados, I am Maxime and I greatly enjoy art and coffee. I do have a collection of coffee mashines at home which I am more than willing to share. Just hit me up if you need something. Hugs M!", email: "amigo22@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/T02NE0241-U02H2FE2KKJ-3ef0a62b55c5-512.jpg"},
+  {username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia@lucia.com" , password: "123456", password_confirmation: "123456", photo:"app/assets/images/Lucia01.jpg", role: 1},
+  {username: "Oyvind", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/king.png", role: 0},
+  {username: "Max", bio: "Gruss Got Freunde, I am new in town and very sick, but I also enjoy hoarding unnecessary shit so I am here to give it further, except of my Lederhose,. Always up for a beer and a good spanks.", email: "amigo24@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/max.jpg", role: 0},
+  {username: "Cyprien", bio: "Hey there, I used to avoid people but now I am ready to make new friends. I would love to hang out over a beer and am ready to jump on new DIY project. Anybody around? ", email: "cyprien@cyprien.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/cypri.jpg", role: 1},
+  {username: "Maxime", bio: "To all art afasionados, I am Maxime and I greatly enjoy art and coffee. I do have a collection of coffee mashines at home which I am more than willing to share. Just hit me up if you need something. Hugs M!", email: "maxime@maxime.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/T02NE0241-U02H2FE2KKJ-3ef0a62b55c5-512.jpg", role: 1},
  ]
 
  users.each do |user|

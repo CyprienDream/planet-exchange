@@ -7,5 +7,12 @@ class User < ApplicationRecord
   has_many :interest_users
   has_many :interests, through: :interest_users
   has_one :storage
+  enum role: [:member, :admin]
+
+  after_initialize do
+    if self.new_record?
+      self.role ||= :member
+    end
+  end
   # accepts_nested_attributes_for :interests
 end
