@@ -53,7 +53,8 @@ h3 {
   line-height: 115.19%;
 }
 
-a, a:hover, a:active {
+a, a:hover, a:active, a:visited, a:focus {
+  color: $white !important;
   text-decoration: none !important;
 }
 

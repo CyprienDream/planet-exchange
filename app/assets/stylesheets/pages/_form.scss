@@ -6,6 +6,21 @@
   padding:0;
 }
 
+.login-links {
+  opacity: 0.5;
+}
+
 .login-links a {
+  color: $white;
+}
+
+.form-border {
+  border-top: 1px solid rgba($color: #FFF, $alpha: 0.2);
+  padding-top: 1em;
+}
+
+.form-control-file {
+  padding: 0;
+  border-radius: 0;
   color: $white;
 }

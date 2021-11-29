@@ -1,14 +1,12 @@
 <%- if controller_name != 'sessions' %>
-  <div class="btn btn-white">
+  <div class="btn btn-white w-100">
     <%= link_to "Log in", new_session_path(resource_name) %>
-    <%= image_tag "arrow-white.svg" %>
   </div>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <div class="btn btn-white w-100">
     <%= link_to "Sign up", new_registration_path(resource_name) %>
-    <%= image_tag "arrow-white.svg" %>
   </div><br>
 <% end %>
 
