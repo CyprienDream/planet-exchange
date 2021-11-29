@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :interest_users
   has_many :interests, through: :interest_users
   has_one :storage
+
   enum role: [:member, :admin]
 
   after_initialize do
