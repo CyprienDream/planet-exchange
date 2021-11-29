@@ -8,13 +8,10 @@
   <%= link_to categories_path do %>
     <%= image_tag "explore-icon.svg", class: "navbar-icon-center" %>
   <% end %>
-  <%# This if statement is temporary (so that sign up page does not break) %>
-  <% if current_user %>
-    <%= link_to user_chatrooms_path(current_user) do %>
-      <%= image_tag "msgs-icon.svg", class: "navbar-icon not-working" %>
-    <% end %>
+  <%= link_to do %>
+    <%= image_tag "msgs-icon.svg", class: "navbar-icon not-working" %>
   <% end %>
-  <%= link_to  do %>
+  <%= link_to do %>
     <%= image_tag "profile-icon.svg", class: "not-working"  %>
   <% end %>
 </div>

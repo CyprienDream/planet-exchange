@@ -11,3 +11,7 @@
   <%= item.item.name %>
   <%= item.storage.address %>
   <% end %>
+
+  <% if policy(:item).new?  %>
+  <p><%= button_to "Add new item", new_item_path, method: :get %></p>
+  <% end %>
