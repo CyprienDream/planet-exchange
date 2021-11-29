@@ -41,11 +41,11 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
 
   initSwiper();
-  autocompleteSearch();
   initMapbox();
   totalCarbon();
   totalSpace();
   totalPrice();
+  autocompleteSearch();
   videoFading();
   initChatroomCable();
 });

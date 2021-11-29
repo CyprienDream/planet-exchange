@@ -2,7 +2,6 @@ class PagesController < ApplicationController
 
   def home
     @categories = Category.all
-
     items_raw = Item.pluck(:name).sort
     @items = items_raw.to_json
   end
