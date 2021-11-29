@@ -15,4 +15,13 @@ class UsersController < Devise::RegistrationsController
     @storage_items = storage.items
   end
 
+  def chatrooms
+    messages = Message.where(user: current_user)
+    @chatrooms = []
+    messages.each do |message|
+      @chatrooms << Chatroom.find(message.chatroom_id)
+    end
+    @chatrooms.uniq!
+  end
+
 end
