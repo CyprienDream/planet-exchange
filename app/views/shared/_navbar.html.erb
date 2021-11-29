@@ -16,7 +16,11 @@
       <%= image_tag "profile-icon.svg", class: "not-working"  %>
     <% end %>
   <% else %>
-    <%= image_tag "msgs-icon.svg", class: "navbar-icon not-working" %>
-    <%= image_tag "profile-icon.svg", class: "not-working"  %>
+    <%= link_to new_user_session_path do %>
+      <%= image_tag "msgs-icon.svg", class: "navbar-icon not-working" %>
+    <% end %>
+    <%= link_to new_user_session_path do %>
+      <%= image_tag "profile-icon.svg", class: "not-working"  %>
+    <% end %>
   <% end %>
 </div>
