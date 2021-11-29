@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :authenticate_user!
+  before_action :authenticate_user! , except: [:home, :search]
   include Pundit
   rescue_from Pundit::NotAuthorizedError, with: :not_authorized
 
