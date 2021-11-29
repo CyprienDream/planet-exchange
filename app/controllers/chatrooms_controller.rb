@@ -5,6 +5,7 @@ class ChatroomsController < ApplicationController
   end
 
   def create
+    # do not assign name
     @user = User.find(request.referrer[-1])
     @chatroom = Chatroom.create(name: @user.username)
     redirect_to chatroom_path(@chatroom)
