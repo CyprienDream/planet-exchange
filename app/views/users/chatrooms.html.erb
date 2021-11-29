@@ -1,7 +1,7 @@
 <% @chatrooms.each do |chatroom| %>
   <%= link_to chatroom_path(chatroom) do %>
-    <div class="chat-preview" style="color: white">
-      <h2><%= chatroom.name %></h2>
+    <div class="chat-preview" style="color: white; border-style: solid">
+      <%= chatroom.name %><br>
       <%= chatroom.messages.last.content %>
     </div>
   <% end %>
