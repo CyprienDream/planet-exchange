@@ -1,14 +1,17 @@
 <div class="navbar">
+  <%= link_to root_path do %>
+    <%= image_tag "home-icon.svg"  %>
+  <% end %>
   <%= link_to search_path do %>
     <%= image_tag "search-icon.svg", class: "navbar-icon"  %>
   <% end %>
   <%= link_to categories_path do %>
-    <%= image_tag "explore-icon.svg" %>
+    <%= image_tag "explore-icon.svg", class: "navbar-icon-center" %>
   <% end %>
   <%= link_to do %>
-    <%= image_tag "msgs-icon.svg", class: "not-working" %>
+    <%= image_tag "msgs-icon.svg", class: "navbar-icon not-working" %>
   <% end %>
   <%= link_to  do %>
-    <%= image_tag "profile-icon.svg", class: "navbar-icon not-working"  %>
+    <%= image_tag "profile-icon.svg", class: "not-working"  %>
   <% end %>
 </div>
