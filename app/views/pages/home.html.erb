@@ -1,5 +1,9 @@
 <div class="on-mobile"><h1>Watch it on your mobile please!</h1></div>
 
+<div class="p-4 text-right">
+  <%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
+</div>
+
 <div class="container d-flex flex-column">
 
   <section class="intro-container">
@@ -103,4 +107,3 @@
   </section>
 
 </div>
-<%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
