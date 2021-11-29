@@ -5,7 +5,10 @@
   <div class="categories categories-container">
       <% @categories.each do |category| %>
         <%= link_to category_path(category) do %>
-          <div class="category-icon"><%= cl_image_tag category.photo.key %></div>
+          <div class="big-button">
+            <small><%= category.name %></small>
+            <%= cl_image_tag category.photo.key %>
+          </div>
         <% end %>
       <% end %>
   </div>
