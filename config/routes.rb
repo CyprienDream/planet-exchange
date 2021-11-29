@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     resources :users, only: %i[show]
   end
+
   root to: 'pages#home'
 
   get '/search', to: 'pages#search'
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   resources :storages, only: %i[show new create]
   resources :items, only: %i[index new create]
   resources :item_storages, only: %i[edit update]
+  resources :chatrooms, only: :show
 end
