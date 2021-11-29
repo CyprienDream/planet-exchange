@@ -36,7 +36,14 @@
 }
 
 .user-interest-icon{
-  padding: 8px 10px;
-  width: 65px;
-  height:65px;
+  object-fit:contain;
+  width: 46px;
+  height: 46px;
+}
+
+.grid-interests {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap:8px;
+  margin-top: 1em;
 }

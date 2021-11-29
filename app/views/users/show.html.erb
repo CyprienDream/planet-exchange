@@ -7,7 +7,6 @@
   </div>
 
   <div class="d-flex justify-content-between align-items-center">
-
     <div class="user-info">
       <h2><%= @user.username %></h2>
       <small><%= @city %></small>
@@ -20,31 +19,29 @@
   </div>
 
   <div class="user-background-container">
-  <div class="p-3">
+    <div class="p-3">
+      <div class="storage-holder">
+        <p><%= @user.username %>'s storage room</p>
+        <div class="storage-room-items-container">
+          <% @storage_items.each do |item| %>
+          <div class="item-item">
+            <%= item.name %>
+          </div>
+          <% end %>
+        </div>
+      </div>
 
-
-    <div class="storage-holder">
-    <p><%= @user.username %>'s storage room</p>
-  <div class="storage-room-items-container">
-  <% @storage_items.each do |item| %>
-  <div class="item-item">
-  <%= item.name %>
-  </div>
-  <% end %>
-  </div>
-
-    </div>
-
-    <div class="interests-holder">
-    <p><%= @user.username%>'s interests</p>
-    <div class="d-flex justify-content-between p-2 interests-container">
-      <% @user.interests.each do |interest|  %>
-      <%= cl_image_tag interest.photo.key, class: "user-interest-icon" %>
-      <% end %>
-    </div>
-  </div>
+      <div class="interests-holder">
+        <p><%= @user.username%>'s interests</p>
+        <div class="grid-interests">
+          <% @user.interests.each do |interest|  %>
+            <%= cl_image_tag interest.photo.key, class: "user-interest-icon" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
+
   <div class="text-center mt-3">
     <div class="btn btn-white ">Contact</div>
   </div>
