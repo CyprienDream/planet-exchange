@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
-    resources :users, only: %i[show]
+    resources :users, only: %i[show edit]
     get '/users/:id/chatrooms', to: 'users#chatrooms', as: :user_chatrooms
   end
 

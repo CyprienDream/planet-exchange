@@ -70,6 +70,15 @@ small {
   display: inline-block;
 }
 
+.very-small {
+  font-family: "Apfel Grotezk", "Helvetica", "sans-serif";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+}
+
 .container {
   padding-left: 32px;
   padding-right: 32px;

@@ -2,6 +2,7 @@ class StoragesController < ApplicationController
   def new
     # instantiate a storage to be available in new view
     @storage = Storage.new
+    @items = Item.all
   end
 
   def show
@@ -17,7 +18,7 @@ class StoragesController < ApplicationController
     if @storage.save
       # create relationships between items and storage
       params[:storage][:item_ids].each do |id|
-        ItemStorage.create(storage_id: @storage.id, item_id: id)
+        ItemStorage.create(storage_id: @storage.id, item_id: id.to_i)
       end
       # redirect to user profile upon storage creation
       redirect_to user_path(current_user)
@@ -25,6 +26,7 @@ class StoragesController < ApplicationController
       # show form again if instance cannot be saved
       render :new
     end
+    # raise
   end
 
   private

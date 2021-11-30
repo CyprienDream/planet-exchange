@@ -88,11 +88,19 @@
               <%= f.input :address,
                           placeholder: "Address",
                           html: { id: "location" } %>
-              <%= f.association :items,
-                                  as: :check_boxes,
-                                  multiple: true %>
+
+          <div class="checkbox-holder storage" >
+              <% @items.each do |item| %>
+                      <div class="checkbox-item">
+                          <%= check_box_tag("storage[item_ids][]", item.id, false, id:item.id) %>
+                          <%= label_tag("storage_item_ids_#{item.id}", "#{item.name}") %>
+                      </div>
+              <% end %>
+          </div>
               <%= f.button :submit, "Create storage", class: "btn btn-white" %>
             <% end %>
+          </div>
+          </div>
           </div>
         </div>
       <%# location autocomplete depends on the map %>

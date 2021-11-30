@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Messages</h2>
+  <h2 class="mb-5">Messages</h2>
 
   <div id="chatrooms-container" data-user-id=<%= current_user.id%>>
     <% if @chatrooms === "" %>
@@ -8,6 +8,20 @@
     <% else %>
       <% @chatrooms.each do |chatroom| %>
         <%= render 'chatrooms/chat_preview', chatroom: chatroom %>
+        <%= link_to chatroom_path(chatroom) do %>
+          <div class="chat-preview">
+            <%= cl_image_tag @user.photo.key %>
+            <div>
+              <% chatroom.users.each do |user|
+                @user = user if user != current_user
+              end %>
+
+              <small><%= @user.username %></small>
+              <% unless chatroom.messages.empty? %>
+                <p class="very-small gray">"<%= chatroom.messages.last.content %>"</p>
+              <% end %>
+            </div>
+          </div>
       <% end %>
     <% end %>
   </div>
