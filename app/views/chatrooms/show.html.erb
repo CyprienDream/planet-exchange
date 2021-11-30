@@ -8,13 +8,11 @@
 
   <div class="d-flex justify-content-between align-items-center">
     <div class="user-info">
-      <h2><%= @displayed_name %></h2>
+      <h2><%= @user.username %></h2>
     </div>
-    <%
-=begin%>
- <%= cl_image_tag @user.photo.key, class: "user-img" %>
-<%
-=end%>
+
+    <%= cl_image_tag @user.photo.key, class: "user-img" %>
+
   </div>
 
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
