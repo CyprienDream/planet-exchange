@@ -9,6 +9,7 @@
  display:flex;
  flex-wrap: wrap;
 }
+
 .checkbox-holder input {
   opacity: 0;
   position: fixed;
@@ -30,10 +31,6 @@
   }
 }
 
-.checkbox-item input:checked{
-  color:black;
-  background:black;
-}
 .calculator {
   background-color: $white;
   padding: 0.8em 0.5em;
