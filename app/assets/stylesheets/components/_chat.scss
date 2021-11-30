@@ -19,6 +19,13 @@
   margin-right: 8px;
 }
 
+.chat-input {
+  position: fixed;
+  bottom: 72px;
+  left: 0;
+  width: 100%;
+  padding: 0 32px;
+}
 
 .message-current-user {
   background-color: $white;

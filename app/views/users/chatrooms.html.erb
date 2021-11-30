@@ -1,29 +1,28 @@
 <div class="container">
   <h2 class="mb-5">Messages</h2>
-
   <div id="chatrooms-container" data-user-id=<%= current_user.id%>>
-    <% if @chatrooms === "" %>
-      <p>You don’t have any messages yet.<br>
-      Find someone to borrow from, <%= link_to "here", search_path %></p>
-    <% else %>
-      <% @chatrooms.each do |chatroom| %>
-        <%= render 'chatrooms/chat_preview', chatroom: chatroom %>
-        <%= link_to chatroom_path(chatroom) do %>
-          <div class="chat-preview">
-            <%= cl_image_tag @user.photo.key %>
-            <div>
-              <% chatroom.users.each do |user|
-                @user = user if user != current_user
-              end %>
+  
+  <% if @chatrooms == nil %>
+  <p>You don’t have any messages yet.<br>
+    Find someone to borrow to, <%= link_to "here", search_path %></p>
+  <% else %>
+    <% @chatrooms.each do |chatroom| %>
+       <%= render 'chatrooms/chat_preview', chatroom: chatroom %>
+      <%= link_to chatroom_path(chatroom) do %>
 
-              <small><%= @user.username %></small>
-              <% unless chatroom.messages.empty? %>
-                <p class="very-small gray">"<%= chatroom.messages.last.content %>"</p>
-              <% end %>
-            </div>
+        <div class="chat-preview">
+          <% chatroom.users.each do |user|
+            @user = user if user != current_user
+          end %>
+          <%= cl_image_tag @user.photo.key %>
+          <div>
+            <small><%= @user.username %></small>
+            <% unless chatroom.messages.empty? %>
+              <p class="very-small gray">"<%= chatroom.messages.last.content %>"</p>
+            <% end %>
           </div>
       <% end %>
     <% end %>
   </div>
-
+  </div>
 </div>
