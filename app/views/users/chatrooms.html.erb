@@ -8,13 +8,13 @@
     <% @chatrooms.each do |chatroom| %>
       <%= link_to chatroom_path(chatroom) do %>
 
-        <div class="chat-preview" style="color: white; border-style: solid">
+        <div class="chat-preview">
           <% chatroom.users.each do |user|
             @displayed_name = user.username if user != current_user
           end %>
-          <%= @displayed_name %><br>
+          <small><%= @displayed_name %></small>
           <% unless chatroom.messages.empty? %>
-            <%= chatroom.messages.last.content %>
+            <p class="very-small"><%= chatroom.messages.last.content %></p>
           <% end %>
         </div>
       <% end %>
