@@ -18,6 +18,8 @@ class UsersController < Devise::RegistrationsController
   def chatrooms
     @chatrooms = current_user.chatrooms
 
+    @user = User.find(params[:id])
+
     # messages = Message.where(user: current_user)
     # refactor with active record
     # @chatrooms = []

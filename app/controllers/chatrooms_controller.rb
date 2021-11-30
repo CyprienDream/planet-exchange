@@ -3,7 +3,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
     @chatroom.users.each do |user|
-      @displayed_name = user.username if user != current_user
+      @user = user if user != current_user
     end
   end
 
