@@ -24,7 +24,7 @@ require("channels");
 import "bootstrap";
 import { initMapbox } from "../plugins/init_mapbox";
 import { initSwiper } from "../components/swiper";
-import { videoFading } from "../components/video";
+import { homeScripts } from "../components/home";
 import { totalCarbon } from "../components/_co2calculator";
 import { totalSpace } from "../components/_co2calculator";
 import { totalPrice } from "../components/_co2calculator";
@@ -46,7 +46,7 @@ document.addEventListener("turbolinks:load", () => {
   totalSpace();
   totalPrice();
   autocompleteSearch();
-  videoFading();
+  homeScripts();
   initChatroomCable();
 });
 
