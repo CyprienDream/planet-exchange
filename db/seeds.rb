@@ -9,19 +9,35 @@
 # categories
 require "open-uri"
 
+Message.destroy_all
+puts "Destroyed messages..."
+ChatroomUser.destroy_all
+puts "Destroyed chatroom users..."
+Chatroom.destroy_all
+puts "Destroyed chatrooms..."
 ActivityItem.destroy_all
+puts "Destroyed activity items..."
 Activity.destroy_all
+puts "Destroyed activities..."
 Category.destroy_all
+puts "Destroyed categories..."
 ItemMaterial.destroy_all
+puts "Destroyed item materials..."
 Material.destroy_all
+puts "Destroyed materials..."
 ItemStorage.destroy_all
+puts "Destroyed item storages..."
 Storage.destroy_all
+puts "Destroyed storages..."
 Item.destroy_all
+puts "Destroyed items..."
 InterestUser.destroy_all
+puts "Destroyed interest users..."
 Interest.destroy_all
+puts "Destroyed interests..."
 User.destroy_all
+puts "Destroyed users..."
 
-puts "destroyed stuff"
 # users
 
 barcelona_addresses = [
@@ -80,12 +96,12 @@ barcelona_addresses = [
 # users
 
 interests = [
-{name: "Coffee", photo: "app/assets/images/interest_icons/cafe.svg"},
-{name: "Sweets", photo: "app/assets/images/interest_icons/cupcake.svg"},
-{name: "Wine", photo: "app/assets/images/interest_icons/wine.svg"},
-{name: "Cinema", photo: "app/assets/images/interest_icons/cinema.svg"},
-{name: "Beer", photo: "app/assets/images/interest_icons/beer.svg"},
-{name: "Exchange", photo: "app/assets/images/interest_icons/exchange.svg"},
+  { name: "Coffee", photo: "app/assets/images/interest_icons/cafe.svg" },
+  { name: "Sweets", photo: "app/assets/images/interest_icons/cupcake.svg" },
+  { name: "Wine", photo: "app/assets/images/interest_icons/wine.svg" },
+  { name: "Cinema", photo: "app/assets/images/interest_icons/cinema.svg" },
+  { name: "Beer", photo: "app/assets/images/interest_icons/beer.svg" },
+  { name: "Exchange", photo: "app/assets/images/interest_icons/exchange.svg" }
 ]
 
 interests.each do |interest|
@@ -96,7 +112,7 @@ interests.each do |interest|
 end
 
 users = [
-  {username: "Lucia" , bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia@lucia.com" , password: "123456", password_confirmation: "123456", photo:"app/assets/images/Lucia01.jpg", role: 1},
+  {username: "Lucia", bio: "I am your lovely neighbour who loves to make cakes, drink beers and talk about falafels", email:"lucia@lucia.com" , password: "123456", password_confirmation: "123456", photo:"app/assets/images/Lucia01.jpg", role: 1},
   {username: "Oyvind", bio: "Hola amigos, I am new in town and enjoy getting sweaty either while baking, doing random DIY project or well, saunaing after some good sports session.", email: "amigo2@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/king.png", role: 0},
   {username: "Max", bio: "Gruss Got Freunde, I am new in town and very sick, but I also enjoy hoarding unnecessary shit so I am here to give it further, except of my Lederhose,. Always up for a beer and a good spanks.", email: "amigo24@amigo.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/max.jpg", role: 0},
   {username: "Cyprien", bio: "Hey there, I used to avoid people but now I am ready to make new friends. I would love to hang out over a beer and am ready to jump on new DIY project. Anybody around? ", email: "cyprien@cyprien.com", password: "123456", password_confirmation: "123456", photo: "app/assets/images/users/cypri.jpg", role: 1},
