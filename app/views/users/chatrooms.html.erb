@@ -1,16 +1,13 @@
 <div class="container">
   <h2 class="mb-5">Messages</h2>
   <div id="chatrooms-container" data-user-id=<%= current_user.id%>>
-
     <% if @chatrooms.empty? %>
       <p>You don’t have any messages yet.<br>
       Find someone to borrow to, <%= link_to "here", search_path %></p>
     <% else %>
       <% @chatrooms.each do |chatroom| %>
         <%= render 'chatrooms/chat_preview', chatroom: chatroom %>
-
       <% end %>
     <% end %>
   </div>
 </div>
-<% end %>
