@@ -26,4 +26,5 @@ class UsersController < Devise::RegistrationsController
     # end
     # @chatrooms.uniq!
   end
+
 end
