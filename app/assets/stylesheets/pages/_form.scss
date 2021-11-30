@@ -30,8 +30,12 @@
 }
 
 .form-check {
-  background-color: $white;
+  border-bottom: 3px solid $white;
   padding: 0.5em;
+}
+
+.form-check-input.is-valid ~ .form-check-label {
+  color: $white;
 }
 
 .text-muted {
