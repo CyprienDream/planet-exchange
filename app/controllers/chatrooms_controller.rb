@@ -17,6 +17,10 @@ class ChatroomsController < ApplicationController
       @chatroom = Chatroom.create(name: "#{current_user.username} - #{@user.username}")
       @user.chatrooms << @chatroom
       current_user.chatrooms << @chatroom
+      ChatIndexChannel.broadcast_to(
+        @user,
+        render_to_string(partial: "chatrooms/chat_preview", locals: { chatroom: @chatroom })
+      )
     end
     redirect_to chatroom_path(@chatroom)
   end

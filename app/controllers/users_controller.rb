@@ -17,6 +17,8 @@ class UsersController < Devise::RegistrationsController
 
   def chatrooms
     @chatrooms = current_user.chatrooms
+    # @chatrooms.last.users.each do |user|
+    #   @user = user if user != current_user
 
     @user = User.find(params[:id])
 
@@ -26,7 +28,7 @@ class UsersController < Devise::RegistrationsController
     # messages.each do |message|
     #   @chatrooms << Chatroom.find(message.chatroom_id)
     # end
-    # @chatrooms.uniq!
+    # create partial for chat preview
   end
 
 end
