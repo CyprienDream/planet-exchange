@@ -17,13 +17,9 @@ class UsersController < Devise::RegistrationsController
 
   def chatrooms
     @chatrooms = current_user.chatrooms
-
-    # messages = Message.where(user: current_user)
-    # refactor with active record
-    # @chatrooms = []
-    # messages.each do |message|
-    #   @chatrooms << Chatroom.find(message.chatroom_id)
+    # @chatrooms.last.users.each do |user|
+    #   @user = user if user != current_user
     # end
-    # @chatrooms.uniq!
+    # create partial for chat preview
   end
 end

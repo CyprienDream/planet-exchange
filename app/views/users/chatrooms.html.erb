@@ -1,23 +1,13 @@
 <div class="container">
   <h2>Messages</h2>
 
-  <div class="chatrooms-container" dataset=<%= current_user.id%>>
+  <div id="chatrooms-container" data-user-id=<%= current_user.id%>>
     <% if @chatrooms === "" %>
       <p>You don’t have any messages yet.<br>
-      Find someone to borrow to, <%= link_to "here", search_path %></p>
+      Find someone to borrow from, <%= link_to "here", search_path %></p>
     <% else %>
       <% @chatrooms.each do |chatroom| %>
-        <%= link_to chatroom_path(chatroom) do %>
-          <div class="chat-preview" style="color: white; border-style: solid">
-            <% chatroom.users.each do |user|
-              @displayed_name = user.username if user != current_user
-            end %>
-            <%= @displayed_name %><br>
-            <% unless chatroom.messages.empty? %>
-              <%= chatroom.messages.last.content %>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render 'chatrooms/chat_preview', chatroom: chatroom %>
       <% end %>
     <% end %>
   </div>
