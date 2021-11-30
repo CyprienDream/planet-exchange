@@ -295,8 +295,6 @@ end
 #   new_item_mat = Material.find_by_name(material)
 #   ItemMaterial.create(item: new_item, material: new_item_mat, percentage_weight:)
 
-
-
 # def calculate_co2(item))
 #   # item has weight , materials (one or two) [{material:, proportion:}]
 #   #(item[:weight]*item[:item_materials[0][:proportion]])*item[material[:co2_per_kilo] + (item[:weight]*item[:item_materials[1][:proportion]])*material[:co2_per_kilo]
@@ -334,7 +332,6 @@ end
 # item8.save8
 
 # materials
-
 
 # material1 = Material.create({name: "Stainless Steel", co2_per_kilo: 6.15})
 # material2 = Material.create({name: "ABS Plastic", co2_per_kilo: 3.46})
