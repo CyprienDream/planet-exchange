@@ -1,4 +1,4 @@
-<h2>#<%= @chatroom.name %></h2>
+<h1><%= @displayed_name %></h1>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <%= render 'messages/messages', message: message %>
