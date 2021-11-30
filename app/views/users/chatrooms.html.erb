@@ -7,7 +7,8 @@
   <% else %>
     <% @chatrooms.each do |chatroom| %>
       <%= link_to chatroom_path(chatroom) do %>
-        <div class="chat-preview" style="color: white; border-style: solid">
+        <div class="chat-preview">
+
           <%= chatroom.name %><br>
           <% unless chatroom.messages.empty? %>
             <%= chatroom.messages.last.content %>
