@@ -7,6 +7,7 @@
   <% else %>
     <% @chatrooms.each do |chatroom| %>
       <%= link_to chatroom_path(chatroom) do %>
+
         <div class="chat-preview" style="color: white; border-style: solid">
           <% chatroom.users.each do |user|
             @displayed_name = user.username if user != current_user
