@@ -17,7 +17,7 @@
 
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
      <% @chatroom.messages.each do |message| %>
-      <% if message.user.id = current_user.id %>
+      <% if message.user.id == current_user.id %>
         <%= render 'messages/message-current-user', message: message %>
       <% else %>
         <%= render 'messages/message-chat-user', message: message %>
