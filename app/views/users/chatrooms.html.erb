@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="mb-5">Messages</h2>
   <div id="chatrooms-container" data-user-id=<%= current_user.id%>>
-  
+
   <% if @chatrooms == nil %>
   <p>You don’t have any messages yet.<br>
     Find someone to borrow to, <%= link_to "here", search_path %></p>
@@ -26,3 +26,4 @@
   </div>
   </div>
 </div>
+<% end %>
