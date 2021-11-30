@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_151007) do
+ActiveRecord::Schema.define(version: 2021_11_29_161849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,15 @@ ActiveRecord::Schema.define(version: 2021_11_29_151007) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "chatroom_users", force: :cascade do |t|
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_chatroom_users_on_chatroom_id"
+    t.index ["user_id"], name: "index_chatroom_users_on_user_id"
   end
 
   create_table "chatrooms", force: :cascade do |t|
@@ -169,6 +178,8 @@ ActiveRecord::Schema.define(version: 2021_11_29_151007) do
   add_foreign_key "activity_items", "items"
   add_foreign_key "activity_users", "activities"
   add_foreign_key "activity_users", "users"
+  add_foreign_key "chatroom_users", "chatrooms"
+  add_foreign_key "chatroom_users", "users"
   add_foreign_key "interest_users", "interests"
   add_foreign_key "interest_users", "users"
   add_foreign_key "item_materials", "items"

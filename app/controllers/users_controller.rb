@@ -16,12 +16,13 @@ class UsersController < Devise::RegistrationsController
   end
 
   def chatrooms
-    messages = Message.where(user: current_user)
-    @chatrooms = []
-    messages.each do |message|
-      @chatrooms << Chatroom.find(message.chatroom_id)
-    end
-    @chatrooms.uniq!
+    @chatrooms = current_user.chatrooms
+    # messages = Message.where(user: current_user)
+    # refactor with active record
+    # @chatrooms = []
+    # messages.each do |message|
+    #   @chatrooms << Chatroom.find(message.chatroom_id)
+    # end
+    # @chatrooms.uniq!
   end
-
 end

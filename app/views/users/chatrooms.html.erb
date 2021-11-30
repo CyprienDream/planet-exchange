@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Messages</h2>
 
-  <% if @chatrooms = "" %>
+  <% if @chatrooms === "" %>
   <p>You don’t have any messages yet.<br>
     Find someone to borrow to, <%= link_to "here", search_path %></p>
   <% else %>
@@ -9,7 +9,9 @@
       <%= link_to chatroom_path(chatroom) do %>
         <div class="chat-preview" style="color: white; border-style: solid">
           <%= chatroom.name %><br>
-          <%= chatroom.messages.last.content %>
+          <% unless chatroom.messages.empty? %>
+            <%= chatroom.messages.last.content %>
+          <% end %>
         </div>
       <% end %>
     <% end %>
