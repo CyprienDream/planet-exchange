@@ -2,6 +2,18 @@
   background-color: $white;
   color: $green3;
   padding: 0.5em;
+  border-radius: 80px;
+  height: 80px;
+  margin-bottom: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.chat-preview img {
+  width: 64px;
+  border-radius: 50%;
 }
 
 
