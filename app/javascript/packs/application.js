@@ -32,7 +32,7 @@ import { totalPrice } from "../components/_co2calculator";
 import { autocompleteSearch } from "../components/autocomplete";
 
 import { initChatroomCable } from "../channels/chatroom_channel";
-
+import { showNext } from "../components/_create_storage_slider";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -41,6 +41,7 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
 
   initSwiper();
+  showNext();
   initMapbox();
   totalCarbon();
   totalSpace();
