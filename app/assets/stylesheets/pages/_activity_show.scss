@@ -43,3 +43,52 @@
 .calculator-row {
   width: 100%;
 }
+
+// info
+
+.info-holder{
+  position:relative;
+// .info-box-content{
+//     display:none;
+//   }
+.info-box{
+  opacity:0.5;
+  position:absolute;
+  left:59px;
+  top:23px;
+  cursor: pointer;
+  }
+  i{
+    font-size: 15px;
+  }
+}
+
+.info-box-content{
+  z-index:9;
+  position: absolute;
+  bottom:10px;
+  &.space{
+
+    left:65px;
+    border-radius: 25px 25px 25px 0px ;
+  }
+  &.money{
+    left:-97px;
+    border-radius: 25px 25px 0px 25px;
+  }
+  &.carbon{
+    left:-76px;
+    border-radius: 25px 0px 25px 25px;
+  }
+  background:rgba(255,255,255,0.8);
+  padding: 15px;
+  width: 9em;
+
+  p {
+    font-size:15px;
+  }
+ .info-box-content-close{
+   text-align:end;
+   margin-bottom: 10px;
+ }
+}

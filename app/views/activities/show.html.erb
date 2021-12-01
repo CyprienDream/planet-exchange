@@ -14,50 +14,64 @@
       <div class="text-center mt-3">
         <%= f.submit "Search", class: "btn btn-white" %>
       </div>
-
     </div>
-    <%
-=begin%>
- <div class="mt-4">An item is missing ? Search it
-      <%= render 'shared/search_bar' %>
-    </div>
-<%
-=end%>
-  <% end %>
+      <% end %>
 
   <div class="calculator">
     <div class="calculator-row d-flex justify-content-around align-items-center">
       <%= image_tag "earth.svg" %>
       <div class="d-flex flex-column">
         <span>You saved</span>
-        <div class="d-flex">
-        <h3 id="carbon_value">0</h3>
-        <span class="quantity">CO2</span></div>
+        <div class="d-flex info-holder">
+
+          <h3 id="carbon_value">0.00</h3><span class="quantity">CO2</span>
+          <div class="info-box" data-id="carbon"><i class="fas fa-info-circle" data-id="carbon"></i></div>
+          <div class="d-none info-box-content carbon" id="carbon">
+            <div class="info-box-content-close"><i class="fas fa-times"></i></div>
+              <p>Emission factor expressed in kg CO2-equivalent per item (averge weight), based on the main item materials</p>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="calculator-row d-flex justify-content-around align-items-center">
       <div class="d-flex flex-column">
         <span>You saved</span>
-        <div class="d-flex"><h3 id="space_value">0</h3><span class="quantity">m²</span></div>
+        <div class="d-flex info-holder">
+          <h3 id="space_value">0.00</h3><span class="quantity">m²</span>
+          <div class="info-box" data-id="space"><i class="fas fa-info-circle" data-id="space"></i></div>
+          <div class="d-none info-box-content space" id="space">
+            <div class="info-box-content-close"><i class="fas fa-times"></i></div>
+              <p>The space saved is calculated used the average size of each item (width * length * height) and is expressed in cubic meters</p>
+          </div>
+        </div>
       </div>
       <%= image_tag "box.svg" %>
     </div>
+
     <div class="calculator-row d-flex justify-content-around align-items-center">
       <%= image_tag "money.svg" %>
       <div class="d-flex flex-column">
         <span>You saved</span>
-        <div class="d-flex"><h3 id="price_value">0</h3><span class="quantity">€</span></div>
+        <div class="d-flex info-holder">
+          <h3 id="price_value">0.00</h3><span class="quantity">€</span>
+          <div class="info-box" data-id="money"><i class="fas fa-info-circle" data-id="money"></i></div>
+          <div class="d-none info-box-content money" id="money">
+            <div class="info-box-content-close"><i class="fas fa-times"></i></div>
+              <p>The estimate of € saved represents the minimum average price based on online-commerce prices</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
 
   <div class="mt-3">
     <%= link_to :back do %>
       <div class="btn btn-list-white">
         <%= image_tag "arrow-white.svg", class: "back"%>
         <small>Back to category</small>
-    </div>
+      </div>
     <% end %>
   </div>
-
 </div>
