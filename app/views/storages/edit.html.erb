@@ -1,4 +1,4 @@
-<div class="container d-flex flex-column">
+<div class="container d-flex flex-column storage-room-container">
           <h2>Edit your storage room</h2>
           <div class="mt-4">
           <h3>Your storage room:</h3>
@@ -36,8 +36,10 @@
             <% end %>
           </div>
           </div>
-            <small>Your current address</small>
-            <%= @storage.address %>
+            <small>Your current address</small><br>
+             <%= @storage.address %>
+            <br>
+            <br>
 
           <div id="btn-open">
           <small>Change address</small>
@@ -50,5 +52,7 @@
                                       html: { id: "location" }%>
             <% end %>
           </div>
-
+          <%= link_to user_path(current_user) do %>
+          <div class="btn btn-white">Finish edits</div>
+          <% end %>
           </div>
