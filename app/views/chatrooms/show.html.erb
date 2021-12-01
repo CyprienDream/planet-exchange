@@ -14,10 +14,10 @@
 
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
      <% @chatroom.messages.each do |message| %>
-      <% if message.user.id == current_user.id %>
-        <%= render 'messages/message-current-user', message: message %>
+      <% if message.user == current_user %>
+        <%= render 'messages/message', message: message, css_class_one: 'message-current-user', css_class_two: 'text-right' %>
       <% else %>
-        <%= render 'messages/message-chat-user', message: message %>
+        <%= render 'messages/message', message: message, css_class_one: 'message-chat-user', css_class_two: 'text-left'%>
       <% end %>
     <% end %>
   </div>

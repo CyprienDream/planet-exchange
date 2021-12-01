@@ -1,0 +1,8 @@
+<div class="message-container" id="message-<%= message.id %>">
+  <div class="<%= css_class_one %>" >
+    <p><%= message.content %></p>
+  </div>
+  <p class="very-small white <%= css_class_two %> mb-2">
+    <%= message.created_at.strftime("%a %b %e at %l:%M%p") %>
+  </p>
+</div>
