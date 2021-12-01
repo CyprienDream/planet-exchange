@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_product_name: "Planet Exchange"
+meta_title: "Planet Exchange - Just borrow it !"
+meta_description: "Meet people around you and help each other out. Borrow an object in exchange for another, meet over a drink, make friends and more!"
+meta_image: "meta_img.png" # should exist in `app/assets/images/`
