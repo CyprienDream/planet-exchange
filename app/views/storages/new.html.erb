@@ -87,7 +87,8 @@
             <%= simple_form_for @storage do |f| %>
               <%= f.input :address,
                           placeholder: "Address",
-                          html: { id: "location" } %>
+                          html: { id: "location" },
+                          required: true %>
 
           <div class="checkbox-holder storage" >
               <% @items.each do |item| %>

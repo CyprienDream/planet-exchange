@@ -10,6 +10,10 @@
  flex-wrap: wrap;
 }
 
+.checkbox-item{
+  position:relative;
+}
+
 .checkbox-holder input {
   opacity: 0;
   position: fixed;
