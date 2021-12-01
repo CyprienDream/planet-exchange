@@ -17,6 +17,7 @@ const totalCarbon = () => {
       } else if (item.checked) {
         total += carbon_emissions;
       }
+      console.log(total);
       value_display.innerText = total.toFixed(2);
     });
   });

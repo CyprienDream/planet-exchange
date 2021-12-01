@@ -10,9 +10,11 @@
   <% end %>
 
   <% if user_signed_in? %>
-    <%= link_to user_chatrooms_path(current_user) do %>
-      <%= image_tag "msgs-icon.svg", class: "navbar-icon" %>
-    <% end %>
+    <div id="notification-holder" data-user-id=<%= current_user.id%>>
+      <%= link_to user_chatrooms_path(current_user) do %>
+        <%= image_tag "msgs-icon.svg", class: "navbar-icon" %>
+      <% end %>
+    </div>
     <%= link_to dashboard_path(current_user)do %>
       <%= image_tag "profile-icon.svg"  %>
     <% end %>

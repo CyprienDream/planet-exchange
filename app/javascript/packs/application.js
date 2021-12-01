@@ -33,6 +33,7 @@ import { autocompleteSearch } from "../components/autocomplete";
 
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initChatIndexCable } from "../channels/chat_index_channel";
+import { initNotificationCable } from "../channels/notification_channel"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -51,6 +52,7 @@ document.addEventListener("turbolinks:load", () => {
   formSubmit();
   initChatroomCable();
   initChatIndexCable();
+  initNotificationCable();
 });
 
 import "controllers";
