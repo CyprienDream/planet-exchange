@@ -13,7 +13,6 @@ const formSubmit = () => {
       }
     });
   }
-
 };
 
 export { formSubmit };
