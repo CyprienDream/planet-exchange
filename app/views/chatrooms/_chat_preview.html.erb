@@ -1,14 +1,20 @@
 <%= link_to chatroom_path(chatroom) do %>
   <div class="chat-preview">
-    <% chatroom.users.each do |user|
-      @user = user if user != current_user
-    end %>
-    <%= cl_image_tag @user.photo.key %>
-    <div>
-      <small><%= @user.username %></small>
-      <% unless chatroom.messages.empty? %>
-        <p class="very-small gray">"<%= chatroom.messages.last.content %>"</p>
-      <% end %>
+    <div class="d-flex">
+      <% chatroom.users.each do |user|
+        @user = user if user != current_user
+      end %>
+      <%= cl_image_tag @user.photo.key %>
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <small><%= @user.username %></small>
+          <% unless chatroom.messages.empty? %>
+            <p class="very-small gray">"<%= chatroom.messages.last.content %>"</p>
+          <% end %>
+        </div>
+      </div>
     </div>
+    <p class="very-small gray pr-2">30min</p>
   </div>
+
 <% end %>

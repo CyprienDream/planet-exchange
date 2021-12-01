@@ -2,7 +2,7 @@
   width: 100%;
   background-color: $green;
   margin-top: 104px;
-  padding: 16px 32px 108px 32px;
+  padding: 16px 32px 116px 32px;
 }
 
 .top-chat {
@@ -25,7 +25,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .chat-preview img {
