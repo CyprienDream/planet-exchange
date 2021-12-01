@@ -48,7 +48,7 @@ const totalPrice = () => {
         total += price_item;
       }
 
-      const total_rounded = total.toFixed(2);
+      const total_rounded = total.toFixed(1);
       if (total_rounded < 0) {
         price_display.innerText = total_rounded * -1;
       } else {
