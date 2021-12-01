@@ -18,11 +18,20 @@
     </div>
     <% end %>
 
-    <%= link_to edit_storage_path(current_user.storage) do %>
-    <div class="btn button-link-white mt-3">
-      <small>Edit storage room</small>
-      <%= image_tag "arrow.svg", class: "icon"  %>
-    </div>
+    <% if current_user.storage == nil  %>
+      <%= link_to new_storage_path(current_user.storage) do %>
+        <div class="btn button-link-white mt-3">
+          <small>Create storage room</small>
+          <%= image_tag "arrow.svg", class: "icon"  %>
+        </div>
+      <% end %>
+    <% else  %>
+      <%= link_to edit_storage_path(current_user.storage) do %>
+        <div class="btn button-link-white mt-3">
+          <small>Edit storage room</small>
+          <%= image_tag "arrow.svg", class: "icon"  %>
+        </div>
+      <% end %>
     <% end %>
 
   </div>
