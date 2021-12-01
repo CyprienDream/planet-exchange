@@ -4,6 +4,28 @@
   100% { transform: rotate(90deg) translateX(0); }
 }
 
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9, 0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes animate-pop-2 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 
 // INTRO --------------------------------------------------
 
@@ -19,11 +41,17 @@
 }
 
 .logo {
+  opacity: 0;
   max-width: 100%;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+  animation-fill-mode: forwards;
 }
 
 .logo h1 {
-    margin-bottom: 0.2em;
+  margin-bottom: 0.2em;
 }
 
 .start{
@@ -31,6 +59,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  animation-name: animate-pop-2;
+  animation-duration: 1.5s;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.login {
+  opacity: 0;
+  animation-name: animate-pop-2;
+  animation-duration: 1.5s;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
 }
 
 .start small {
