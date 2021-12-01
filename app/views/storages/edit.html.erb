@@ -1,0 +1,50 @@
+<div class="container d-flex flex-column">
+          <h2>Edit your storage room</h2>
+          <div class="mt-4">
+          <h3>In your storage room</h3>
+
+          <div class="storage-room-items-list">
+          <% @user_items.each do |user_item| %>
+          <div class="d-flex flex-direction-row justify-content-between align-items-center mb-3 storage-room-items">
+              <%= cl_image_tag user_item.item.photo.key %>
+              <div class="d-flex buttons-delete-edit">
+              <div class="pr-2">
+                <%= link_to item_storage_path(user_item), method: :delete, remote: true do%>
+                  <i class="fa fa-trash"></i>
+                <% end %>
+              </div>
+              <div class="pr-2">
+                 <%= link_to edit_item_storage_path(user_item) do %>
+                    <i class="fas fa-edit"></i>
+                  <% end %>
+              </div>
+              </div>
+           </div>
+          <% end %>
+          </div>
+
+            <%= @storage.address %>
+          <div class="storage-magic" >
+          <div class="checkbox-holder">
+
+              <% @items.each do |item| %>
+            <%= form_tag({:controller => "item_storages", :action => "create", :method => "post", remote: true}, id: "#{item.id}") do %>
+                      <div class="checkbox-item" >
+                          <%= check_box_tag("item_id", item.id, false, id:item.id, class: "checkbox-button", data: {checkboxid: item.id} ) %>
+                          <%= label_tag("item_id", "#{item.name}") %>
+                      </div>
+              <% end %>
+            <% end %>
+
+          </div>
+          </div>
+
+
+
+
+            <%# <%= f.input :address,
+            label: false,
+                          placeholder: "Address",
+                          html: { id: "location" } %>
+
+          </div>

@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 
   resources :categories, only: %i[new create index show]
   resources :activities, only: %i[new create show]
-  resources :storages, only: %i[show new create]
+  resources :storages, only: %i[show new create edit update]
   resources :items, only: %i[index new create]
-  resources :item_storages, only: %i[edit update]
+  resources :item_storages, only: %i[new create edit update destroy]
   resources :chatrooms, only: %i[show create] do
     resources :messages, only: :create
   end
