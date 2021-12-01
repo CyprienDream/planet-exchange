@@ -16,7 +16,7 @@
         <%= image_tag "icon_message_active.svg", class: "navbar-icon d-none", id: "active-msg-icon" %>
       <% end %>
     </div>
-    <%= link_to dashboard_path(current_user)do %>
+    <%= link_to dashboard_path do %>
       <%= image_tag "profile-icon.svg"  %>
     <% end %>
   <% else %>

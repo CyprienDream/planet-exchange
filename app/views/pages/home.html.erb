@@ -34,7 +34,7 @@
 
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide pr-4 pl-4">
+        <div class="swiper-slide px-4 pb-4">
           <%= image_tag("explore.svg") %>
           <h2>Explore</h2>
           <p class="text-left">Meet people around you and help each other out.
@@ -97,7 +97,7 @@
     <p class="text-center mt-5">Look here for a specific item</p>
     <%= render 'shared/search_bar' %>
 
-    <p class="text-center mt-5">Select here the activity's category that you would like to do.</p>
+    <p class="text-center mt-5 mb-2">Select here the activity's category that you would like to do.</p>
     <div class="grid">
       <% @categories.each do |category| %>
         <%= link_to category_path(category) do %>

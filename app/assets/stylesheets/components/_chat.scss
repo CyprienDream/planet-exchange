@@ -1,12 +1,14 @@
 #messages {
   width: 100%;
   background-color: $green;
-  margin-top: 104px;
-  padding: 16px 32px 116px 32px;
+  // margin-top: 104px;
+  padding: 116px 32px 116px 32px;
+  height:calc(100vh - 34px);
+  overflow: scroll;
 }
 
 .top-chat {
-  position: fixed;
+  position: absolute;
   top:0;
   left:0;
   width: 100%;
