@@ -26,10 +26,11 @@ class PagesController < ApplicationController
         @storage_items << item_storage if @items_instances.include?(item_storage.item)
       end
 
-      @owners = []
+      owners_all = []
       @storage_items.each do |storage_item|
-        @owners << storage_item.storage.user
+        owners_all << storage_item.storage.user
       end
+      @owners = owners_all.reject { |owner| owner == current_user }
       @owners.uniq!
       # def belongs_to_user(owner)
       #   owner.storage.items.select { |item| @storage_items.include?(item) }
@@ -45,8 +46,10 @@ class PagesController < ApplicationController
       end
 
       @storage_items.each do |storage_item|
+       if storage_item.storage.user != current_user
         found = @belongings.index { |e| e[0] == storage_item.storage.user }
         @belongings[found][1] << storage_item
+       end
       end
 
       # raise
