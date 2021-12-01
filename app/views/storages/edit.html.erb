@@ -1,19 +1,19 @@
 <div class="container d-flex flex-column">
           <h2>Edit your storage room</h2>
           <div class="mt-4">
-          <h3>In your storage room</h3>
-
+          <h3>Your storage room:</h3>
+          <small>Edit or delete items</small>
           <div class="storage-room-items-list">
           <% @user_items.each do |user_item| %>
           <div class="d-flex flex-direction-row justify-content-between align-items-center mb-3 storage-room-items">
               <%= cl_image_tag user_item.item.photo.key %>
               <div class="d-flex buttons-delete-edit">
-              <div class="pr-2">
+              <div class="storage-btn">
                 <%= link_to item_storage_path(user_item), method: :delete, remote: true do%>
                   <i class="fa fa-trash"></i>
                 <% end %>
               </div>
-              <div class="pr-2">
+              <div class="storage-btn">
                  <%= link_to edit_item_storage_path(user_item) do %>
                     <i class="fas fa-edit"></i>
                   <% end %>
@@ -22,11 +22,10 @@
            </div>
           <% end %>
           </div>
-
-            <%= @storage.address %>
-          <div class="storage-magic" >
+          <div class="mt-4 storage-magic" >
+          <h3>Add items to your storage room</h3>
+          <small>click on item you want to add</small>
           <div class="checkbox-holder">
-
               <% @items.each do |item| %>
             <%= form_tag({:controller => "item_storages", :action => "create", :method => "post", remote: true}, id: "#{item.id}") do %>
                       <div class="checkbox-item" >
@@ -35,16 +34,21 @@
                       </div>
               <% end %>
             <% end %>
-
           </div>
           </div>
+            <small>Your current address</small>
+            <%= @storage.address %>
 
-
-
-
-            <%# <%= f.input :address,
-            label: false,
-                          placeholder: "Address",
-                          html: { id: "location" } %>
+          <div id="btn-open">
+          <small>Change address</small>
+          </div>
+          <div class="show-hide">
+            <%= simple_form_for @storage do |f| %>
+                        <%= f.input :address,
+                        label: false,
+                                      placeholder: "Address",
+                                      html: { id: "location" }%>
+            <% end %>
+          </div>
 
           </div>

@@ -1,4 +1,5 @@
 const formSubmit = () => {
+  console.log("FormSubmit sends it's regards, winter is coming");
   const storage = document.querySelector(".storage-magic");
   const checkboxItem = document.querySelectorAll(".checkbox-button");
   if (storage) {
@@ -12,6 +13,7 @@ const formSubmit = () => {
       }
     });
   }
+
 };
 
 export { formSubmit };
