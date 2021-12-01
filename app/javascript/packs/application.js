@@ -28,7 +28,7 @@ import { homeScripts } from "../components/home";
 import { totalCarbon } from "../components/_co2calculator";
 import { totalSpace } from "../components/_co2calculator";
 import { totalPrice } from "../components/_co2calculator";
-
+import { formSubmit } from "../components/_form_submit";
 import { autocompleteSearch } from "../components/autocomplete";
 
 import { initChatroomCable } from "../channels/chatroom_channel";
@@ -48,6 +48,7 @@ document.addEventListener("turbolinks:load", () => {
   totalPrice();
   autocompleteSearch();
   homeScripts();
+  formSubmit();
   initChatroomCable();
   initChatIndexCable();
 });
