@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  # helper :message_link
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!, except: %i[home search]
   include Pundit
@@ -25,6 +26,10 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "Log in as admin"
     redirect_back fallback_location: root_path
   end
+
+  # def message_link(message)
+  #   chatroom_path(chatroom.message, anchor: "message-#{message.i}")
+  # end
 
   # def after_sign_in_path_for(resource)
   #   user_path(current_user) # your path
