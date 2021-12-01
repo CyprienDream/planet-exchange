@@ -1,3 +1,20 @@
+#messages {
+  width: 100%;
+  background-color: $green;
+  margin-top: 104px;
+  padding: 16px 32px 108px 32px;
+}
+
+.top-chat {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  padding: 16px 32px;
+  background-color: #3fbef08c;
+  backdrop-filter: blur(6px);
+}
+
 .chat-preview {
   background-color: $white;
   color: $green3;
@@ -21,16 +38,18 @@
 
 .chat-input {
   position: fixed;
-  bottom: 72px;
+  bottom: 38px;
   left: 0;
   width: 100%;
-  padding: 0 32px;
+  padding: 4px 32px 20px 32px;
+  background-color: #29daba86;
+  backdrop-filter: blur(6px);
 }
 
 .message-current-user {
   background-color: $white;
   color: $green3;
-  padding: 0.5em;
+  padding: 0.7em;
   -webkit-border-radius: 20px;
   -webkit-border-top-right-radius: 0;
   -moz-border-radius: 20px;
@@ -44,7 +63,7 @@
 .message-chat-user {
   background-color: $green3;
   color:$white;
-  padding: 0.5em;
+  padding: 0.7em;
   -webkit-border-radius: 20px;
   -webkit-border-top-left-radius: 0;
   -moz-border-radius: 20px;
