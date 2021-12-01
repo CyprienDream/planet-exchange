@@ -4,10 +4,15 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.chatroom = @chatroom
     @message.user = current_user
+    other_user = @chatroom.users.distinct.where.not(id: current_user.id)[0]
     if @message.save
       ChatroomChannel.broadcast_to(
         @chatroom,
         render_to_string(partial: "message-current-user", locals: { message: @message })
+      )
+      NotificationChannel.broadcast_to(
+        other_user,
+        1
       )
       redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
     else
