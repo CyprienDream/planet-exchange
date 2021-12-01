@@ -2,7 +2,7 @@ const totalCarbon = () => {
   const items = document.querySelectorAll("#search_array_");
   let total = 0;
   const value_display = document.getElementById("carbon_value");
-  if (value_display !== null){
+  if (value_display !== null) {
     value_display.innerText = total;
   }
   // const updateSum = () => {
@@ -18,7 +18,12 @@ const totalCarbon = () => {
         total += carbon_emissions;
       }
       console.log(total);
-      value_display.innerText = total.toFixed(2);
+      const total_rounded = total.toFixed(2);
+      if (total_rounded < 0) {
+        value_display.innerText = total_rounded * -1;
+      } else {
+        value_display.innerText = total_rounded;
+      }
     });
   });
 };
@@ -42,7 +47,13 @@ const totalPrice = () => {
       } else if (item.checked) {
         total += price_item;
       }
-      price_display.innerText = total.toFixed(2);
+
+      const total_rounded = total.toFixed(2);
+      if (total_rounded < 0) {
+        price_display.innerText = total_rounded * -1;
+      } else {
+        price_display.innerText = total_rounded;
+      }
     });
   });
 };
@@ -67,7 +78,12 @@ const totalSpace = () => {
         total += space_item;
       }
       if (space_display) {
-        space_display.innerText = total.toFixed(2);
+        const total_rounded = total.toFixed(2);
+        if (total_rounded < 0) {
+          space_display.innerText = total_rounded * -1;
+        } else {
+          space_display.innerText = total_rounded;
+        }
       }
     });
   });
