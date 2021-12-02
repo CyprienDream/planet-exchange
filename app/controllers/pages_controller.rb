@@ -8,6 +8,8 @@ class PagesController < ApplicationController
   def search
     items_raw = Item.pluck(:name).sort
     @items = items_raw.to_json
+    @belongings = []
+    @owners = []
 
     if params[:query].present? || params[:search_array].present?
 
@@ -15,7 +17,6 @@ class PagesController < ApplicationController
         @items_instances = Item.search_by_name(params[:query])
       else
         @items_instances = []
-        # @items_instances = Item.search_by_name(Item.find(params[:search][:item_id]).name)
         params[:search_array].each do |name|
           @items_instances += Item.search_by_name(name)
         end
@@ -32,15 +33,7 @@ class PagesController < ApplicationController
       end
       @owners = owners_all.reject { |owner| owner == current_user }
       @owners.uniq!
-      # def belongs_to_user(owner)
-      #   owner.storage.items.select { |item| @storage_items.include?(item) }
-      # end
 
-      # @owners.each do |owner|
-      #  @owner_items_found = owner.storage.items.select { |item| @storage_items.include?(item.id)}
-      # end
-
-      @belongings = []
       @owners.each do |owner|
         @belongings << [owner, []]
       end
@@ -62,7 +55,22 @@ class PagesController < ApplicationController
         }
       end
     else
+      User.all.each do |owner|
+        @belongings << [owner, []]
+      end
+      @belongings.reject! { |belonging| belonging[0] == current_user }
 
+      @markers = @belongings.map do |belonging|
+        next if belonging[0].storage.nil?
+
+        {
+          lat: belonging[0].storage.latitude,
+          lng: belonging[0].storage.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { belonging: belonging }),
+          image_url: belonging[0].photo.service_url
+          # image_url: helpers.cl_img('arrow.svg')
+        }
+      end
     end
   end
 
