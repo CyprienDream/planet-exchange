@@ -20,6 +20,8 @@ const initChatroomCable = () => {
         }
         messagesContainer.insertAdjacentHTML('beforeend', message.innerHTML);
 
+        const msgs = document.querySelector("#messages")
+        msgs.scrollTop = msgs.scrollHeight
       },
     });
   }
