@@ -65,6 +65,7 @@ const totalSpace = () => {
   const space_display = document.getElementById("space_value");
   if (space_display) {
     space_display.innerText = total;
+    console.log(total);
   }
   // const updateSum = () => {
 
@@ -80,6 +81,7 @@ const totalSpace = () => {
       }
       if (space_display) {
         const total_rounded = total.toFixed(2);
+        console.log(total);
         if (total_rounded < 0) {
           space_display.innerText = (total_rounded * -1);
         } else {

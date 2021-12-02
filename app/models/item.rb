@@ -18,6 +18,7 @@ class Item < ApplicationRecord
                   }
 
   def space_taken
+    raise
     return ((height * width * length ))
   end
 
