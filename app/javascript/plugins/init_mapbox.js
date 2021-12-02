@@ -7,13 +7,14 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
-const makeMarkerClickable = (marker, element) => {
+const makeMarkerClickable = (marker, id) => {
   // add a nice link to go to
-  const linkToGo = `users/${marker.user_id}`;
+  const element = marker.getElement();
+  const linkToGo = `users/${id}`;
   // wrap the marker element in a <a> tag
-  element.outerHTML = `
-  <a class='add-some-style' href='${linkToGo}'>
-  ${element.outerHTML}
+  element.innerHTML = `
+  <a class='w-100 h-100 d-block' href='${linkToGo}'>
+    ${element.innerHTML}
   </a>
   `;
   // debugger
@@ -34,7 +35,7 @@ const initMapbox = () => {
 
     //generate the markers
     const markers = JSON.parse(mapElement.dataset.markers);
-    if (markers) {
+      if (markers) {
       markers.forEach((marker) => {
         let popup = null;
         if (marker.info_window){
@@ -50,11 +51,12 @@ const initMapbox = () => {
         element.style.width = "25px";
         element.style.height = "25px";
 
-        new mapboxgl.Marker(element)
+        const mapboxMarker = new mapboxgl.Marker(element)
           .setLngLat([marker.lng, marker.lat])
           .setPopup(popup)
           .addTo(map);
-          makeMarkerClickable(marker, element);
+
+        makeMarkerClickable(mapboxMarker, marker.user_id);
       });
 
       fitMapToMarkers(map, markers);
