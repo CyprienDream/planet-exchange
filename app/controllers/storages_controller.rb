@@ -49,12 +49,15 @@ class StoragesController < ApplicationController
     @storage = Storage.find(params[:id])
     @storage.update(storage_params)
     if @storage.save
-        # create relationships between items and storage
+      # create relationships between items and storage
+      unless params[:storage][:item_ids].nil?
         params[:storage][:item_ids].each do |id|
           ItemStorage.create(storage_id: @storage.id, item_id: id.to_i)
         end
-        # redirect to user profile upon storage creation
-        redirect_to user_path(current_user)
+      end
+      # redirect to user profile upon storage creation
+      raise
+      redirect_to user_path(current_user)
     end
   end
   private
