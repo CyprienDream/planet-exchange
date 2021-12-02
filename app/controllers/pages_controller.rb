@@ -46,24 +46,11 @@ class PagesController < ApplicationController
       end
 
       @storage_items.each do |storage_item|
-       if storage_item.storage.user != current_user
-        found = @belongings.index { |e| e[0] == storage_item.storage.user }
-        @belongings[found][1] << storage_item
-       end
+        if storage_item.storage.user != current_user
+          found = @belongings.index { |e| e[0] == storage_item.storage.user }
+          @belongings[found][1] << storage_item
+        end
       end
-
-      # raise
-      # @markers = @storage_items.map do |item_storage|
-      #   next unless item_storage.storage.geocoded?
-      # raise
-
-      #   {
-      #     lat: item_storage.storage.latitude,
-      #     lng: item_storage.storage.longitude,
-      #     info_window: render_to_string(partial: "info_window", locals: { item: item_storage }),
-      #     image_url: helpers.asset_url(item_storage.item.photo.filename)
-      #   }
-      # end
 
       @markers = @belongings.map do |belonging|
         {
@@ -74,6 +61,8 @@ class PagesController < ApplicationController
           # image_url: helpers.cl_img('arrow.svg')
         }
       end
+    else
+
     end
   end
 
