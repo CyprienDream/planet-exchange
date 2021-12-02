@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  # A hundred branches have been merged!!!
+
   # helper :message_link
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!, except: %i[home search]
