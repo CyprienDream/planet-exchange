@@ -16,15 +16,18 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/streets-v10",
-      // center: [2.1774322, 41.3828939],
-      // zoom: 11
+      center: [2.1774322, 41.3828939],
+      zoom: 8
     });
 
     //generate the markers
     const markers = JSON.parse(mapElement.dataset.markers);
     if (markers) {
       markers.forEach((marker) => {
-        const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+        let popup = null;
+        if (marker.info_window){
+          popup = new mapboxgl.Popup().setHTML(marker.info_window);
+        }
 
         const element = document.createElement("div");
         element.className = "marker";

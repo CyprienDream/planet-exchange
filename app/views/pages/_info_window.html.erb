@@ -1,7 +1,9 @@
 <p style="color: black; font-size: 18px"><%= belonging[0].username %></p>
 
 <div class="d-flex">
-  <% belonging[1].each do |item| %>
-    <%= cl_image_tag item.item.photo.key, class: "map-img" %>
+  <% unless belonging[1].empty? %>
+    <% belonging[1].each do |item| %>
+      <%= cl_image_tag item.item.photo.key, class: "map-img" %>
+    <% end %>
   <% end %>
 </div>

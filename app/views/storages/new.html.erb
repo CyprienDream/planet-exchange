@@ -107,6 +107,6 @@
         </div>
       <%# location autocomplete depends on the map %>
       <div class="map" id="map" style="display:none"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC9LZC67e3qFKLk8-RSOQPV0lmCHZ6i4s&libraries=places&callback=initMap&solution_channel=GMP_QB_addressselection_v1_cABC" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>&libraries=places&callback=initMap&solution_channel=GMP_QB_addressselection_v1_cABC" async defer></script>
   </body>
 </html>

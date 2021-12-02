@@ -1,4 +1,5 @@
-<%= link_to chatroom_path(chatroom, anchor: "message-#{chatroom.messages.last.id}"), data: { turbolinks: false } do %>
+<% @anchor = chatroom.messages.empty? ? "" : "message-#{chatroom.messages.last.id}" %>
+<%= link_to chatroom_path(chatroom, anchor: @anchor), data: { turbolinks: false } do %>
   <div class="chat-preview">
     <div class="d-flex">
       <% chatroom.users.each do |user|
