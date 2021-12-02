@@ -54,7 +54,7 @@ const initMapbox = () => {
           .setLngLat([marker.lng, marker.lat])
           .setPopup(popup)
           .addTo(map);
-          // makeMarkerClickable(marker, element);
+          makeMarkerClickable(marker, element);
       });
 
       fitMapToMarkers(map, markers);
