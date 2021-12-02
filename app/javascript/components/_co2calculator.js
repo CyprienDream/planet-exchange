@@ -6,7 +6,6 @@ const totalCarbon = () => {
     value_display.innerText = total;
   }
   // const updateSum = () => {
-
   // }
 
   items.forEach((item) => {

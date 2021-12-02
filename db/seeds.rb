@@ -209,15 +209,15 @@ activity13.save!
 # items
 
 items = [
-  {name: "Whisk", avg_price: 2.5, avg_weight: 0.236, height: 0.29 , width: 0.06, photo: "app/assets/images/baking_whisk.png", item_materials: [{material: "Stainless Steel", proportion: 1}]},
-  {name: "Spatula", avg_price: 2, avg_weight: 0.04, height: 0.29 , width: 0.058, photo: "app/assets/images/baking_spatula.png", item_materials: [{material: "ABS Plastic", proportion: 0.5}, {material: "Silicone Rubber", proportion: 0.5}]},
-  {name: "Cake pan", avg_price: 8, avg_weight: 0.7926, height: 0.07 , width: 0.25, photo: "app/assets/images/baking_cake_pan.png", item_materials: [{material: "Carbon Steel", proportion: 1}]},
-  {name: "Hand mixer", avg_price: 15, avg_weight: 1.129, height: 0.208, width: 0.156, photo: "app/assets/images/baking_hand_mixer.png", item_materials: [{material: "ABS Plastic", proportion:0.7}, {material: "Stainless Steel", proportion: 0.3}]},
-  {name: "Drill", avg_price: 15, avg_weight: 1.53, height: 0.3 , width: 0.14, photo: "app/assets/images/diy_drill.png", item_materials: [{material: "ABS Plastic", proportion:0.7}, {material: "Steel",proportion: 0.3}]},
-  {name: "Hammer", avg_price: 6, avg_weight: 0.73, height: 0.36, width: 0.048, photo: "app/assets/images/tools/fa-solid_hammer.png", item_materials: [{material: "Wood", proportion: 0.6}, {material: "Steel", proportion: 0.4}]},
-  {name: "Ladder", avg_price: 35, avg_weight: 4.3, height: 1.75, width: 0.8, photo: "app/assets/images/tools/diy_ladder.png", item_materials: [{material:"Aluminium", proportion:1}]},
-  {name: "Pot", avg_price: 21, avg_weight: 1.4, height: 0.165, width: 0.279, photo: "app/assets/images/cooking_item_big_pot.png", item_materials: [{material: "Stainless Steel", proportion: 1}]},
-  {name: "Tape measure", avg_price: 5, avg_weight: 0.205, height: 0.12, width: 0.08, photo: "app/assets/images/tools/tape_measure.png", item_materials: [{material: "Steel", proportion: 0.5}, {material: "ABS Plastic", proportion: 0.5}]},
+  {name: "Whisk", avg_price: 2.5, avg_weight: 0.236, height: 0.29 , width: 0.06, length: 0.10, photo: "app/assets/images/baking_whisk.png", item_materials: [{material: "Stainless Steel", proportion: 1}]},
+  {name: "Spatula", avg_price: 2, avg_weight: 0.04, height: 0.29 , width: 0.058, length: 0.1, photo: "app/assets/images/baking_spatula.png", item_materials: [{material: "ABS Plastic", proportion: 0.5}, {material: "Silicone Rubber", proportion: 0.5}]},
+  {name: "Cake pan", avg_price: 8, avg_weight: 0.7926, height: 0.07 , width: 0.25, length: 0.25, photo: "app/assets/images/baking_cake_pan.png", item_materials: [{material: "Carbon Steel", proportion: 1}]},
+  {name: "Hand mixer", avg_price: 15, avg_weight: 1.129, height: 0.208, width: 0.156, length: 0.25,photo: "app/assets/images/baking_hand_mixer.png", item_materials: [{material: "ABS Plastic", proportion:0.7}, {material: "Stainless Steel", proportion: 0.3}]},
+  {name: "Drill", avg_price: 15, avg_weight: 1.53, height: 0.3 , width: 0.14 , length: 0.25, photo: "app/assets/images/diy_drill.png", item_materials: [{material: "ABS Plastic", proportion:0.7}, {material: "Steel",proportion: 0.3}]},
+  {name: "Hammer", avg_price: 6, avg_weight: 0.73, height: 0.36, width: 0.048 , length: 0.25, photo: "app/assets/images/tools/fa-solid_hammer.png", item_materials: [{material: "Wood", proportion: 0.6}, {material: "Steel", proportion: 0.4}]},
+  {name: "Ladder", avg_price: 35, avg_weight: 4.3, height: 1.75, width: 0.8, length: 0.05, photo: "app/assets/images/tools/diy_ladder.png", item_materials: [{material:"Aluminium", proportion:1}]},
+  {name: "Pot", avg_price: 21, avg_weight: 1.4, height: 0.165, width: 0.279, length: 0.279, photo: "app/assets/images/cooking_item_big_pot.png", item_materials: [{material: "Stainless Steel", proportion: 1}]},
+  {name: "Tape measure", avg_price: 5, avg_weight: 0.205, height: 0.12, width: 0.08, length: 0.08,  photo: "app/assets/images/tools/tape_measure.png", item_materials: [{material: "Steel", proportion: 0.5}, {material: "ABS Plastic", proportion: 0.5}]},
 
   {name: "Flashlight", avg_price: 6.5, avg_weight: 0.205, height: 0.06, width: 0.04, length: 0.14 ,photo: "app/assets/images/tools/flashlight.png", item_materials: [{material: "Aluminium", proportion: 1}]},
   {name: "Utility knife", avg_price: 6.5, avg_weight: 0.230, height: 0.08, width: 0.08, length: 0.18, photo: "app/assets/images/tools/utility_knife.png", item_materials: [{material: "Zinc", proportion: 0.7}, {material: "ABS Plastic", proportion: 0.3}]},
@@ -254,7 +254,7 @@ materials = [
 Material.create!(materials)
 
 items.each do |item|
-  item_in_db = Item.new(name: item[:name], avg_price: item[:avg_price], weight: item[:avg_weight], height: item[:height], width: item[:width])
+  item_in_db = Item.new(name: item[:name], avg_price: item[:avg_price], weight: item[:avg_weight], height: item[:height], width: item[:width], length:item[:length])
 
   item[:item_materials].each do |material_i|
     puts material_i[:material]
