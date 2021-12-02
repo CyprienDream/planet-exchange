@@ -5,6 +5,8 @@ class ChatroomsController < ApplicationController
     @chatroom.users.each do |user|
       @user = user if user != current_user
     end
+
+    # redirect_to chatroom_path(@chatroom, anchor: "message-#{@chatroom.messages.last.id}")
   end
 
   def create
