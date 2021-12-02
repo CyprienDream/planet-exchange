@@ -2,7 +2,7 @@
   <h2><%= @activity.name %></h2>
   <%= simple_form_for :search, url: search_path, method: :get do |f| %>
     <div class="you-may-need mt-4">
-      <p>For this activity, you may need</p>
+      <p class="text-center mb-2">For this activity, you may need</p>
       <div class="checkbox-holder">
           <% @activity.items.each do |item|%>
           <div class="checkbox-item">
