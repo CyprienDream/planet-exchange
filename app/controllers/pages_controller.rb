@@ -73,8 +73,10 @@ class PagesController < ApplicationController
           # image_url: helpers.cl_img('arrow.svg')
         }
       end
-      @markers << { lat: current_user.storage.latitude, lng: current_user.storage.longitude } unless current_user.storage.nil?
-      @markers.compact!
+      if current_user
+        @markers << { lat: current_user.storage.latitude, lng: current_user.storage.longitude } unless current_user.storage.nil?
+      end
+        @markers.compact!
     end
   end
 
