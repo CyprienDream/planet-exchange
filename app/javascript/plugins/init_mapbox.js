@@ -7,6 +7,18 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
+const makeMarkerClickable = (marker, element) => {
+  // add a nice link to go to
+  const linkToGo = `users/${marker.user_id}`;
+  // wrap the marker element in a <a> tag
+  element.outerHTML = `
+  <a class='add-some-style' href='${linkToGo}'>
+  ${element.outerHTML}
+  </a>
+  `;
+  // debugger
+};
+
 const initMapbox = () => {
   const mapElement = document.getElementById("map");
 
@@ -42,6 +54,7 @@ const initMapbox = () => {
           .setLngLat([marker.lng, marker.lat])
           .setPopup(popup)
           .addTo(map);
+          makeMarkerClickable(marker, element);
       });
 
       fitMapToMarkers(map, markers);
