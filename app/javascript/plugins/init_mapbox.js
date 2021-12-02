@@ -67,6 +67,7 @@ const initMapbox = () => {
             center: coordinates,
             zoom: 10,
           });
+          window.scrollTo(0, 0);
         });
       });
     }
