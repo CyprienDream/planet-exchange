@@ -10,7 +10,7 @@
         <div>
           <small><%= @user.username %></small>
           <% unless chatroom.messages.empty? %>
-            <p class="very-small gray">"<%= chatroom.messages.last.content %>"</p>
+            <p class="very-small gray"><%= chatroom.messages.last.content %></p>
           <% end %>
         </div>
       </div>
