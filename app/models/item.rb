@@ -18,7 +18,7 @@ class Item < ApplicationRecord
                   }
 
   def space_taken
-    return (height * width).round(3)
+    return ((height * width * length ))
   end
 
   def carbon_footprint_calc

@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_12_01_105418) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -128,6 +129,7 @@ ActiveRecord::Schema.define(version: 2021_12_01_105418) do
     t.float "weight"
     t.float "height"
     t.float "width"
+    t.integer "length"
   end
 
   create_table "materials", force: :cascade do |t|

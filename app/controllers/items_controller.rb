@@ -31,6 +31,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :photo, :weight, :height, :width, :carbon_footprint, activity_ids: [])
+    params.require(:item).permit(:name, :photo, :weight, :height, :width, :length,:carbon_footprint, activity_ids: [])
   end
 end
