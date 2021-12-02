@@ -41,6 +41,11 @@ const initMapbox = () => {
 
       fitMapToMarkers(map, markers);
 
+      window.addEventListener('load', () => {
+        map.resize();
+        fitMapToMarkers(map, markers);
+      })
+
       // Add fly to feature to map
 
       //select all fly buttons
