@@ -8,6 +8,8 @@ class PagesController < ApplicationController
   def search
     items_raw = Item.pluck(:name).sort
     @items = items_raw.to_json
+    @belongings = []
+    @owners = []
 
     if params[:query].present? || params[:search_array].present?
 
@@ -15,7 +17,6 @@ class PagesController < ApplicationController
         @items_instances = Item.search_by_name(params[:query])
       else
         @items_instances = []
-        # @items_instances = Item.search_by_name(Item.find(params[:search][:item_id]).name)
         params[:search_array].each do |name|
           @items_instances += Item.search_by_name(name)
         end
@@ -32,48 +33,48 @@ class PagesController < ApplicationController
       end
       @owners = owners_all.reject { |owner| owner == current_user }
       @owners.uniq!
-      # def belongs_to_user(owner)
-      #   owner.storage.items.select { |item| @storage_items.include?(item) }
-      # end
 
-      # @owners.each do |owner|
-      #  @owner_items_found = owner.storage.items.select { |item| @storage_items.include?(item.id)}
-      # end
-
-      @belongings = []
       @owners.each do |owner|
         @belongings << [owner, []]
       end
 
       @storage_items.each do |storage_item|
-       if storage_item.storage.user != current_user
-        found = @belongings.index { |e| e[0] == storage_item.storage.user }
-        @belongings[found][1] << storage_item
-       end
+        if storage_item.storage.user != current_user
+          found = @belongings.index { |e| e[0] == storage_item.storage.user }
+          @belongings[found][1] << storage_item
+        end
       end
-
-      # raise
-      # @markers = @storage_items.map do |item_storage|
-      #   next unless item_storage.storage.geocoded?
-      # raise
-
-      #   {
-      #     lat: item_storage.storage.latitude,
-      #     lng: item_storage.storage.longitude,
-      #     info_window: render_to_string(partial: "info_window", locals: { item: item_storage }),
-      #     image_url: helpers.asset_url(item_storage.item.photo.filename)
-      #   }
-      # end
 
       @markers = @belongings.map do |belonging|
         {
           lat: belonging[0].storage.latitude,
           lng: belonging[0].storage.longitude,
-          info_window: render_to_string(partial: "info_window", locals: { belonging: belonging }),
-          image_url: belonging[0].photo.service_url
+          # info_window: render_to_string(partial: "info_window", locals: { belonging: belonging }),
+          image_url: belonging[0].photo.service_url,
+          user_id: belonging[0].id
+
+        }
+      end
+    else
+      User.all.each do |owner|
+        @belongings << [owner, []]
+      end
+      @belongings.reject! { |belonging| belonging[0] == current_user }
+
+      @markers = @belongings.map do |belonging|
+        next if belonging[0].storage.nil?
+
+        {
+          lat: belonging[0].storage.latitude,
+          lng: belonging[0].storage.longitude,
+          image_url: belonging[0].photo.service_url,
+          user_id: belonging[0].id
+          # info_window: render_to_string(partial: "info_window", locals: { belonging: belonging }),
           # image_url: helpers.cl_img('arrow.svg')
         }
       end
+      @markers << { lat: current_user.storage.latitude, lng: current_user.storage.longitude } unless current_user.storage.nil?
+      @markers.compact!
     end
   end
 

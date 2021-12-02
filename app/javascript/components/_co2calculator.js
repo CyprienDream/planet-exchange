@@ -19,7 +19,9 @@ const totalCarbon = () => {
       console.log(total);
       const total_rounded = total.toFixed(2);
       if (total_rounded < 0) {
-        value_display.innerText = total_rounded * -1;
+        value_display.innerText = (total_rounded * -1);
+      } else if (total > 10) {
+        value_display.innerText = total.toFixed(1);
       } else {
         value_display.innerText = total_rounded;
       }
@@ -49,7 +51,7 @@ const totalPrice = () => {
 
       const total_rounded = total.toFixed(1);
       if (total_rounded < 0) {
-        price_display.innerText = total_rounded * -1;
+        price_display.innerText = (total_rounded * -1);
       } else {
         price_display.innerText = total_rounded;
       }
@@ -79,7 +81,7 @@ const totalSpace = () => {
       if (space_display) {
         const total_rounded = total.toFixed(2);
         if (total_rounded < 0) {
-          space_display.innerText = total_rounded * -1;
+          space_display.innerText = (total_rounded * -1);
         } else {
           space_display.innerText = total_rounded;
         }

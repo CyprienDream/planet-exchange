@@ -7,6 +7,19 @@ const fitMapToMarkers = (map, markers) => {
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
+const makeMarkerClickable = (marker, id) => {
+  // add a nice link to go to
+  const element = marker.getElement();
+  const linkToGo = `users/${id}`;
+  // wrap the marker element in a <a> tag
+  element.innerHTML = `
+  <a class='w-100 h-100 d-block' href='${linkToGo}'>
+    ${element.innerHTML}
+  </a>
+  `;
+  // debugger
+};
+
 const initMapbox = () => {
   const mapElement = document.getElementById("map");
 
@@ -16,30 +29,42 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/streets-v10",
-      // center: [2.1774322, 41.3828939],
-      // zoom: 11
+      center: [2.1774322, 41.3828939],
+      zoom: 8
     });
 
     //generate the markers
     const markers = JSON.parse(mapElement.dataset.markers);
-    if (markers) {
+      if (markers) {
       markers.forEach((marker) => {
-        const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+        let popup = null;
+        if (marker.info_window){
+          popup = new mapboxgl.Popup().setHTML(marker.info_window);
+        }
 
         const element = document.createElement("div");
         element.className = "marker";
-        element.style.backgroundImage = `url('${marker.image_url}')`;
+        if (marker.image_url){
+          element.style.backgroundImage = `url('${marker.image_url}')`;
+        }
         element.style.backgroundSize = "contain";
         element.style.width = "25px";
         element.style.height = "25px";
 
-        new mapboxgl.Marker(element)
+        const mapboxMarker = new mapboxgl.Marker(element)
           .setLngLat([marker.lng, marker.lat])
           .setPopup(popup)
           .addTo(map);
+
+        makeMarkerClickable(mapboxMarker, marker.user_id);
       });
 
       fitMapToMarkers(map, markers);
+
+      window.addEventListener('load', () => {
+        map.resize();
+        fitMapToMarkers(map, markers);
+      })
 
       // Add fly to feature to map
 
@@ -59,6 +84,7 @@ const initMapbox = () => {
             center: coordinates,
             zoom: 10,
           });
+          window.scrollTo(0, 0);
         });
       });
     }
