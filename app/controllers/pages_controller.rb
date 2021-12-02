@@ -50,8 +50,10 @@ class PagesController < ApplicationController
           lat: belonging[0].storage.latitude,
           lng: belonging[0].storage.longitude,
           info_window: render_to_string(partial: "info_window", locals: { belonging: belonging }),
-          image_url: belonging[0].photo.service_url
+          image_url: belonging[0].photo.service_url,
           # image_url: helpers.cl_img('arrow.svg')
+          user_id: belonging[0].id
+
         }
       end
     else

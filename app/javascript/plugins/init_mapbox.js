@@ -34,7 +34,7 @@ const initMapbox = () => {
 
     //generate the markers
     const markers = JSON.parse(mapElement.dataset.markers);
-    if (markers) {
+      if (markers) {
       markers.forEach((marker) => {
         let popup = null;
         if (marker.info_window){
@@ -54,7 +54,7 @@ const initMapbox = () => {
           .setLngLat([marker.lng, marker.lat])
           .setPopup(popup)
           .addTo(map);
-          makeMarkerClickable(marker, element);
+          // makeMarkerClickable(marker, element);
       });
 
       fitMapToMarkers(map, markers);
