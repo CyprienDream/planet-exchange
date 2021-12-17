@@ -1,5 +1,5 @@
 class ItemStorage < ApplicationRecord
+  # define databse relationships
   belongs_to :storage
   belongs_to :item
-  # belongs_to :user, through: :storages
 end

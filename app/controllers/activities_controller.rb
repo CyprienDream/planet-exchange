@@ -1,5 +1,8 @@
 class ActivitiesController < ApplicationController
+  # authorize user access solely for displaying
   before_action :authenticate_user! , except: [:index, :show]
+
+
   def show
     @activity = Activity.find(params[:id])
     @items = @activity.items
@@ -12,7 +15,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     if @activity.save
-      redirect_to root_path # needs to change to desired path
+      redirect_to root_path
     else
       render :new
     end
